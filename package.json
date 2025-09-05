@@ -135,5 +135,6 @@
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-standard": "^37.0.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "packageManager": "pnpm@9.12.3"
 }
