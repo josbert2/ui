@@ -1,0 +1,138 @@
+---
+title: Textarea
+description: Allows users to input long text data into a form.
+priorityOrder : 25
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <textarea class="textarea variant-plain sz-md" placeholder="Your message" rows="3"> </textarea>
+    </div>
+    <div class="field">
+        <textarea class="textarea variant-bottomOutlined sz-md" placeholder="Your message" rows="3"> </textarea>
+    </div>
+    <div class="field">
+        <textarea class="textarea variant-soft sz-md" placeholder="Your message" rows="3"> </textarea>
+    </div>
+    <div class="field">
+        <textarea class="textarea variant-outlined sz-md" placeholder="Your message" rows="3"> </textarea>
+    </div>
+    <div class="field">
+        <textarea class="textarea variant-mixed sz-md" placeholder="Your message" rows="3"> </textarea>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-xs w-full" data-shade="900">
+            <div class="field">
+                <textarea class="textarea variant-plain sz-md" placeholder="Your message" rows="3"> </textarea>
+            </div>
+            <div class="field">
+                <textarea class="textarea variant-bottomOutlined sz-md" placeholder="Your message" rows="3"> </textarea>
+            </div>
+            <div class="field">
+                <textarea class="textarea variant-soft sz-md" placeholder="Your message" rows="3"> </textarea>
+            </div>
+            <div class="field">
+                <textarea class="textarea variant-outlined sz-md" placeholder="Your message" rows="3"> </textarea>
+            </div>
+            <div class="field">
+                <textarea class="textarea variant-mixed sz-md" placeholder="Your message" rows="3"> </textarea>
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Textarea 
+
+            The textarea component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## With label
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="msg">Message</label>
+        <textarea class="textarea variant-mixed sz-md" id="msg" rows="3"> </textarea>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="msg">Message</label>
+                    <textarea class="textarea variant-mixed sz-md" id="msg" rows="3"> </textarea>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## With Caption
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="msg">Message</label>
+        <textarea class="textarea variant-mixed sz-md" id="msg" rows="3"> </textarea>
+        <span class="inline-block text-sm text-caption">Input description</span>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="msg2">Message</label>
+                    <textarea class="textarea variant-mixed sz-md" id="msg2" rows="3"> </textarea>
+                    <span class="inline-block text-sm text-caption">Input description</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="msg">Message</label>
+        <textarea disabled class="textarea variant-mixed sz-md" id="msg" rows="3"> </textarea>
+        <span class="inline-block text-sm text-caption">Input description</span>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="msg">Message</label>
+                    <textarea disabled class="textarea variant-mixed sz-md" id="msg" rows="3"> </textarea>
+                    <span class="inline-block text-sm text-caption">Input description</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+---
+title: Integrations
+description: Allows users to seamlessly integrate services with other top tier applications.
+priorityOrder : 5
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { integrationFirstCode } from "@blocks/integrations/integration-first"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Intergration 1"
+    src="/blocks-preview/integrations/integration-first"
+    code={integrationFirstCode}
+    client:visible
+/>

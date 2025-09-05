@@ -1,0 +1,50 @@
+---
+import { twMerge } from 'tailwind-merge'
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
+import '@styles/color-theme.css'
+
+interface Props {
+    title?: string
+    description?: string
+    className?: string
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, className } = Astro.props
+---
+
+<script is:inline>
+    function setCustomization(document) {
+        const palette = localStorage.getItem('palette') || 'tls'
+        const shade = localStorage.getItem('shade') || '900'
+        const rounded = localStorage.getItem('rounded') || 'large'
+        const theme = localStorage.getItem('theme') || 'dark'
+
+        const root = document.documentElement
+
+        root.dataset.palette = palette
+        root.dataset.shade = shade
+        root.dataset.rounded = rounded
+
+        if (theme == 'dark') {
+            root.classList.add('dark')
+        } else {
+            root.classList.remove('dark')
+        }
+    }
+
+    setCustomization(document)
+
+    document.addEventListener('astro:before-swap', (event) => {
+        setCustomization(event.newDocument)
+    })
+</script>
+
+<html class="scroll-smooth" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+    <body class={twMerge('bg-gray-50 font-sans antialiased dark:bg-gray-950', className)}>
+        <slot />
+    </body>
+</html>

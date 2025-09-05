@@ -1,0 +1,234 @@
+---
+title: Radio Group
+description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+priorityOrder : 21
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-6 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r1" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r1" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r1" class="block text-title select-none">Create a private project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r2" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r2" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r2" class="block text-title select-none">Create a public project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r3" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r3" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r3" class="block text-title select-none">Create an internal project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-6 max-w-sm w-full" data-shade="900">
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r1" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r1" name="radio1"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r1" class="block text-title select-none">Create a private project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r2" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r2" name="radio1"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r2" class="block text-title select-none">Create a public project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r3" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r3" name="radio1"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r3" class="block text-title select-none">Create an internal project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-6 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r1" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r1" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r1" class="block text-title select-none">Create a private project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r2" class="radio group rounded-full">
+                <input disabled class="peer" type="radio" id="r2" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r2" class="block text-title select-none">Create a public project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r3" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r3" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r3" class="block text-title select-none">Create an internal project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-6 max-w-sm w-full" data-shade="900">
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r2-1" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r2-1" name="radio2"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r2-1" class="block text-title select-none">Create a private project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r2-2" class="radio group rounded-full">
+                        <input disabled class="peer" type="radio" id="r2-2" name="radio2"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r2-2" class="block text-title select-none">Create a public project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r2-3" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r2-3" name="radio2"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r2-3" class="block text-title select-none">Create an internal project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+        </form>
+    </PreviewBlock>
+    </div>
+
+    <div>
+        ## Default Checked
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-6 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r1" class="radio group rounded-full">
+                <input checked class="peer" type="radio" id="r1" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r1" class="block text-title select-none">Create a private project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r2" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r2" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r2" class="block text-title select-none">Create a public project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="r3" class="radio group rounded-full">
+                <input class="peer" type="radio" id="r3" name="radio1"  />
+                <span class="radio-indicator"> </span>
+            </label>
+            <label for="r3" class="block text-title select-none">Create an internal project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-6 max-w-sm w-full" data-shade="900">
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r3-1" class="radio group rounded-full">
+                        <input checked class="peer" type="radio" id="r3-1" name="radio3"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r3-1" class="block text-title select-none">Create a private project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r3-2" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r3-2" name="radio3"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r3-2" class="block text-title select-none">Create a public project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="r3-3" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r3-3" name="radio3"  />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <label for="r3-3" class="block text-title select-none">Create an internal project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+        </form>
+    </PreviewBlock>
+    </div>
+</div>

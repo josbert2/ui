@@ -1,0 +1,37 @@
+---
+title: Astro Guide
+description: Install and Configure Tailus UI HTML with Astro
+priorityOrder : 3
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import csscode from "@lib/csscode"
+import Daisy from "@components/Daisy"
+export const components = {
+    ..._components
+}
+
+export const configCode = `import {palettes} from "@tailus/themer-plugins"
+
+module.exports = {
+    content: [
+        './index.html',
+        './src/**/*.{js,ts,jsx,tsx}',
+    ],
+    theme: {
+        extend: {
+            colors : palettes.trust
+        },
+    }
+};`
+
+export const config = {
+    code: configCode,
+    lang: "ts",
+    highlightedLines:"1,10",
+}
+
+
+<Daisy />
+<button class="btn ">Default</button>

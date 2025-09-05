@@ -1,0 +1,75 @@
+---
+title: Popover
+description: Displays rich content in a portal, triggered by a button.
+frameworkDocs : 
+    name : Flexilla Popover
+    link : https://flexilla-docs.vercel.app/docs/components/popover
+priorityOrder : 30
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR, BERNARD_AVATAR, THEO_AVATAR, GLODIE_AVATAR } from "src/const"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Popover from "@components/interactive/Popover.astro"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<button data-popover-trigger data-popover-id="demo-popover" class="btn variant-outlined sz-md">
+    <span class="btn-label">Show PopOver</span>
+</button>
+<div data-fx-popover id="demo-popover" aria-describedby="popover-1" class="card variant-outlined invisible fixed left-[--fx-popper-placement-x] top-[--fx-popper-placement-y] z-50 max-w-xs scale-95 opacity-0 shadow-lg duration-200 data-[state=open]:visible data-[state=open]:scale-100 data-[state=open]:opacity-100">
+    <h2 id="popover-1" class="text-title text-lg font-medium">Help</h2>
+    <p class="text-body mt-3 text-sm">Nisi suscipit ab illo molestiae! Cum possimus necessitatibus enim ipsum sapiente!</p>
+</div>`,
+              lang: "html"
+          }]}>
+        <Popover />
+    </PreviewBlock>
+
+    <div>
+        ## Installation
+    
+        <div class="space-y-12">
+            <div>
+                ### 1. Install the component
+
+                Install flexilla popover using your package manager
+
+                <CodeSnippet
+                    lang="bash"
+                    client:visible
+                    code="npm install @flexilla/popover"
+                />
+            </div>
+            <div>
+                ### Configure your popover
+
+                Add your component's config in a `.js` or `.ts` file 
+
+                <CodeSnippet
+                    lang="js"
+                    client:visible
+                    code={`import { Popover } from '@flexilla/popover'
+
+new Popover('#demo-popover', {
+    offsetDistance: 8,
+    placement: 'bottom-middle',
+    onShow: () => {
+        document.documentElement.classList.add('overflow-hidden')
+    },
+    onHide: () => {
+        document.documentElement.classList.remove('overflow-hidden')
+    },
+})`} />
+            </div>
+        </div>
+    </div>
+</div>

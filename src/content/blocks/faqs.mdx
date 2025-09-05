@@ -1,0 +1,20 @@
+---
+title: FAQs
+description: Provides answers to common questions, helping users quickly find information and clarify doubts about a product or service.
+priorityOrder : 12
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { plainCode } from "@blocks/faqs/plain"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Plain"
+    src="/blocks-preview/faqs/plain"
+    code={plainCode}
+    client:visible
+/>

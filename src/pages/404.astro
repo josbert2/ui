@@ -1,0 +1,69 @@
+---
+import Layout from '@layouts/BaseLayout.astro'
+import Container from '@components/Container.astro'
+import { ArrowRight } from 'lucide-react'
+---
+
+<Layout title="Tailus UI : 404">
+    <main class="overflow-hidden">
+        <section class="relative z-20 pt-20 will-change-transform sm:pt-40 lg:pt-20">
+            <Container>
+                <div class="text-center">
+                    <h1 class="text-title mt-12 text-balance bg-gradient-to-b text-4xl font-semibold sm:text-5xl lg:mt-0 lg:text-6xl">Oops! Page Not Found</h1>
+                    <p class="mx-auto mb-8 mt-6 text-lg md:max-w-md">We couldn't find the page you're looking for. Here are some helpful links to get you back on track:</p>
+                </div>
+                <ul class="group/links text-title mx-auto w-fit">
+                    <li>
+                        <a href="https://html.tailus.io" class="bg-ui-soft hover:!bg-ui-soft group rounded-btn -mx-3 flex w-56 items-center justify-between gap-4 px-3 py-2 text-sm hover:text-primary-600 group-hover/links:bg-transparent dark:hover:text-primary-300">
+                            <span class="opacity-50">Tailus</span> UI HTML
+                            <ArrowRight className="size-3.5 opacity-0 duration-300 group-hover:translate-x-1 group-hover:opacity-100" strokeWidth={2.5} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://html.tailus.io/blocks/hero-section" class="hover:bg-ui-soft group rounded-btn -mx-3 flex w-56 items-center justify-between gap-4 px-3 py-2 text-sm hover:text-primary-600 dark:hover:text-primary-300">
+                            <span class="opacity-50">Tailus</span> UI Blocks
+                            <ArrowRight className="size-3.5 opacity-0 duration-300 group-hover:translate-x-1 group-hover:opacity-100" strokeWidth={2.5} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ui.tailus.io" class="hover:bg-ui-soft group rounded-btn -mx-3 flex w-56 items-center justify-between gap-4 px-3 py-2 text-sm hover:text-primary-600 dark:hover:text-primary-300">
+                            <span class="opacity-50">Tailus</span> UI React
+                            <ArrowRight className="size-3.5 opacity-0 duration-300 group-hover:translate-x-1 group-hover:opacity-100" strokeWidth={2.5} />
+                        </a>
+                    </li>
+                </ul>
+            </Container>
+        </section>
+        <div class="relative mt-16 lg:mt-0">
+            <div class="absolute inset-0 z-[2] h-full w-full items-center px-5 py-24 [--layer-color:theme(colors.gray.50)] [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,var(--layer-color)_100%)] dark:[--layer-color:theme(colors.gray.950)]"></div>
+            <div class="absolute inset-0 z-[2] h-full w-full items-center px-5 py-24 [--layer-color:theme(colors.gray.50)] [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,var(--layer-color)_100%)] dark:[--layer-color:theme(colors.gray.950)]"></div>
+
+            <div class="relative mx-auto max-w-7xl">
+                <div class="absolute inset-20 z-[1] pl-56 [perspective:1000px] lg:-mr-80 lg:pl-56">
+                    <div class="[transform:rotateX(20deg)]">
+                        <div class="relative [transform:skewX(.36rad)] lg:h-[44rem]">
+                            <img class="rounded-card relative z-[1] border shadow-xl shadow-gray-950/15 dark:hidden" src="https://tailus.io/blocks/feat-light.webp" alt="tailus ui features section" width="" height="" />
+                            <img class="rounded-card relative z-[1] hidden border shadow-xl shadow-gray-950/15 dark:block" src="https://tailus.io/blocks/feat-dark.webp" alt="tailus ui features section" width="" height="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-64 z-[1] -mr-16 pl-56 [perspective:1000px] lg:-mr-[40rem] lg:pl-56">
+                    <div class="[transform:rotateX(20deg)]">
+                        <div class="relative [transform:skewX(.36rad)] lg:h-[44rem]">
+                            <img class="rounded-card relative z-[1] border shadow-xl shadow-gray-950/15 dark:hidden" src="https://tailus.io/blocks/auth-light.webp" alt="tailus ui auth section" width="" height="" />
+                            <img class="rounded-card relative z-[1] hidden border shadow-xl shadow-gray-950/15 dark:block" src="https://tailus.io/blocks/auth-dark.webp" alt="tailus ui auth section" width="" height="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-16 pl-16 [perspective:1000px] lg:-mr-56 lg:pl-56">
+                    <div class="[transform:rotateX(20deg)]">
+                        <div class="relative [transform:skewX(.36rad)] lg:h-[44rem]">
+                            <img class="rounded-card relative z-[1] border dark:hidden" src="https://tailus.io/blocks/hero-light.webp" alt="tailus ui hero section" width="" height="" />
+                            <img class="rounded-card relative z-[1] hidden border dark:block" src="https://tailus.io/blocks/hero-dark.webp" alt="tailus ui hero section" width="" height="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>

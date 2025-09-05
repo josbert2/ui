@@ -1,0 +1,33 @@
+---
+title: Accordion
+description: Your user's gateway to interactive functionalities.
+priorityOrder : 13
+
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/button"
+import PreviewWithCode from "@components/PreviewWithCode.astro"
+
+
+import Accordion1 from "@components/accordion/accordion"
+
+
+export const components = {
+    ..._components
+}
+
+<div className="">
+       
+        <PreviewWithCode component="Accordion1">
+             <Accordion1 />  
+        </PreviewWithCode>
+
+
+    
+    </div>
+
+
+<script src="../../../packages/flyonui/dist/accordion.js"></script> 

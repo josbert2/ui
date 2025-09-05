@@ -1,0 +1,46 @@
+---
+import Button from '@tailus-ui/Button'
+import { twMerge } from 'tailwind-merge'
+const currentPath = Astro.url.pathname
+
+const navlinks = [
+    {
+        name: 'Docs',
+        href: '/get-started/installation',
+    },
+    {
+        name: 'Html',
+        href: 'https://html.tailus.io',
+    },
+    {
+        name: 'React',
+        href: 'https://ui.tailus.io',
+    },
+    {
+        name: 'Themer',
+        href: 'https://ui.tailus.io/themer/get-started/introduction/',
+    },
+    {
+        name: 'Blocks',
+        href: '/blocks/hero-section',
+    },
+    {
+        name: 'Templates',
+        href: 'https://tailus.io/templates',
+    },
+]
+
+const { asPill = false } = Astro.props
+---
+
+<ul class="flex w-fit flex-col gap-6 lg:flex-row lg:items-center lg:gap-3" class:list={asPill && 'lg:gap-0'} data-shade="900">
+    {
+        navlinks.map((link) => (
+            <li>
+                <Button.Root data-rounded="full" variant="ghost" intent="gray" size="xs" href={link.href} className={twMerge('justify-start hover:bg-gray-950/5 outline-none !text-base-content', currentPath.includes(link.href) && 'bg-gray-950/5 dark:bg-white/5')}>
+                    <Button.Label>{link.name}</Button.Label>
+                </Button.Root>
+            </li>
+        ))
+    }
+</ul>

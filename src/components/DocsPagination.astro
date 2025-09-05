@@ -1,0 +1,30 @@
+---
+import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
+
+const { page = {} } = Astro.props;
+---
+
+<nav class="flex flex-wrap gap-4 justify-between border-t pt-16">
+    {
+        page.prev && (
+            <a href={`/${page.prev.slug}`} class="group text-gray-600 dark:text-gray-400 text-sm hover:text-gray-950 dark:hover:text-white">
+                <span class="ml-5 mb-1 inline-block">Previous</span>
+                <span class="flex items-center gap-1 text-gray-950 font-medium dark:text-white text-base group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                    <ChevronLeftIcon className="size-4" />
+                    {page.prev.data.title}
+                </span>
+            </a>
+        )
+    }
+    {
+        page.next && (
+            <a href={`/${page.next.slug}`} class="group ml-auto flex flex-col items-end text-gray-600 dark:text-gray-400 text-sm hover:text-gray-950 dark:hover:text-white">
+                <span class="mr-5 mb-1 inline-block">Next</span>
+                <span class="flex items-center gap-1 text-gray-950 font-medium dark:text-white text-base group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                    {page.next.data.title}
+                    <ChevronRightIcon className="size-4" />
+                </span>
+            </a>
+        )
+    }
+</nav>

@@ -1,0 +1,19 @@
+@tailwind utilities;
+
+
+@layer utilities {
+    .avatar-mask {
+        -webkit-mask-image: url('/avatar-mask.svg');
+        mask-image: url('/avatar-mask.svg');
+        mask-size: cover;
+        -webkit-mask-size: cover;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+    }
+    .avatar-mask-none {
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+}

@@ -1,0 +1,20 @@
+---
+title: Login
+description: Allows users to enter their credentials to access a secure area of a website or application.
+priorityOrder : 13
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { loginCode1 } from "@blocks/login/login1"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Login 1"
+    src="/blocks-preview/login/login1"
+    code={loginCode1}
+    client:visible
+/>

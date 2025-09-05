@@ -1,0 +1,366 @@
+
+  
+
+  [data-palette="halloween"] {
+    /* Indica que este tema usa esquema de color oscuro */
+    color-scheme: dark;
+  
+    /* Base */
+    --base-100:oklch(27.89% 0.0091 285.79);
+    --base-200: oklch(14% 0.004 49.25);
+    --base-300: oklch(0% 0 0);
+    --base-content: oklch(84.955% 0 0);
+
+    /* Gray */
+    --neutral: oklch(0.66 0.01 0);
+    --neutral-content: oklch(84.874% 0.009 65.681);
+    --neutral-50: color-mix(in oklch, white 95%, var(--neutral) 5%);
+    --neutral-100: color-mix(in oklch, white 90%, var(--neutral) 10%);
+    --neutral-200: color-mix(in oklch, white 75%, var(--neutral) 25%);
+    --neutral-300: color-mix(in oklch, white 60%, var(--neutral) 40%);
+    --neutral-400: color-mix(in oklch, white 40%, var(--neutral) 60%);
+    --neutral-500: var(--neutral);
+    --neutral-600: color-mix(in oklch, black 20%, var(--neutral) 80%);
+    --neutral-700: color-mix(in oklch, black 40%, var(--neutral) 60%);
+    --neutral-800: color-mix(in oklch, black 60%, var(--neutral) 40%);
+    --neutral-900: color-mix(in oklch, black 80%, var(--neutral) 20%);
+    --neutral-950: color-mix(in oklch, black 95%, var(--neutral) 5%);
+  
+    /* Primary */
+    --primary: oklch(77.48% 0.204 60.62);
+    --primary-content: oklch(19.693% 0.004 196.779);
+    --primary-50: color-mix(in oklch, white 95%, var(--primary) 5%);
+    --primary-100: color-mix(in oklch, white 90%, var(--primary) 10%);
+    --primary-200: color-mix(in oklch, white 75%, var(--primary) 25%);
+    --primary-300: color-mix(in oklch, white 60%, var(--primary) 40%);
+    --primary-400: color-mix(in oklch, white 40%, var(--primary) 60%);
+    --primary-500: var(--primary);
+    --primary-600: color-mix(in oklch, black 20%, var(--primary) 80%);
+    --primary-700: color-mix(in oklch, black 40%, var(--primary) 60%);
+    --primary-800: color-mix(in oklch, black 60%, var(--primary) 40%);
+    --primary-900: color-mix(in oklch, black 80%, var(--primary) 20%);
+    --primary-950: color-mix(in oklch, black 95%, var(--primary) 5%);
+  
+    /* Secondary */
+    --secondary: oklch(45.98% 0.248 305.03);
+    --secondary-content: oklch(89.196% 0.049 305.03);
+    --secondary-50: color-mix(in oklch, white 95%, var(--secondary) 5%);
+    --secondary-100: color-mix(in oklch, white 90%, var(--secondary) 10%);
+    --secondary-200: color-mix(in oklch, white 75%, var(--secondary) 25%);
+    --secondary-300: color-mix(in oklch, white 60%, var(--secondary) 40%);
+    --secondary-400: color-mix(in oklch, white 40%, var(--secondary) 60%);
+    --secondary-500: var(--secondary);
+    --secondary-600: color-mix(in oklch, black 20%, var(--secondary) 80%);
+    --secondary-700: color-mix(in oklch, black 40%, var(--secondary) 60%);
+    --secondary-800: color-mix(in oklch, black 60%, var(--secondary) 40%);
+    --secondary-900: color-mix(in oklch, black 80%, var(--secondary) 20%);
+    --secondary-950: color-mix(in oklch, black 95%, var(--secondary) 5%);
+
+
+    /* Success */
+    --success: oklch(62.705% 0.169 149.213);
+    --success-content: oklch(12.541% 0.033 149.213);
+    --success-50: color-mix(in oklch, white 95%, var(--success) 5%);
+    --success-100: color-mix(in oklch, white 90%, var(--success) 10%);
+    --success-200: color-mix(in oklch, white 75%, var(--success) 25%);
+    --success-300: color-mix(in oklch, white 60%, var(--success) 40%);
+    --success-400: color-mix(in oklch, white 40%, var(--success) 60%);
+    --success-500: var(--success);
+    --success-600: color-mix(in oklch, black 20%, var(--success) 80%);
+    --success-700: color-mix(in oklch, black 40%, var(--success) 60%);
+    --success-800: color-mix(in oklch, black 60%, var(--success) 40%);
+    --success-900: color-mix(in oklch, black 80%, var(--success) 20%);
+    --success-950: color-mix(in oklch, black 95%, var(--success) 5%);
+
+
+     /* Warning */
+     --warning: oklch(66.584% 0.157 58.318);
+     --warning-content: oklch(13.316% 0.031 58.318);
+   
+     --warning-50: color-mix(in oklch, white 95%, var(--warning) 5%);
+     --warning-100: color-mix(in oklch, white 90%, var(--warning) 10%);
+     --warning-200: color-mix(in oklch, white 75%, var(--warning) 25%);
+     --warning-300: color-mix(in oklch, white 60%, var(--warning) 40%);
+     --warning-400: color-mix(in oklch, white 40%, var(--warning) 60%);
+     --warning-500: var(--warning);
+     --warning-600: color-mix(in oklch, black 20%, var(--warning) 80%);
+     --warning-700: color-mix(in oklch, black 40%, var(--warning) 60%);
+     --warning-800: color-mix(in oklch, black 60%, var(--warning) 40%);
+     --warning-900: color-mix(in oklch, black 80%, var(--warning) 20%);
+     --warning-950: color-mix(in oklch, black 95%, var(--warning) 5%);
+
+  
+    /* Accent */
+    --accent: oklch(64.8% 0.223 136.073);
+    --accent-content: oklch(0% 0 0);
+    --accent-50: color-mix(in oklch, white 95%, var(--accent) 5%);
+    --accent-100: color-mix(in oklch, white 90%, var(--accent) 10%);
+    --accent-200: color-mix(in oklch, white 75%, var(--accent) 25%);
+    --accent-300: color-mix(in oklch, white 60%, var(--accent) 40%);
+    --accent-400: color-mix(in oklch, white 40%, var(--accent) 60%);
+    --accent-500: var(--accent);
+    --accent-600: color-mix(in oklch, black 20%, var(--accent) 80%);
+    --accent-700: color-mix(in oklch, black 40%, var(--accent) 60%);
+    --accent-800: color-mix(in oklch, black 60%, var(--accent) 40%);
+    --accent-900: color-mix(in oklch, black 80%, var(--accent) 20%);
+    --accent-950: color-mix(in oklch, black 95%, var(--accent) 5%);
+
+  
+    
+  
+    /* Info */
+    --info: oklch(54.615% 0.215 262.88);
+    --info-content: oklch(90.923% 0.043 262.88);
+
+    --info-50: color-mix(in oklch, white 95%, var(--info) 5%);
+    --info-100: color-mix(in oklch, white 90%, var(--info) 10%);
+    --info-200: color-mix(in oklch, white 75%, var(--info) 25%);
+    --info-300: color-mix(in oklch, white 60%, var(--info) 40%);
+    --info-400: color-mix(in oklch, white 40%, var(--info) 60%);
+    --info-500: var(--info);
+    --info-600: color-mix(in oklch, black 20%, var(--info) 80%);
+    --info-700: color-mix(in oklch, black 40%, var(--info) 60%);
+    --info-800: color-mix(in oklch, black 60%, var(--info) 40%);
+    --info-900: color-mix(in oklch, black 80%, var(--info) 20%);
+    --info-950: color-mix(in oklch, black 95%, var(--info) 5%);
+    
+  
+    
+
+  
+   
+  
+    /* Error */
+    --error: oklch(65.72% 0.199 27.33);
+    --error-content: oklch(13.144% 0.039 27.33);
+  
+    --error-50: color-mix(in oklch, white 95%, var(--error) 5%);
+    --error-100: color-mix(in oklch, white 90%, var(--error) 10%);
+    --error-200: color-mix(in oklch, white 75%, var(--error) 25%);
+    --error-300: color-mix(in oklch, white 60%, var(--error) 40%);
+    --error-400: color-mix(in oklch, white 40%, var(--error) 60%);
+    --error-500: var(--error);
+    --error-600: color-mix(in oklch, black 20%, var(--error) 80%);
+    --error-700: color-mix(in oklch, black 40%, var(--error) 60%);
+    --error-800: color-mix(in oklch, black 60%, var(--error) 40%);
+    --error-900: color-mix(in oklch, black 80%, var(--error) 20%);
+    --error-950: color-mix(in oklch, black 95%, var(--error) 5%);
+  
+    /* Base */
+  
+    /* Radios, tamaños, bordes, profundidad y “ruido” */
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+  
+    /* Opcional: atajos (shortcut vars) */
+    --b1: var(--base-100);
+    --b2: var(--base-200);
+    --b3: var(--base-300);
+    --bc: var(--base-content);
+  
+    --p: var(--primary);
+    --pc: var(--primary-content);
+    --s: var(--secondary);
+    --sc: var(--secondary-content);
+    --a: var(--accent);
+    --ac: var(--accent-content);
+    --n: var(--neutral);
+    --nc: var(--neutral-content);
+  
+    --in: var(--info);
+    --inc: var(--info-content);
+    --su: var(--success);
+    --suc: var(--success-content);
+    --wa: var(--warning);
+    --wac: var(--warning-content);
+    --er: var(--error);
+    --erc: var(--error-content);
+  }
+
+  [data-palette="entrekids"] {
+    /* Indica que este tema usa esquema de color oscuro */
+    color-scheme: dark;
+  
+    /* Base */
+    --base-100:oklch(0.28, 0.01, 285.79);
+    --base-200: oklch(14% 0.004 49.25);
+    --base-300: oklch(0% 0 0);
+    --base-content: oklch(84.955% 0 0);
+
+    /* Gray */
+    --neutral: oklch(0.66 0.01 0);
+    --neutral-content: oklch(84.874% 0.009 65.681);
+    --neutral-50: color-mix(in oklch, white 95%, var(--neutral) 5%);
+    --neutral-100: color-mix(in oklch, white 90%, var(--neutral) 10%);
+    --neutral-200: color-mix(in oklch, white 75%, var(--neutral) 25%);
+    --neutral-300: color-mix(in oklch, white 60%, var(--neutral) 40%);
+    --neutral-400: color-mix(in oklch, white 40%, var(--neutral) 60%);
+    --neutral-500: var(--neutral);
+    --neutral-600: color-mix(in oklch, black 20%, var(--neutral) 80%);
+    --neutral-700: color-mix(in oklch, black 40%, var(--neutral) 60%);
+    --neutral-800: color-mix(in oklch, black 60%, var(--neutral) 40%);
+    --neutral-900: color-mix(in oklch, black 80%, var(--neutral) 20%);
+    --neutral-950: color-mix(in oklch, black 95%, var(--neutral) 5%);
+  
+    /* Primary */
+    --primary: oklch(0.72 0.15 231.4);
+    --primary-content: oklch(19.693% 0.004 196.779);
+    --primary-50: color-mix(in oklch, white 95%, var(--primary) 5%);
+    --primary-100: color-mix(in oklch, white 90%, var(--primary) 10%);
+    --primary-200: color-mix(in oklch, white 75%, var(--primary) 25%);
+    --primary-300: color-mix(in oklch, white 60%, var(--primary) 40%);
+    --primary-400: color-mix(in oklch, white 40%, var(--primary) 60%);
+    --primary-500: var(--primary);
+    --primary-600: color-mix(in oklch, black 20%, var(--primary) 80%);
+    --primary-700: color-mix(in oklch, black 40%, var(--primary) 60%);
+    --primary-800: color-mix(in oklch, black 60%, var(--primary) 40%);
+    --primary-900: color-mix(in oklch, black 80%, var(--primary) 20%);
+    --primary-950: color-mix(in oklch, black 95%, var(--primary) 5%);
+  
+    /* Secondary */
+    --secondary: oklch(45.98% 0.248 305.03);
+    --secondary-content: oklch(89.196% 0.049 305.03);
+    --secondary-50: color-mix(in oklch, white 95%, var(--secondary) 5%);
+    --secondary-100: color-mix(in oklch, white 90%, var(--secondary) 10%);
+    --secondary-200: color-mix(in oklch, white 75%, var(--secondary) 25%);
+    --secondary-300: color-mix(in oklch, white 60%, var(--secondary) 40%);
+    --secondary-400: color-mix(in oklch, white 40%, var(--secondary) 60%);
+    --secondary-500: var(--secondary);
+    --secondary-600: color-mix(in oklch, black 20%, var(--secondary) 80%);
+    --secondary-700: color-mix(in oklch, black 40%, var(--secondary) 60%);
+    --secondary-800: color-mix(in oklch, black 60%, var(--secondary) 40%);
+    --secondary-900: color-mix(in oklch, black 80%, var(--secondary) 20%);
+    --secondary-950: color-mix(in oklch, black 95%, var(--secondary) 5%);
+
+
+    /* Success */
+    --success: oklch(62.705% 0.169 149.213);
+    --success-content: oklch(12.541% 0.033 149.213);
+    --success-50: color-mix(in oklch, white 95%, var(--success) 5%);
+    --success-100: color-mix(in oklch, white 90%, var(--success) 10%);
+    --success-200: color-mix(in oklch, white 75%, var(--success) 25%);
+    --success-300: color-mix(in oklch, white 60%, var(--success) 40%);
+    --success-400: color-mix(in oklch, white 40%, var(--success) 60%);
+    --success-500: var(--success);
+    --success-600: color-mix(in oklch, black 20%, var(--success) 80%);
+    --success-700: color-mix(in oklch, black 40%, var(--success) 60%);
+    --success-800: color-mix(in oklch, black 60%, var(--success) 40%);
+    --success-900: color-mix(in oklch, black 80%, var(--success) 20%);
+    --success-950: color-mix(in oklch, black 95%, var(--success) 5%);
+
+
+     /* Warning */
+     --warning: oklch(66.584% 0.157 58.318);
+     --warning-content: oklch(13.316% 0.031 58.318);
+   
+     --warning-50: color-mix(in oklch, white 95%, var(--warning) 5%);
+     --warning-100: color-mix(in oklch, white 90%, var(--warning) 10%);
+     --warning-200: color-mix(in oklch, white 75%, var(--warning) 25%);
+     --warning-300: color-mix(in oklch, white 60%, var(--warning) 40%);
+     --warning-400: color-mix(in oklch, white 40%, var(--warning) 60%);
+     --warning-500: var(--warning);
+     --warning-600: color-mix(in oklch, black 20%, var(--warning) 80%);
+     --warning-700: color-mix(in oklch, black 40%, var(--warning) 60%);
+     --warning-800: color-mix(in oklch, black 60%, var(--warning) 40%);
+     --warning-900: color-mix(in oklch, black 80%, var(--warning) 20%);
+     --warning-950: color-mix(in oklch, black 95%, var(--warning) 5%);
+
+  
+    /* Accent */
+    --accent: oklch(64.8% 0.223 136.073);
+    --accent-content: oklch(0% 0 0);
+    --accent-50: color-mix(in oklch, white 95%, var(--accent) 5%);
+    --accent-100: color-mix(in oklch, white 90%, var(--accent) 10%);
+    --accent-200: color-mix(in oklch, white 75%, var(--accent) 25%);
+    --accent-300: color-mix(in oklch, white 60%, var(--accent) 40%);
+    --accent-400: color-mix(in oklch, white 40%, var(--accent) 60%);
+    --accent-500: var(--accent);
+    --accent-600: color-mix(in oklch, black 20%, var(--accent) 80%);
+    --accent-700: color-mix(in oklch, black 40%, var(--accent) 60%);
+    --accent-800: color-mix(in oklch, black 60%, var(--accent) 40%);
+    --accent-900: color-mix(in oklch, black 80%, var(--accent) 20%);
+    --accent-950: color-mix(in oklch, black 95%, var(--accent) 5%);
+
+  
+    
+  
+    /* Info */
+    --info: oklch(54.615% 0.215 262.88);
+    --info-content: oklch(90.923% 0.043 262.88);
+
+    --info-50: color-mix(in oklch, white 95%, var(--info) 5%);
+    --info-100: color-mix(in oklch, white 90%, var(--info) 10%);
+    --info-200: color-mix(in oklch, white 75%, var(--info) 25%);
+    --info-300: color-mix(in oklch, white 60%, var(--info) 40%);
+    --info-400: color-mix(in oklch, white 40%, var(--info) 60%);
+    --info-500: var(--info);
+    --info-600: color-mix(in oklch, black 20%, var(--info) 80%);
+    --info-700: color-mix(in oklch, black 40%, var(--info) 60%);
+    --info-800: color-mix(in oklch, black 60%, var(--info) 40%);
+    --info-900: color-mix(in oklch, black 80%, var(--info) 20%);
+    --info-950: color-mix(in oklch, black 95%, var(--info) 5%);
+    
+  
+    
+
+  
+   
+  
+    /* Error */
+    --error: oklch(65.72% 0.199 27.33);
+    --error-content: oklch(13.144% 0.039 27.33);
+  
+    --error-50: color-mix(in oklch, white 95%, var(--error) 5%);
+    --error-100: color-mix(in oklch, white 90%, var(--error) 10%);
+    --error-200: color-mix(in oklch, white 75%, var(--error) 25%);
+    --error-300: color-mix(in oklch, white 60%, var(--error) 40%);
+    --error-400: color-mix(in oklch, white 40%, var(--error) 60%);
+    --error-500: var(--error);
+    --error-600: color-mix(in oklch, black 20%, var(--error) 80%);
+    --error-700: color-mix(in oklch, black 40%, var(--error) 60%);
+    --error-800: color-mix(in oklch, black 60%, var(--error) 40%);
+    --error-900: color-mix(in oklch, black 80%, var(--error) 20%);
+    --error-950: color-mix(in oklch, black 95%, var(--error) 5%);
+  
+    /* Base */
+  
+    /* Radios, tamaños, bordes, profundidad y “ruido” */
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+  
+    /* Opcional: atajos (shortcut vars) */
+    --b1: var(--base-100);
+    --b2: var(--base-200);
+    --b3: var(--base-300);
+    --bc: var(--base-content);
+  
+    --p: var(--primary);
+    --pc: var(--primary-content);
+    --s: var(--secondary);
+    --sc: var(--secondary-content);
+    --a: var(--accent);
+    --ac: var(--accent-content);
+    --n: var(--neutral);
+    --nc: var(--neutral-content);
+  
+    --in: var(--info);
+    --inc: var(--info-content);
+    --su: var(--success);
+    --suc: var(--success-content);
+    --wa: var(--warning);
+    --wac: var(--warning-content);
+    --er: var(--error);
+    --erc: var(--error-content);
+  }

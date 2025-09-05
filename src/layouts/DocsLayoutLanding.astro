@@ -1,0 +1,325 @@
+---
+import { type CollectionEntry } from 'astro:content'
+import BaseHead from '../components/BaseHead.astro'
+import DocsSideBarLanding from '../components/DocsSideBarLanding.astro'
+import DocsFooter from '../components/DocsFooter.astro'
+import { Link } from '@tailus-ui/typography'
+import '@styles/pagefind.css'
+import '@styles/color-theme.css'
+
+
+import DocsPagination from '../components/DocsPagination.astro'
+import DocsHeader2 from '../components/DocsHeader2.astro'
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+import { Text } from '@tailus-ui/typography/Text'
+import { Title } from '@tailus-ui/typography/Title'
+import { ArrowTopRightIcon } from '@radix-ui/react-icons'
+import Search from '@components/Search'
+import PageLoader from '@components/utilities/PageLoader.astro'
+import { ViewTransitions } from 'astro:transitions'
+import { Bug, Lightbulb, MessageCircle } from 'lucide-react'
+import { Image } from 'astro:assets'
+import tlsBundle from '../images/tls-bundle-thumb.png'
+import DocsBadge from '@components/DocsBadge'
+import SeparatorBlockLanding from '@components/landing/separatorBlockLanding.astro'
+import ContentSeparatorDocs from '@components/landing/contentSeparatorDocs.astro'
+import DynamicImage from '@components/DynamicImage.astro'
+
+import '../styles/landing.css';
+import '../styles/fonts.css';
+
+
+type Props = CollectionEntry<'html'>
+const docs = Astro.props
+const { collection } = docs as Props
+const documentation = docs.data
+console.log(documentation)
+const { headings } = await docs.render()
+
+const getGithubIssueUrl = (repo: string, template: string) => `https://github.com/Tailus-UI/${repo}/issues/new?assignees=&labels=&projects=&template=${template}&title=`
+const getGithubDiscussionUrl = (repo: string) => `https://github.com/Tailus-UI/${repo}/discussions/new/choose`
+
+const bugReportTemplate = '%F0%9F%90%9E-bug-report.md'
+const newIdeasTemplate = '%F0%9F%92%A1-ideas-for-new-components--new-variants--examples--features-and-improvements-.md'
+const repo = 'html.tailus.io'
+---
+
+<script>
+    const options = {
+        root: null,
+        threshold: 0,
+        rootMargin: '0px',
+    }
+
+    document.addEventListener('astro:page-load', () => {
+        const headings = document.querySelectorAll('h1, h2')
+        const headingLinks = document.querySelectorAll("a[href^='#']")
+        const headingIndicator = document.querySelector('#heading-indicator') as HTMLElement
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach((entry) => {
+                const { id } = entry.target
+
+                headingLinks.forEach((link) => {
+                    const href = link.getAttribute('href')?.replace('#', '')
+
+                    if (href === id) {
+                        const { classList } = link
+
+                        if (entry.isIntersecting) {
+                            headingIndicator.style.top = `${(link as HTMLElement).offsetTop}px`
+                            headingIndicator.style.height = `${(link as HTMLElement).offsetHeight}px`
+
+                            classList.add('font-medium')
+                            classList.replace('text-body', 'text-title')
+                        } else {
+                            classList.remove('font-medium')
+                            classList.replace('text-title', 'text-body')
+                        }
+                    }
+                })
+            })
+        }, options)
+
+        headings.forEach((heading) => {
+            observer.observe(heading)
+        })
+    })
+</script>
+
+<script is:inline>
+    function setCustomization(document) {
+        const theme = localStorage.getItem('theme') || 'dark'
+
+        const root = document.documentElement.classList
+
+        if (theme == 'dark') {
+            root.add('dark')
+        } else {
+            root.remove('dark')
+        }
+    }
+
+    setCustomization(document)
+
+    document.addEventListener('astro:before-swap', (event) => {
+        setCustomization(event.newDocument)
+    })
+</script>
+
+<html class="scroll-smooth" lang="en" data-theme="maintheme-dark" data-rounded="xlarge" data-shade="900">
+    <head>
+        <BaseHead title={`${documentation.title} - Tailus UI ${collection.charAt(0).toUpperCase() + collection.slice(1)}`} description={documentation.description} />
+        <ViewTransitions />
+        <script src="/pagefind/pagefind-ui.js" is:inline></script>
+    </head>
+    <body class="LandingLayout grid grid-rows-[auto_1fr_auto] min-h-screen">
+        <PageLoader />
+        <header class="fixed top-0 left-0 right-0 z-10 h-[3.5rem] border-b border-edge-primary in-data-scroll-locked:pr-(--removed-body-scroll-bar-size) row-start-1 row-end-2 bg-color-header" style="transform: none;">
+            <div class="grid justify-center lg:mx-auto grid-cols-1 md:grid-cols-[var(--width-gutter)_minmax(0,calc(var(--width-landing-container)-var(--width-gutter)*2))_var(--width-gutter)] h-full max-w-7xl">
+                <div class="hidden col-start-1 border-x border-edge-primary md:block"></div>
+                <div>
+                    <div class="flex justify-between items-center px-4 h-full">
+                        <a class="flex gap-1.5 items-center" href="/">
+                            <div>
+                                <svg class="h-4 md:h-5" viewBox="0 0 851 187" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M398.26 147.496C388.921 147.496 381.025 145.917 374.57 142.758C368.253 139.462 363.377 134.655 359.944 128.338C356.648 121.883 355 113.987 355 104.648V44.29H376.424V103.206C376.424 111.995 378.209 118.725 381.78 123.394C385.351 127.926 390.844 130.192 398.26 130.192C405.676 130.192 411.238 127.857 414.946 123.188C418.654 118.519 420.508 111.858 420.508 103.206V44.29H441.726V104.854C441.726 118.862 438.018 129.505 430.602 136.784C423.186 143.925 412.405 147.496 398.26 147.496Z"
+                                        fill="currentColor"
+                                    ></path>
+                                    <path
+                                        d="M468.686 44.29H490.11V144.2H468.686V44.29ZM468.686 126.896H490.11V144.2H468.686V126.896ZM468.686 44.29H479.398V61.594H468.686V44.29ZM467.656 3.502H490.934V27.192H467.656V3.502Z"
+                                        fill="currentColor"
+                                    ></path>
+                                    <path
+                                        d="M518.175 44.29H539.599V50.264C539.599 52.736 539.461 55.414 539.187 58.298C542.345 53.2167 546.74 49.0967 552.371 45.938C558.139 42.642 564.662 40.994 571.941 40.994C581.005 40.994 588.901 43.3287 595.631 47.998C602.497 52.53 607.716 58.8473 611.287 66.95C614.995 74.9153 616.849 84.048 616.849 94.348C616.849 104.923 614.926 114.261 611.081 122.364C607.235 130.329 601.811 136.509 594.807 140.904C587.94 145.299 580.112 147.496 571.323 147.496C563.769 147.496 557.383 145.985 552.165 142.964C546.946 139.943 542.62 135.754 539.187 130.398C539.461 133.557 539.599 136.509 539.599 139.256V186.636H518.175V44.29ZM566.791 130.81C572.421 130.81 577.365 129.299 581.623 126.278C585.88 123.119 589.176 118.793 591.511 113.3C593.845 107.807 595.013 101.421 595.013 94.142C595.013 87.138 593.845 80.8893 591.511 75.396C589.176 69.9027 585.88 65.6453 581.623 62.624C577.503 59.4653 572.559 57.886 566.791 57.886C561.435 57.886 556.559 59.3967 552.165 62.418C547.907 65.4393 544.543 69.6967 542.071 75.19C539.736 80.546 538.569 86.8633 538.569 94.142C538.569 101.421 539.736 107.807 542.071 113.3C544.543 118.793 547.907 123.119 552.165 126.278C556.422 129.299 561.297 130.81 566.791 130.81Z"
+                                        fill="currentColor"
+                                    ></path>
+                                    <path
+                                        d="M681.108 147.496C671.769 147.496 663.872 145.917 657.418 142.758C651.1 139.462 646.225 134.655 642.792 128.338C639.496 121.883 637.848 113.987 637.848 104.648V44.29H659.272V103.206C659.272 111.995 661.057 118.725 664.628 123.394C668.198 127.926 673.692 130.192 681.108 130.192C688.524 130.192 694.086 127.857 697.794 123.188C701.502 118.519 703.356 111.858 703.356 103.206V44.29H724.574V104.854C724.574 118.862 720.866 129.505 713.45 136.784C706.034 143.925 695.253 147.496 681.108 147.496Z"
+                                        fill="currentColor"
+                                    ></path>
+                                    <path
+                                        d="M804.888 147.496C797.472 147.496 790.949 145.985 785.318 142.964C779.825 139.805 775.567 135.617 772.546 130.398C772.821 133.419 772.958 136.441 772.958 139.462V144.2H751.534V0H772.958V49.234C772.958 51.706 772.821 54.7273 772.546 58.298C775.979 53.0793 780.374 48.8907 785.73 45.732C791.223 42.5733 797.609 40.994 804.888 40.994C813.677 40.994 821.505 43.26 828.372 47.792C835.376 52.1867 840.801 58.4353 844.646 66.538C848.491 74.6407 850.414 83.9793 850.414 94.554C850.414 105.129 848.491 114.467 844.646 122.57C840.938 130.535 835.582 136.715 828.578 141.11C821.711 145.367 813.815 147.496 804.888 147.496ZM799.944 130.81C805.575 130.81 810.519 129.299 814.776 126.278C819.171 123.119 822.535 118.862 824.87 113.506C827.342 108.013 828.578 101.695 828.578 94.554C828.578 87.4127 827.342 81.0953 824.87 75.602C822.535 69.9713 819.171 65.6453 814.776 62.624C810.519 59.4653 805.575 57.886 799.944 57.886C794.451 57.886 789.575 59.3967 785.318 62.418C781.061 65.4393 777.696 69.6967 775.224 75.19C772.889 80.6833 771.722 87.0693 771.722 94.348C771.722 101.489 772.889 107.807 775.224 113.3C777.696 118.793 781.061 123.119 785.318 126.278C789.575 129.299 794.451 130.81 799.944 130.81Z"
+                                        fill="currentColor"
+                                    ></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 176.294V9H167.294V176.294H0Z" fill="#bcf800"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M185.294 176.292V79.5864H282V176.292H185.294Z" fill="#bcf800"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M185.294 61.5882V9H282V61.5882H185.294Z" fill="#bcf800"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] tracking-1 text-primary-8 font-mono mb-1.5 pointer-events-none select-none">alpha</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:col-start-3 border-x border-edge-primary md:block"></div>
+            </div>
+        </header>
+        <main class="pt-[56px] lg:mt-auto " data-pagefind-body>
+
+            
+            <div class="lg:mx-auto lg:flex l lg:gap-24 xl:px-0">
+                <div id="menu-list" style="    width:14.5%;left:24px" class=" fixed bottom-0 left-0 z-50 hidden h-[calc(100dvh-5.75rem)] w-full bg-white lg:left-auto lg:flex lg:h-[calc(100dvh-4rem)] lg:w-48 lg:flex-col lg:justify-end lg:bg-transparent dark:bg-gray-925 dark:lg:bg-transparent" data-pagefind-ignore>
+                    <DocsSideBarLanding target={collection} />
+                </div>
+                <div class="w-full lg:ml-auto">
+                    <main class="row-start-2 row-end-3">
+                        <div class="hidden md:grid justify-center lg:mx-auto  grid-cols-1 md:grid-cols-[1fr_minmax(0,var(--width-landing-container))_1fr]">
+                            <div class="hidden col-start-1 md:block light:bg-surface-a1"></div>
+                            <div class="relative border-r border-b-0 border-l GoldenRatioLayoutDesktop border-edge-primary">
+                               <!--- <svg class="absolute inset-0 pointer-events-none overflow-visible text-decoration -m-[1.5px]" viewBox="0 0 340 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M105.1 -170.853L464.633 411.625" stroke="#1b1718" stroke-dasharray="4 12.56" vector-effect="non-scaling-stroke"></path>
+                                        <path d="M-267.831 375.247L600.141 -159.777" stroke="#1b1718" stroke-dasharray="4 12.56" vector-effect="non-scaling-stroke"></path>
+                                       
+                                        <path d="M339.5 80.5H210" stroke="currentColor" vector-effect="non-scaling-stroke"></path>
+                                        <path d="M210 210V0.5" stroke="currentColor" vector-effect="non-scaling-stroke"></path>
+                                    
+                                        
+                                        <path
+                                            d="M239.897 60.3571C239.897 54.894 244.414 50.381 249.882 50.381C255.35 50.381 259.868 54.894 259.868 60.3571C259.868 71.2835 250.833 80.3095 239.897 80.3095C223.493 80.3095 209.941 66.7704 209.941 50.381C209.941 23.0652 232.527 0.499999 259.868 0.5C303.613 0.499995 339.75 36.6043 339.75 80.3095C339.75 151.33 281.027 210 209.941 210C95.1103 210 0.25 115.226 0.25 0.5C0.250008 -185.69 154.06 -339.5 340.25 -339.5"
+                                            stroke="url(#paint0_linear_129_21)"
+                                            vector-effect="non-scaling-stroke"
+                                        ></path>
+                                    </g>
+                                    <defs>
+                                        
+                                    </defs>
+                                </svg> -->
+                                <div class="absolute inset-0 pointer-events-none text-surface-8">
+                                    <svg class="absolute -left-[6.5px] -top-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                                        <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+                                    </svg>
+                                    <svg class="absolute -left-[6.5px] -bottom-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                                        <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+                                    </svg>
+                                    <svg class="absolute -right-[6.5px] -top-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                                        <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+                                    </svg>
+                                    <svg class="absolute -right-[6.5px] -bottom-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                                        <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+                                    </svg>
+                                    <svg class="absolute left-[61.2%] -top-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                                        <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <div class="grid overflow-hidden relative GoldenLayoutTextDesktop">
+                                    <div class="GoldenLayoutTextDesktopMainSquare  p-8  flex flex-col gap-6 lg:gap-8 row-[1/span_2] col-[1]">
+                                        <div class="gap-6 p-6 w-full bg-gradient-to-br rounded-lg ring-1 ring-primary/20 to-primary/10 from-base-100/10 text-start sm:flex">
+                                            <div class="flex flex-col gap-1.5 sm:w-7/12">
+                                                <p class="text-lg font-semibold capitalize text-primary"> {documentation.badge && <DocsBadge badge={documentation.badge} />}</p>
+                                                <h1 class="text-4xl font-bold leading-tight capitalize text-base-content/90"> {documentation.title}</h1>
+                                                <p class="mt-2 text-base font-normal text-base-content/80">  {documentation.description}</p>
+                                            </div>
+                                            <div class="flex justify-center items-center grow max-sm:mt-5 max-sm:justify-start">
+                                                <div class="svg-color-main GoldenLayoutTextDesktopRectangle p-4 flex flex-col gap-4 row-[1] col-[2]">
+                                                    <DynamicImage name="button" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                
+
+
+                                
+                                        
+                                        
+                                           
+                                      
+                                      
+                                    
+                                       <!--- <div class="flex flex-1 gap-4 content-end pb-8">
+                                           
+                                        </div> -->
+                                    </div>
+                                
+                                  <!---  <div class="GoldenLayoutTextDesktopSquare p-6 pt-4 lg:p-8 lg:pt-6 row-[2] col-[2]">
+                                       
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="hidden md:col-start-3 md:block light:bg-surface-a1"></div>
+                        </div>
+                        <SeparatorBlockLanding />
+                            <ContentSeparatorDocs>
+                                <div class="w-full xl:flex xl:gap-16">
+                                    <div class="space-y-10 xl:w-full">
+                                        <div>
+                                        
+                                            <div class="flex gap-4 mt-4">
+                                                {
+                                                    documentation.frameworkDocs && (
+                                                        <Link className="flex items-center group" target="_blank" intent="neutral" variant="underlined" href={documentation.frameworkDocs.link}>
+                                                            {documentation.frameworkDocs.name}
+                                                            <ArrowTopRightIcon className="size-3 ml-1 opacity-50 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                                        </Link>
+                                                    )
+                                                }
+                                            </div>
+                                        </div>
+                                        <slot />
+                                        <DocsPagination data-pagefind-ignore page={docs} collection={collection} />
+                                        <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-[3.3rem] mx-auto h-0 w-full -translate-y-px lg:top-6 lg:h-14">
+                                            <BlurDivs />
+                                        </div>
+                                    </div>
+                                    <div class="fixed right-[-71px] top-6">
+                                        <div data-pagefind-ignore id="table-of-content" class="feedback-shadow fancy-border fixed right-4 top-24 ml-auto hidden size-fit rounded-[--card-radius] bg-[--ui-bg] p-[--card-padding] lg:sticky lg:top-32 lg:h-fit lg:w-[20rem] lg:rounded-none lg:!border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:!outline-none xl:block">
+                                            <div class="text-base font-medium text-[#b4b4b4]">On this page</div>
+                                            <div class="relative ml-px mt-3 h-fit max-h-[calc(100vh-26rem)] w-fit overflow-y-auto">
+                                                <div id="heading-indicator" aria-hidden="true" class="absolute left-0 top-0 z-[1] hidden border-l-[1.5px] border-primary transition-all duration-300 lg:block dark:border-white"></div>
+                                                <ul class="relative space-y-0.5 border-l border-[var(--ui-border-color)]">
+                                                    <li>
+                                                        <a href="#overview" class="flex items-center px-3.5 py-0.5 text-xs font-medium text-gray-600 rounded-2xl transition duration-300 hover:text-info-600 dark:text-gray-400 dark:hover:text-info-400"> Overview</a>
+                                                    </li>
+                                                    {
+                                                        headings.map((heading) => {
+                                                            if (heading.depth === 1 || heading.depth === 2) {
+                                                                return (
+                                                                    <li class="pt-2 mt-0 mb-0">
+                                                                        <a href={`#${heading.slug}`} class="flex items-center rounded-2xl px-3.5 py-0.5 text-[14px] font-medium text-[#4d4d4d] transition duration-300 hover:text-info-600  dark:hover:text-info-400 ">
+                                                                            {heading.text}
+                                                                        </a>
+                                                                    </li>
+                                                                )
+                                                            }
+                                                        })
+                                                    }
+                                                </ul>
+                                            </div>
+                
+                                            <div class="mt-6">
+                                                <div class="text-base font-medium text-[#b4b4b4]">Contribute</div>
+                                                <div class="mt-2">
+                                                    <a href={getGithubIssueUrl(repo, bugReportTemplate)} class="flex items-center gap-2 py-1 text-xs text-gray-600 transition duration-300 hover:text-gray-950 text-[#4d4d4d]">
+                                                        <Bug className="size-3.5" />
+                                                        Report a bug
+                                                    </a>
+                                                    <a href={getGithubIssueUrl(repo, newIdeasTemplate)} class="flex items-center gap-2 py-1 text-xs text-gray-600 transition duration-300 hover:text-gray-950 text-[#4d4d4d]">
+                                                        <Lightbulb className="size-3.5" />
+                                                        New Ideas
+                                                    </a>
+                                                    <a href={getGithubDiscussionUrl(repo)} class="flex items-center gap-2 py-1 text-xs text-gray-600 transition duration-300 hover:text-gray-950 text-[#4d4d4d]">
+                                                        <MessageCircle className="size-3.5" />
+                                                        Start a discussion
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </ContentSeparator> 
+                        <SeparatorBlockLanding />
+                        
+                    </main>
+                    <DocsFooter />
+                </div>
+            </div>
+        </main>
+        <Search client:load>
+            <div id="search"></div>
+        </Search>
+    </body>
+</html>

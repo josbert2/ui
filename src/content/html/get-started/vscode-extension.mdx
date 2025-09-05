@@ -1,0 +1,73 @@
+---
+title: Tailus Snippets
+description: Use Tailus UI HTML without ever leaving your editor.
+priorityOrder : 4
+---
+
+import _components from "@content/_components"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <div className="aspect-[16/10] z-[1] relative rounded-card overflow-hidden">
+        <video className="size-full aspect-[16/10] grayscale-[50%] contrast-150" autoPlay playsInline loop poster="/snippets-poster.webp">
+            <source src="https://res.cloudinary.com/dg4jhba5c/video/upload/v1730459764/snippets_qq3f6y.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div>
+        ## Prerequisites
+        Before you install the extension, ensure that you have already installed Tailus UI HTML in your project. If not, please follow the [Tailus UI HTML installation guide](/get-started/installation).
+    </div>
+
+    <div>
+        ## Installation
+
+        <div className="space-y-12">
+            <div>
+                ### - Via the Extensions view
+
+                To install the Tailus UI HTML extension, open the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window. Search for "Tailus Snippets" and click on the Install button.
+            </div>
+
+            <div>
+                ### - Via the marketplace
+
+                You can also install the extension via the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=TailusUI.tailus-snippets).
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Usage
+
+        To use the snippets, open an HTML, Astro, TSX, JSX or Vue file and start typing `tls-` to see the available snippets.
+
+        ### Available Snippets
+
+        - annonce : `tls-annonce`
+        - avatar : `tls-avatar`
+        - badge : `tls-badge`
+        - button : `tls-button`
+        - callout : `tls-callout`
+        - card : `tls-card`
+        - checkbox : `tls-checkbox`
+        - input : `tls-input`
+        - progress : `tls-progress`
+        - radio card : `tls-radio-card`
+        - radio-group : `tls-radio-group`
+        - select : `tls-select`
+        - switch : `tls-switch`
+        - textarea : `tls-textarea`
+    </div>
+
+    <div>
+        ## Contributing
+
+        If you have any suggestions or would like to contribute, please visit the [GitHub repository](https://github.com/Tailus-UI/snippets)
+    </div>
+</div>

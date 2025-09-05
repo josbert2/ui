@@ -1,0 +1,81 @@
+---
+import { SITE_SOCIAL_GITHUB } from '../const'
+import { GitHubIcon } from './utilities/icons/'
+import ThemeSwitcher from './ThemeSwitcher'
+import Button from '@tailus-ui/Button'
+import NavLinks from './NavLinks.astro'
+import SearchButton from './Button/SearchButton'
+import BrandLogo from './utilities/BrandLogo'
+import SeparatorRoot from './tailus-ui/Separator'
+---
+
+<script>
+    const navitems = document.querySelector('#mobile-navitems') as HTMLElement
+    const hamburger = document.querySelector('#mobile-navitems-trigger')
+    let isActive = navitems?.getAttribute('data-state') === 'open'
+
+    function toggleItems() {
+        isActive = !isActive
+        navitems?.setAttribute('data-state', isActive ? 'open' : 'closed')
+        hamburger?.setAttribute('data-state', isActive ? 'open' : 'closed')
+        document.body.classList.toggle('overflow-hidden', isActive)
+    }
+
+    hamburger?.addEventListener('click', toggleItems)
+</script>
+
+<header data-rounded="full" class="absolute inset-x-0 top-0 z-40 flex flex-col lg:h-16">
+    <div class="mx-auto my-auto flex h-fit w-full max-w-5xl items-center justify-between gap-4 px-4 py-3.5 sm:gap-6 lg:py-2">
+        <div class="flex items-center sm:gap-6">
+            <a href="https://tailus.io" aria-label="main tailus ui website" class="rounded-full">
+                <BrandLogo className="h-7" />
+            </a>
+
+            <div data-state="closed" id="mobile-navitems" class="absolute inset-x-0 bottom-0 top-28 -z-50 h-0 overflow-hidden border-gray-950/10 bg-white px-1 shadow-lg shadow-gray-950/5 transition-[height] duration-300 data-[state=open]:h-dvh lg:hidden dark:border-white/10 dark:bg-gray-950 dark:backdrop-blur-xl">
+                <div class="py-8">
+                    <NavLinks />
+                </div>
+            </div>
+
+            <nav class="hidden lg:block">
+                <NavLinks />
+            </nav>
+        </div>
+
+        <div class="flex items-center justify-between lg:gap-1.5">
+            <SearchButton client:idle />
+
+            <div class="flex items-center gap-1.5">
+                <SeparatorRoot orientation="vertical" className="mx-3 h-4" />
+                <ThemeSwitcher client:load />
+                <Button.Root variant="ghost" intent="gray" href={SITE_SOCIAL_GITHUB} aria-label="Visit our GitHub" size="md" className="size-9 px-0">
+                    <Button.Icon type="only" size="md">
+                        <GitHubIcon className="size-4" />
+                    </Button.Icon>
+                </Button.Root>
+                <Button.Root id="mobile-navitems-trigger" data-state="closed" variant="ghost" intent="gray" size="md" aria-label="Toggle navlinks" className="group relative -mr-2.5 flex size-9 flex-col transition duration-200 hover:bg-transparent lg:hidden dark:hover:bg-transparent">
+                    <Button.Icon type="only">
+                        <div class="absolute inset-0 m-auto transition-transform duration-300 group-data-[state=open]:-translate-x-px group-data-[state=open]:translate-y-0.5 group-data-[state=open]:rotate-45">
+                            <div aria-hidden="true" class="absolute inset-x-0 top-0 mx-auto h-[1.5px] w-[1.125rem] translate-y-[13.5px] rounded bg-gray-950 transition-transform duration-200 group-data-[state=open]:translate-y-4 dark:bg-white"></div>
+                            <div aria-hidden="true" class="absolute inset-x-0 top-0 mx-auto h-[1.5px] w-[1.125rem] translate-y-[21.5px] rounded bg-gray-950 transition-transform duration-200 group-data-[state=open]:translate-y-4 group-data-[state=open]:rotate-90 dark:bg-white"></div>
+                        </div>
+                    </Button.Icon>
+                </Button.Root>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('astro:page-load', () => {
+            // @ts-ignore
+            new PagefindUI({
+                element: '#search',
+                showSubResults: false,
+                resultsCount: false,
+                showImages: false,
+            })
+        })
+    })
+</script>

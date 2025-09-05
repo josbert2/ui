@@ -1,0 +1,141 @@
+---
+title: Rounded
+description: Learn how to set and customize the border radius of your theme.
+priorityOrder : 8
+---
+
+import _components from "@content/_components"
+import DocsCodeStep from "@components/DocsCodeStep"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import RoundedPreviewBlock from "@components/examples/RoundedPreviewBlock.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import { MESCHAC_AVATAR } from "src/const"
+
+export const components = {
+    ..._components
+}
+
+export const rounded = [
+    {
+        code: '<html data-rounded="xlarge" >',
+        lang : "html"
+    }
+]
+
+export const specificExample = `<html data-rounded="xlarge" >
+    <head> </head>
+    <body>
+        <main>
+            <div class="grid grid-cols-4 gap-3">
+                <div>Theme rounded</div>
+                <div>Theme rounded</div>
+                <div>Theme rounded</div>
+                <div data-rounded="3xlarge">3xlarge</div>
+            </div>
+        </main>
+    </body>
+</html>
+`
+
+export const roundedDataAttribute = {
+    code: `@layer base {
+    [data-rounded="xlarge"] {
+        --card-radius: theme(borderRadius.xl);
+
+        --btn-radius: theme(borderRadius.lg);
+        --badge-radius: var(--btn-radius);
+        --input-radius: var(--btn-radius);
+
+        --avatar-radius: theme(borderRadius.full);
+        --annonce-radius: theme(borderRadius.full);
+    }
+}`,
+    lang: "css",
+}
+
+export const roundedVars = {
+    code: `@layer base {
+    :root {
+        --card-radius: theme(borderRadius.2xl);
+
+        --btn-radius: theme(borderRadius.md);
+        --badge-radius: var(--btn-radius);
+        --input-radius: var(--btn-radius);
+
+        --avatar-radius: theme(borderRadius.full);
+        --annonce-radius: theme(borderRadius.full);
+    }
+}`,
+    lang: "css",
+}
+
+<div className="space-y-20">
+
+    <div>
+        Adjust the border radius of your components using the `data-rounded` attribute. Start with importing and adding the `rounded` plugin to your config's `plugins` array
+
+        <DocsStackedSnippets snippets={rounded} client:visible />
+    </div>
+
+    <div>
+        ## Rounded corners
+
+        The data-rounded attribute accepts the following values:
+
+        <div className="space-y-12">
+            <RoundedPreviewBlock />
+        </div>
+    </div>
+
+    <div>
+        ## Adding rounded corners to a specific component
+        You can add the `data-rounded` attribute to any component to apply a different border radius to that specific component.
+
+        <PreviewBlock codeBlocks={[{code:specificExample, lang:"tsx"}]}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3" data-shade="900">
+                <div className="p-[--card-padding] h-20 text-[--body-text-color] feedback-bg card-shadow rounded-[--card-radius] border text-xs flex items-center justify-center">Theme rounded</div>
+                <div className="p-[--card-padding] h-20 text-[--body-text-color] feedback-bg card-shadow rounded-[--card-radius] border text-xs flex items-center justify-center">Theme rounded</div>
+                <div className="p-[--card-padding] h-20 text-[--body-text-color] feedback-bg card-shadow rounded-[--card-radius] border text-xs flex items-center justify-center">Theme rounded</div>
+                <div className="p-[--card-padding] h-20 text-[--title-text-color] feedback-bg card-shadow rounded-[--card-radius] border text-xs flex items-center justify-center border-gray-300 dark:border-gray-700" data-rounded="3xlarge">3xlarge</div>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Customization
+        
+        You have the flexibility to modify an existing `data-rounded` or even bypass all the default altogether. This can be achieved by assigning new values to the CSS variables that control border radius.
+
+        <div className="space-y-12">
+            <div>
+                ### Customizing a data-rounded
+
+                Choose a `data-rounded` to customize, then define its CSS variables within the `@layer` base block in your CSS file.
+                
+                <CodeSnippet {...roundedDataAttribute} client:visible />
+            </div>
+
+            <div>
+                ### default border radius
+
+                Define the radius CSS variables in your CSS file by assigning them values within the `:root` selector. Make sure to place these definitions inside the `@layer` base block for proper layering.
+                <CodeSnippet {...roundedVars} client:visible />
+            </div>
+        </div>
+    </div>
+
+    <div data-shade="900">
+        ## Utilities
+        
+        Custom utilities for applying border radius
+
+        <CodeSnippet code={`<div class="rounded-card">
+<img class="rounded-avatar" src=""/>
+<div class="rounded-annonce"/>,
+<button class="rounded-btn" />,
+<span class="rounded-badge"/>
+<input class="rounded-input" />`}
+            lang = 'html' client:visible/>
+    </div>
+</div>

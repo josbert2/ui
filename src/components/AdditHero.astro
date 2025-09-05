@@ -1,0 +1,398 @@
+<section class="relative z-[9] mx-auto -mt-24 overflow-hidden bg-gray-50 pb-16 dark:bg-gray-950 dark:bg-gradient-to-t dark:from-gray-925 dark:to-transparent">
+    <div class="absolute inset-x-0 -bottom-1 z-[4] hidden h-1/4 bg-gradient-to-t from-white dark:from-gray-950"></div>
+    <svg class="absolute inset-0 z-[2] mx-auto w-full border text-secondary-200 blur-3xl dark:hidden dark:text-white/10" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+    </svg>
+    <svg class="absolute inset-0 z-[2] m-auto w-1/2 border text-yellow-400 blur-3xl dark:hidden dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+    </svg>
+    <div class="absolute inset-x-0 bottom-20 z-[4] mx-auto w-fit tw:btn-sito">
+        <div class="*:bg-ui flex divide-x border *:p-4 dark:*:bg-gray-950">
+            <div>
+                <HTMLIcon />
+            </div>
+            <div>
+                <AstroIcon />
+            </div>
+            <div>
+                <NextIcon />
+            </div>
+            <div>
+                <NuxtIcon />
+            </div>
+        </div>
+    </div>
+    <div class="absolute inset-0 z-[3] h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:hidden dark:opacity-5"></div>
+    <div class="absolute inset-0 z-[4] max-h-96 bg-[radial-gradient(ellipse_80%_90%_at_20%_-5%,var(--bg-color),bg-transparent)] duration-300 [--bg-color:theme(colors.gray.50)] dark:hidden dark:[--bg-color:theme(colors.gray.950)]"></div>
+    <div class="relative z-10 mx-auto flex max-w-[84rem] translate-x-12 items-end gap-4 px-6 [--ui-bg:theme(colors.white/0.75)] [--ui-border-color:theme(colors.gray.950/0.10)] dark:[--ui-bg:theme(colors.gray.900)] dark:dark:[--ui-border-color:theme(colors.gray.800)]">
+        <div class="h-max w-[20%] space-y-4">
+            <div class="ml-auto flex h-12 w-fit items-center gap-2 rounded-[calc(var(--avatar-radius)+8px)] border px-2">
+                <div class="avatar sz-xs fallback-soft intent-gray">G</div>
+                <SeparatorRoot orientation="vertical" className="h-full" />
+                <div class="avatar sz-xs fallback-solid intent-gray">N</div>
+                <SeparatorRoot orientation="vertical" className="h-full" />
+                <div class="avatar sz-xs z-10">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+            </div>
+
+            <div class="rounded-card relative z-10 ml-auto flex h-12 w-fit items-center gap-4 rounded-l-[calc(var(--btn-radius)+8px)] border pl-2 pr-4">
+                <button class="btn variant-solid sz-xs intent-primary">Button</button>
+                <SeparatorRoot orientation="vertical" className="h-full" />
+                <label for="r1" class="radio group rounded-full">
+                    <input class="peer" type="radio" id="r1" name="radio1" />
+                    <span class="radio-indicator"> </span>
+                </label>
+                <SeparatorRoot orientation="vertical" className="h-full" />
+                <label for="c1" class="checkbox group">
+                    <input class="peer" type="checkbox" id="c1" name="checkbox1" />
+                    <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                </label>
+                <SeparatorRoot orientation="vertical" className="h-full" />
+                <label for="sw1" class="switch intent-primary">
+                    <input checked class="peer" type="checkbox" id="sw1" name="switch1" />
+                    <span class="switch-thumb"></span>
+                </label>
+            </div>
+        </div>
+        <div class="w-[28%] space-y-4">
+            <div class="relative ml-auto hidden w-1/2">
+                <label title="Click to upload" for="button2" class="before:bg-ui-soft dark:before:bg-ui before:rounded-card group flex cursor-pointer items-center justify-center gap-4 px-6 py-4 before:absolute before:inset-0 before:border before:border-dashed before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                    <div class="relative w-max">
+                        <CloudUpload />
+                    </div>
+                    <div class="relative">
+                        <span class="text-title relative block text-sm font-medium group-hover:text-primary-500 dark:text-white"> Upload a file</span>
+                        <span class="text-caption mt-0.5 block text-xs">Max 2 MB</span>
+                    </div>
+                </label>
+                <input hidden type="file" name="button2" id="button2" />
+            </div>
+            <form data-rounded="medium" class="flex justify-end gap-3">
+                <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="x">
+                    <input type="radio" id="x" name="size" hidden />
+                    X
+                </label>
+                <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small">
+                    <input type="radio" id="small" name="size" hidden />
+                    S
+                </label>
+                <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="medium">
+                    <input type="radio" id="medium" checked name="size" hidden />
+                    M
+                </label>
+                <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="large">
+                    <input type="radio" id="large" name="size" hidden />
+                    L
+                </label>
+                <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="xlarge">
+                    <input type="radio" id="xlarge" name="size" hidden />
+                    XL
+                </label>
+            </form>
+            <div class="card variant-mixed group relative p-2 !shadow-xl !shadow-gray-950/5">
+                <div class="grid gap-2 [grid-template-columns:auto_1fr]">
+                    <div class="relative h-40 w-32 overflow-hidden rounded-[calc(var(--card-radius)-8px)] border before:absolute before:inset-0 before:z-[1] before:bg-gray-100 before:mix-blend-darken">
+                        <Image class="size-full object-cover" src="https://ui.tailus.io/images/store/dress.webp" alt="Dress Product" width="500" height="500" />
+                    </div>
+                    <div class="p-3">
+                        <div class="text-title font-medium">Clein Black Dress</div>
+                        <p class="mt-1.5 line-clamp-1 text-sm">Amet consectetur adipisicing In odit</p>
+                        <div class="item-center mt-6 flex">
+                            <svg class="h-5 w-5 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current text-gray-500" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current text-gray-500" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                            </svg>
+                        </div>
+                        <div class="item-center mt-2 flex justify-between">
+                            <span class="text-title text-lg font-medium">$220</span>
+                            <button class="btn variant-soft sz-sm intent-gray">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[20%]">
+            <form class="w-full max-w-xs space-y-4">
+                <label class="field card variant-mixed hover:variant-soft has-[:checked]:variant-outlined block px-4 py-3 !shadow-xl !shadow-gray-950/5 [--icon-display:none] has-[:checked]:outline has-[:checked]:outline-2 has-[:checked]:outline-primary-600 has-[:checked]:[--icon-display:block]" for="personal2">
+                    <input type="radio" id="personal2" name="plan" hidden />
+                    <div class="flex justify-between">
+                        <p class="text-title text-sm font-medium">4-Core CPU</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-primary-600 [display:var(--icon-display)]">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <p class="text-caption mt-1 text-sm">For personal projects</p>
+                    <p class="text-body mt-4 text-sm">$9.99</p>
+                </label>
+
+                <label class="field card variant-mixed hover:variant-soft has-[:checked]:variant-outlined block px-4 py-3 !shadow-xl !shadow-gray-950/5 [--icon-display:none] has-[:checked]:outline has-[:checked]:outline-2 has-[:checked]:outline-primary-600 has-[:checked]:[--icon-display:block]" for="business2">
+                    <input type="radio" id="business2" checked name="plan" hidden />
+                    <div class="flex justify-between">
+                        <p class="text-title text-sm font-medium">6-Core CPU</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-primary-600 [display:var(--icon-display)]">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <p class="text-caption mt-1 text-sm">For startups and businesses</p>
+                    <p class="text-body mt-4 text-sm">$39.99</p>
+                </label>
+
+                <label class="field card variant-mixed hover:variant-soft has-[:checked]:variant-outlined block px-4 py-3 !shadow-xl !shadow-gray-950/5 [--icon-display:none] has-[:checked]:outline has-[:checked]:outline-2 has-[:checked]:outline-primary-600 has-[:checked]:[--icon-display:block]" for="org2">
+                    <input type="radio" id="org2" name="plan" hidden />
+                    <div class="flex justify-between">
+                        <p class="text-title text-sm font-medium">8-Core CPU</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-primary-600 [display:var(--icon-display)]">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <p class="text-caption mt-1 text-sm">For large organizations</p>
+                    <p class="text-body mt-4 text-sm">$99.99</p>
+                </label>
+            </form>
+        </div>
+        <div class="w-[22%] space-y-4">
+            <div class="card variant-mixed !shadow-xl !shadow-gray-950/5">
+                <span class="text-caption text-xs">Great UX</span>
+                <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
+                <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+
+                <div class="card variant-outlined mt-12 space-y-3 p-4">
+                    <div class="flex justify-between">
+                        <div class="text-title flex items-center gap-1.5">
+                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 19v-6q0-.675.275-1.225T3 10.8V8q0-1.25.875-2.125T6 5h4q.575 0 1.075.213T12 5.8q.425-.375.925-.587T14 5h4q1.25 0 2.125.875T21 8v2.8q.45.425.725.975T22 13v6h-2v-2H4v2zm11-9h6V8q0-.425-.288-.712T18 7h-4q-.425 0-.712.288T13 8zm-8 0h6V8q0-.425-.288-.712T10 7H6q-.425 0-.712.288T5 8z"></path></svg>
+                            <div class="text-sm font-medium">Sleep</div>
+                        </div>
+                        <div class="text-caption text-xs">5:45 AM</div>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="space-y-1">
+                            <div class="text-title text-sm font-medium">Time in Bed</div>
+                            <div class="flex gap-3">
+                                <div class="-space-x-0.5">
+                                    <span class="text-title align-baseline text-xl font-medium">5</span>
+                                    <span class="text-placeholder text-xs">hr</span>
+                                </div>
+                                <div class="-space-x-0.5">
+                                    <span class="text-title align-baseline text-xl font-medium">59</span>
+                                    <span class="text-placeholder text-xs">min</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-end gap-1">
+                            <div aria-hidden="true" class="h-3 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                            <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                            <div aria-hidden="true" class="h-10 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                            <div aria-hidden="true" class="h-4 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                            <div aria-hidden="true" class="h-6 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                            <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                            <div aria-hidden="true" class="h-9 w-1.5 rounded bg-gradient-to-b from-primary-300 to-primary-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card variant-mixed group relative p-2 !shadow-xl !shadow-gray-950/5">
+                <div class="grid gap-2 [grid-template-columns:auto_1fr]">
+                    <div class="relative w-24 overflow-hidden rounded-[calc(var(--card-radius)-8px)] before:absolute before:inset-0 before:bg-gray-500/50 before:mix-blend-overlay dark:before:bg-gray-500">
+                        <Image class="size-full object-cover" src={podcastCover} alt="Yves Kalume" />
+                    </div>
+                    <div class="p-3">
+                        <div class="title font-medium">Devcast podcast</div>
+                        <p class="mt-px line-clamp-1 text-sm">Freelancer in DR Congo</p>
+                        <div data-rounded="full" class="mt-4 flex gap-2">
+                            <button aria-label="prev" class="btn icon-only variant-soft sz-sm intent-gray border">
+                                <FastForward className="size-4 rotate-180" />
+                            </button>
+                            <button aria-label="play" class="btn icon-only variant-soft sz-sm intent-gray border">
+                                <Play className="size-4" />
+                            </button>
+                            <button aria-label="forward" class="btn icon-only variant-soft sz-sm intent-gray border">
+                                <FastForward className="size-4" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative z-[3] mx-auto mt-4 flex max-w-[84rem] -translate-x-20 justify-end gap-4 px-6 [--ui-bg:theme(colors.white/0.8)] [--ui-border-color:theme(colors.gray.950/0.10)] dark:[--ui-bg:theme(colors.gray.900)] dark:dark:[--ui-border-color:theme(colors.gray.800)]">
+        <div class="w-[22%]">
+            <div class="card variant-mixed relative ml-auto !shadow-lg !shadow-gray-950/5">
+                <div class="relative mb-6 divide-y divide-dashed border-l">
+                    <div class="py-2">
+                        <div class="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Jan 2022</div>
+                    </div>
+                    <div class="py-2">
+                        <div class="flex h-8 w-4/5 items-center rounded-r-[--btn-radius] border border-l-0 border-white/5 bg-primary-600 bg-gradient-to-l from-white/15 to-transparent pl-2 text-xs text-white dark:bg-gray-800">Jun 2022</div>
+                    </div>
+                    <div class="py-2">
+                        <div class="flex h-8 w-1/2 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Aug 2022</div>
+                    </div>
+                </div>
+                <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+            </div>
+        </div>
+        <div class="w-[42%]">
+            <div class="card variant-mixed w-full overflow-auto !shadow-xl !shadow-gray-950/5 lg:overflow-clip">
+                <div class="mb-6">
+                    <h2 class="text-title font-medium">Customers</h2>
+                    <p class="mt-1 text-sm">New users by First user primary channel group (Default Channel Group)</p>
+                </div>
+                <table class="w-max table-auto border-collapse [--ui-border-color:theme(colors.gray.950/0.05)] lg:w-full dark:[--ui-border-color:theme(colors.gray.700/0.25)] dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                    <thead class="text-title sticky top-0 bg-gray-950/5 dark:bg-gray-925">
+                        <tr class="*:p-3 *:text-left *:text-sm *:font-medium">
+                            <th class="rounded-l-[--card-radius]">#</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Customer</th>
+                            <th class="rounded-r-[--card-radius]">Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="*:border-b *:p-3">
+                            <td>1</td>
+                            <td>10/31/2023</td>
+                            <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                            <td>
+                                <div class="text-title flex items-center gap-2">
+                                    <div class="avatar sz-xxs">
+                                        <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height="" />
+                                    </div>
+                                    <span>Bernard Ng</span>
+                                </div>
+                            </td>
+                            <td>$43.99</td>
+                        </tr>
+                        <tr class="*:border-b *:p-3">
+                            <td>2</td>
+                            <td>10/21/2023</td>
+                            <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                            <td>
+                                <div class="text-title flex items-center gap-2">
+                                    <div class="avatar sz-xxs">
+                                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                    </div>
+                                    <span>Méschac Irung</span>
+                                </div>
+                            </td>
+                            <td>$19.99</td>
+                        </tr>
+                        <tr class="*:border-b *:p-3">
+                            <td>3</td>
+                            <td>05/21/2023</td>
+                            <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
+                            <td>
+                                <div class="text-title flex items-center gap-2">
+                                    <div class="avatar sz-xxs">
+                                        <img src={THEO_AVATAR} alt="Théo Balick" width="" height="" />
+                                    </div>
+                                    <span>Théo Balick</span>
+                                </div>
+                            </td>
+                            <td>$59.99</td>
+                        </tr>
+                        <tr class="*:border-b *:p-3">
+                            <td>4</td>
+                            <td>09/21/2024</td>
+                            <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
+                            <td>
+                                <div class="text-title flex items-center gap-2">
+                                    <div class="avatar sz-xxs">
+                                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                    </div>
+                                    <span>Méschac Irung</span>
+                                </div>
+                            </td>
+                            <td>$39.99</td>
+                        </tr>
+                        <tr class="*:p-3">
+                            <td>5</td>
+                            <td>05/21/2023</td>
+                            <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                            <td>
+                                <div class="text-title flex items-center gap-2">
+                                    <div class="avatar sz-xxs">
+                                        <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height="" />
+                                    </div>
+                                    <span>Glodie Lukose</span>
+                                </div>
+                            </td>
+
+                            <td>$29.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="-mr-12 h-max w-[28%]">
+            <div class="card variant-mixed hidden space-y-4 !shadow-xl !shadow-gray-950/5">
+                <div class="flex items-end justify-between">
+                    <span class="text-title">Setup Assistant</span>
+                    <span class="text-caption text-sm">66% Completed</span>
+                </div>
+                <div class="progress sz-md w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                    <div class="progress-indicator intent-primary w-[66%]"></div>
+                </div>
+            </div>
+            <form action="" class="card variant-mixed p-1 !shadow-xl !shadow-gray-950/5">
+                <div class="p-8">
+                    <div>
+                        <h2 class="text-title mb-1 text-xl font-semibold">Sign In to Tailus UI</h2>
+                        <p class="text-sm">Welcome back! Sign in to continue</p>
+                    </div>
+
+                    <div class="mt-6">
+                        <button class="btn sz-md variant-outlined intent-gray w-full gap-3.5 !text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em" viewBox="0 0 256 262">
+                                <path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
+                                <path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
+                                <path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"></path>
+                                <path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
+                            </svg>
+                            Continue With Google
+                        </button>
+                    </div>
+
+                    <div class="mb-4 mt-6 grid items-center gap-3 [grid-template-columns:1fr_auto_1fr]">
+                        <span class="separator"></span>
+                        <span class="text-caption text-sm">Or</span>
+                        <span class="separator"></span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="field">
+                            <label for="email2" class="text-title text-sm">Username</label>
+                            <input type="email" required name="email2" id="email2" class="input sz-md variant-mixed" />
+                        </div>
+
+                        <div class="field">
+                            <div class="flex justify-between">
+                                <label for="pwd" class="text-title text-sm">Password</label>
+                                <a href="#" class="link intent-info variant-ghost text-sm">Forgot your Password ?</a>
+                            </div>
+                            <input type="password" required name="pwd" id="pwd" class="input sz-md variant-mixed" />
+                        </div>
+
+                        <button class="btn variant-solid intent-primary sz-md w-full">Sign In</button>
+                    </div>
+                </div>
+
+                <div data-shade="925" class="card variant-soft rounded-[calc(var(--card-radius)-4px)] dark:!bg-[--ui-bg]">
+                    <p class="text-center text-sm">Don't have an account ?<a href="#" class="link intent-neutral variant-underlined">Create account</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

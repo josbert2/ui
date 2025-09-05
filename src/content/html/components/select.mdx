@@ -1,0 +1,250 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from
+priorityOrder : 22
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select class="input variant-plain sz-md appearance-none" placeholder="Select an option">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+    </div>
+    <div class="field">
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select class="input variant-bottomOutlined sz-md appearance-none" placeholder="Select an option">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+    </div>
+    <div class="field">
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select class="input variant-soft sz-md appearance-none" placeholder="Select an option">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+    </div>
+    <div class="field">
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select class="input variant-outlined sz-md appearance-none" placeholder="Select an option">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+    </div>
+    <div class="field">
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select class="input variant-mixed sz-md appearance-none" placeholder="Select an option">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-xs w-full" data-shade="900">
+            <div class="field">
+                <div class="relative">
+                    <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                    <select class="input variant-plain sz-md appearance-none" placeholder="Select an option">
+                        <option value="1">Option 1 </option>
+                        <option value="2">Option 2 </option>
+                        <option value="3">Option 3 </option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="relative">
+                    <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                    <select class="input variant-bottomOutlined sz-md appearance-none" placeholder="Select an option">
+                        <option value="1">Option 1 </option>
+                        <option value="2">Option 2 </option>
+                        <option value="3">Option 3 </option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="relative">
+                    <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                    <select class="input variant-soft sz-md appearance-none" placeholder="Select an option">
+                        <option value="1">Option 1 </option>
+                        <option value="2">Option 2 </option>
+                        <option value="3">Option 3 </option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="relative">
+                    <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                    <select class="input variant-outlined sz-md appearance-none" placeholder="Select an option">
+                        <option value="1">Option 1 </option>
+                        <option value="2">Option 2 </option>
+                        <option value="3">Option 3 </option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="relative">
+                    <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                    <select class="input variant-mixed sz-md appearance-none" placeholder="Select an option">
+                        <option value="1">Option 1 </option>
+                        <option value="2">Option 2 </option>
+                        <option value="3">Option 3 </option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Input 
+
+            The input component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## With label
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="options">Select Options</label>
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select id="options" class="input variant-mixed sz-md appearance-none">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="options">Select Options</label>
+                    <div class="relative">
+                        <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                        <select id="options" class="input variant-mixed sz-md appearance-none">
+                            <option value="1">Option 1 </option>
+                            <option value="2">Option 2 </option>
+                            <option value="3">Option 3 </option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## With Caption
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="options">Select Options</label>
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select id="options" class="input variant-mixed sz-md appearance-none">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+        <span class="inline-block text-sm text-caption">Select description</span>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="options">Select Options</label>
+                    <div class="relative">
+                        <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                        <select id="options" class="input variant-mixed sz-md appearance-none">
+                            <option value="1">Option 1 </option>
+                            <option value="2">Option 2 </option>
+                            <option value="3">Option 3 </option>
+                        </select>
+                    </div>
+                    <span class="inline-block text-sm text-caption">Select description</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="options2">Select Options</label>
+        <div class="relative">
+            <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+            <select disabled id="options2" class="input variant-mixed sz-md appearance-none">
+                <option value="1">Option 1 </option>
+                <option value="2">Option 2 </option>
+                <option value="3">Option 3 </option>
+            </select>
+        </div>
+        <span class="inline-block text-sm text-caption">Select description</span>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="options2">Select Options</label>
+                    <div class="relative">
+                        <svg class="absolute right-2.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                        <select disabled id="options2" class="input variant-mixed sz-md appearance-none">
+                            <option value="1">Option 1 </option>
+                            <option value="2">Option 2 </option>
+                            <option value="3">Option 3 </option>
+                        </select>
+                    </div>
+                    <span class="inline-block text-sm text-caption">Select description</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+---
+title: Content
+description: Presents information or media, such as text, images, or videos, in a structured layout to engage users and convey key messages.
+priorityOrder : 4
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { centerScreenshotCode } from "@blocks/content/centerScreenshot"
+import { rightScreenshotCode } from "@blocks/content/rightScreenshot"
+import { screenshotCode } from "@blocks/content/screenshot"
+import { imageFeaturesCode } from "@blocks/content/imageFeatures"
+import { withImageCode } from "@blocks/content/withImage"
+import { gridContentCode } from "@blocks/content/gridContent"
+import { gridCode } from "@blocks/content/grid"
+import { gridParagraphsCode } from "@blocks/content/gridParagraphs"
+import { communityCode } from "@blocks/content/community"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Center Screenshot"
+    src="/blocks-preview/content/center-screenshot"
+    code={centerScreenshotCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Left Screenshot"
+    src="/blocks-preview/content/left-screenshot"
+    code={screenshotCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Right Screenshot"
+    src="/blocks-preview/content/right-screenshot"
+    code={rightScreenshotCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="With Image and Features"
+    src="/blocks-preview/content/image-features"
+    code={imageFeaturesCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="With Image"
+    src="/blocks-preview/content/with-image"
+    code={withImageCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid Content"
+    src="/blocks-preview/content/grid-content"
+    code={gridContentCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid"
+    src="/blocks-preview/content/grid"
+    code={gridCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid Paragraphs"
+    src="/blocks-preview/content/grid-paragraphs"
+    code={gridParagraphsCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Community"
+    src="/blocks-preview/content/community"
+    code={communityCode}
+    client:visible
+/>

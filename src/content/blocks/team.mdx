@@ -1,0 +1,37 @@
+---
+title: Team
+description: Introduces team members with photos, names, and roles to build trust and connection.
+priorityOrder : 6
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { oneCode } from "@blocks/team/one"
+import { twoCode } from "@blocks/team/two"
+import { threeCode } from "@blocks/team/three"
+
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="One"
+    src="/blocks-preview/team/one"
+    code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Two"
+    src="/blocks-preview/team/two"
+    code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Three"
+    src="/blocks-preview/team/three"
+    code={threeCode}
+    client:visible
+/>

@@ -1,0 +1,29 @@
+---
+title: Chip
+description: A small component typically used to display status information or additional context for another UI element.
+priorityOrder : 11
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/badge"
+import ComponentsPreviewCheck from '@components/ComponentsPreviewCheck.astro';
+
+
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <ComponentsPreviewCheck name="chip" />
+    <script is:inline src="../../../../packages/preline/dist/chip.js"></script>
+    <script is:inline>
+        const chipEl = document.querySelector('[data-hs-chip]');
+        const chipInstance = new HSChip(chipEl);
+    </script>
+
+
+</div>

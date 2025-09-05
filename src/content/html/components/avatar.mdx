@@ -1,0 +1,216 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+priorityOrder : 10
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR, BERNARD_AVATAR, THEO_AVATAR, GLODIE_AVATAR } from "src/const"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="flex gap-3">
+    <div class="avatar sz-md">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-md fallback-neutral">M</div>
+    <div class="avatar sz-md fallback-primary">N</div>
+</div>`,
+              lang: "html"
+          }]}>
+        <div class="flex gap-3">
+            <div class="avatar sz-md">
+                <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+            </div>
+            <div class="avatar sz-md fallback-neutral">M</div>
+            <div class="avatar sz-md fallback-primary">N</div>
+        </div>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Avatar 
+
+            The avatar component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## Status
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-3">
+    <div class="flex gap-3" data-shade="900">
+        <div class="avatar sz-md avatar-status status-online">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-offline">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-away">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-busy">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+    </div>
+    <div class="flex gap-3" data-shade="900">
+        <div class="avatar sz-md avatar-status status-online before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-offline before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-away before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-busy before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="space-y-3">
+                <div class="flex gap-3" data-shade="900">
+                    <div class="avatar sz-md avatar-status status-online">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-offline">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-away">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-busy">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                </div>
+                <div class="flex gap-3" data-shade="900">
+                    <div class="avatar sz-md avatar-status status-online before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-offline before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-away before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-busy before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                </div>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Sizes
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="flex flex-wrap items-end gap-3" data-shade="900">
+    <div class="avatar sz-xxs">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-xs">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-sm">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-md">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-lg">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-xl">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-xxl">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-xxxl">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="flex flex-wrap items-end gap-3" data-shade="900">
+                <div class="avatar sz-xxs">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-xs">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-sm">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-md">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-lg">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-xl">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-xxl">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-xxxl">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Stacked
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<div class="flex -space-x-2" data-shade="925">
+    <div class="avatar sz-sm border-2 border-[--ui-bg]">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-sm border-2 border-[--ui-bg]">
+        <img src={BERNARD_AVATAR} alt="Bernard Ngandu" width="" height="" />
+    </div>
+    <div class="avatar sz-sm border-2 border-[--ui-bg]">
+        <img src={THEO_AVATAR} alt="Théo Balick" width="" height="" />
+    </div>
+    <div class="avatar sz-sm border-2 border-[--ui-bg]">
+        <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height="" />
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="flex -space-x-2" data-shade="925">
+                <div class="avatar sz-sm border-2 border-[--ui-bg]">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                </div>
+                <div class="avatar sz-sm border-2 border-[--ui-bg]">
+                    <img src={BERNARD_AVATAR} alt="Bernard Ngandu" width="" height="" />
+                </div>
+                <div class="avatar sz-sm border-2 border-[--ui-bg]">
+                    <img src={THEO_AVATAR} alt="Théo Balick" width="" height="" />
+                </div>
+                <div class="avatar sz-sm border-2 border-[--ui-bg]">
+                    <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height="" />
+                </div>
+            </div>
+        </PreviewBlock>
+    </div>
+</div>

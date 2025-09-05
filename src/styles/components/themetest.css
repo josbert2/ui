@@ -1,0 +1,30 @@
+
+/*@import '../../../packages/flyonui/src/js/plugins/accordion/variants.css';*/
+
+
+/* Components */
+
+
+
+
+
+
+@import './alert/alert.css';
+@import './button/button.css';
+@import './input/input.css';
+@import './accordion/accordion.css';
+@import './chip/chip.css';
+@import './loading/loading.css';
+
+
+
+/* Pages styles */
+
+@import '../tailus.css';
+
+
+
+
+.btn-seto{
+    @apply bg-red-50
+}

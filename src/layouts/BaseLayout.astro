@@ -1,0 +1,74 @@
+---
+import Footer from '../components/BlocksFooter'
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+
+import PageLoader from '@components/utilities/PageLoader.astro'
+import MainHeader from '@components/MainHeader.astro'
+import KitHeader from '@components/KitHeader.astro'
+import Search from '@components/Search'
+
+
+interface Props {
+    title?: string
+    description?: string
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
+---
+
+<script>
+    function setCustomization(document) {
+        const theme = localStorage.getItem('theme') || 'dark'
+
+        const root = document.documentElement.classList
+
+        if (theme == 'dark') {
+            root.add('dark')
+        } else {
+            root.remove('dark')
+        }
+    }
+
+    setCustomization(document)
+
+    document.addEventListener('astro:before-swap', (event) => {
+        setCustomization(event.newDocument)
+    })
+</script>
+
+<html class="scroll-smooth" lang="en"  data-shade="900" data-rounded="large" data-palette="entrekids">
+    <head>
+        <BaseHead title={title} description={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body  style="font-family: var(--font-sans)" class="bg-gray-50 font-sans antialiased dark:bg-gray-950 dark:[--body-text-color:theme(colors.gray.300)]">
+        <PageLoader />
+
+        <MainHeader />
+        <KitHeader />
+        <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-20 mx-auto h-0 w-full -translate-y-px lg:h-28">
+            <BlurDivs />
+        </div>
+        <div class="absolute inset-x-0 top-0 mx-auto hidden max-w-5xl lg:block">
+            <div class="absolute left-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/[0.07] dark:from-white/[0.07]"></div>
+            <div class="absolute right-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/[0.07] dark:from-white/[0.07]"></div>
+            <div class="absolute -left-20 top-[4.1rem] h-12 w-20 p-2">
+                <div class="-z-10 h-full w-full bg-[radial-gradient(var(--bg-color)_1px,transparent_1px)] [--bg-color:theme(colors.gray.950/0.1)] [background-size:6px_6px] dark:[--bg-color:theme(colors.white/0.05)]"></div>
+            </div>
+            <div class="absolute -right-20 top-[4.1rem] h-12 w-20 p-2">
+                <div class="-z-10 h-full w-full bg-[radial-gradient(var(--bg-color)_1px,transparent_1px)] [--bg-color:theme(colors.gray.950/0.1)] [background-size:6px_6px] dark:[--bg-color:theme(colors.white/0.05)]"></div>
+            </div>
+        </div>
+        <main class="will-change-auto [--card-radius:theme(borderRadius.2xl)]">
+            <slot />
+        </main>
+        <Search client:load>
+            <div id="search"></div>
+        </Search>
+        <Footer className="max-w-6xl" />
+    </body>
+</html>

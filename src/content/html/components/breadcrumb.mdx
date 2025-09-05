@@ -1,0 +1,156 @@
+---
+title: Breadcrumb
+description: List of links to the parent pages of the current page in hierarchical order.
+priorityOrder : 12
+badge : new
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/button"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<nav aria-label="breadcrumb">
+    <ol class="flex items-center gap-2 text-sm">
+        <li>
+            <a href="https://tailus.io" class="link text-body variant-ghost">Tailus UI</a>
+        </li>
+        <li role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </li>
+        <li>
+            <a href="/" class="link text-body variant-ghost">Tailus UI HTML</a>
+        </li>
+        <li role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </li>
+        <li>
+            <a href="#" class="link text-body variant-ghost">Components</a>
+        </li>
+        <li role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </li>
+        <li>
+            <span class="font-medium text-title">Breadcrumb</span>
+        </li>
+    </ol>
+</nav>`,
+              lang: "html"
+          }]}>
+        <nav aria-label="breadcrumb">
+            <ol className="flex items-center gap-2 text-sm">
+                <li>
+                    <a href="https://tailus.io" className="link text-body variant-ghost">Tailus UI</a>
+                </li>
+                <li role="presentation">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </li>
+                <li>
+                    <a href="/" className="link text-body variant-ghost">Tailus UI HTML</a>
+                </li>
+                <li role="presentation">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </li>
+                <li>
+                    <a href="#" className="link text-body variant-ghost">Components</a>
+                </li>
+                <li role="presentation">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </li>
+                <li>
+                    <span className="font-medium text-title">Breadcrumb</span>
+                </li>
+            </ol>
+        </nav>
+    </PreviewBlock>
+
+    <div>
+        ## With Slash
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<nav aria-label="breadcrumb">
+    <ol class="flex items-center gap-2 text-sm">
+        <li>
+            <a href="https://tailus.io" class="link text-body variant-ghost">Tailus UI</a>
+        </li>
+        <li role="presentation">
+            <svg aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 20.247 6-16.5" />
+            </svg>
+        </li>
+        <li>
+            <a href="/" class="link text-body variant-ghost">Tailus UI HTML</a>
+        </li>
+        <li role="presentation">
+            <svg aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 20.247 6-16.5" />
+            </svg>
+        </li>
+        <li>
+            <a href="#" class="link text-body variant-ghost">Components</a>
+        </li>
+        <li role="presentation">
+            <svg aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 20.247 6-16.5" />
+            </svg>
+        </li>
+        <li>
+            <a href="/" aria-current="page" class="font-medium text-title">Breadcrumb</a>
+        </li>
+    </ol>
+</nav>`,
+            lang: "html"
+        }]}>
+            <nav aria-label="breadcrumb">
+                <ol className="flex items-center gap-2 text-sm">
+                    <li>
+                        <a href="https://tailus.io" className="link text-body variant-ghost">Tailus UI</a>
+                    </li>
+                    <li role="presentation">
+                        <svg aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m9 20.247 6-16.5" />
+                        </svg>
+                    </li>
+                    <li>
+                        <a href="/" className="link text-body variant-ghost">Tailus UI HTML</a>
+                    </li>
+                    <li role="presentation">
+                        <svg aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m9 20.247 6-16.5" />
+                        </svg>
+                    </li>
+                    <li>
+                        <a href="#" className="link text-body variant-ghost">Components</a>
+                    </li>
+                    <li role="presentation">
+                        <svg aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 text-caption">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m9 20.247 6-16.5" />
+                        </svg>
+                    </li>
+                    <li>
+                        <a href="/" aria-current="page" className="font-medium text-title">Breadcrumb</a>
+                    </li>
+                </ol>
+            </nav>
+        </PreviewBlock>
+    </div>
+</div>

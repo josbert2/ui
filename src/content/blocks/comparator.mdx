@@ -1,0 +1,20 @@
+---
+title: Comparator
+description: Allows users to compare different products, services, or features side by side, highlighting key differences to aid decision-making.
+priorityOrder : 11
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { pricingCode } from "@blocks/comparator/pricing"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Pricing"
+    src="/blocks-preview/comparator/pricing"
+    code={pricingCode}
+    client:visible
+/>

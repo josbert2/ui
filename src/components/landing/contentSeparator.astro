@@ -1,0 +1,27 @@
+---
+
+
+---
+<div class="grid justify-center lg:mx-auto border-b border-edge-primary grid-cols-1 md:grid-cols-[1fr_minmax(0,var(--width-landing-container))_1fr] light:bg-surface-a1">
+    <div class="col-start-1 hidden md:block"></div>
+    <div class="relative grid grid-cols-1 md:grid-cols-[1.618fr_minmax(0,1fr)] border-x border-edge-primary">
+        <div class="absolute inset-0 pointer-events-none text-surface-8 hidden md:block">
+            <svg class="absolute -left-[6.5px] -top-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+            </svg>
+            <svg class="absolute -right-[6.5px] -top-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+            </svg>
+        </div>
+        <div class="absolute inset-0 pointer-events-none text-surface-8 hidden md:block">
+            <svg class="absolute -left-[6.5px] -bottom-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+            </svg>
+            <svg class="absolute -right-[6.5px] -bottom-[6.5px]" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" vector-effect="non-scaling-stroke">
+                <path d="M6 0V12M0 6H12" stroke="currentColor"></path>
+            </svg>
+        </div>
+        <slot />
+    </div>
+    <div class="md:col-start-3 hidden md:block"></div>
+</div>

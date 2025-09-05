@@ -1,0 +1,205 @@
+---
+title: Tabs
+description: Tabs are a set of layered sections of content, known as tab panels, that display one panel of content at a time.
+frameworkDocs : 
+    name : W3C Tabs
+    link : https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
+priorityOrder : 31
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR, BERNARD_AVATAR, THEO_AVATAR, GLODIE_AVATAR } from "src/const"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Tabs from "@components/interactive/Tabs.astro"
+import Tabs2 from "@components/interactive/TabsSegmented.astro"
+import Tabs3 from "@components/interactive/TabsPill.astro"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="max-w-md w-full">
+    <div data-tabgroup="tls-1" class="space-y-3 w-full" data-rounded="full">
+        <div role="tablist" aria-labelledby="tablist-1" data-tabs="default" class="flex group gap-1 relative data-[tabs=default]:pb-1 data-[tabs=segmented]:bg-ui-soft data-[tabs=segmented]:p-1 data-[tabs=segmented]:rounded-[calc(var(--btn-radius)+0.25rem)] data-[tabs=default]:border-b data-[tabs=pill]:[--title-text-color:theme(colors.white)]">
+            <div data-tabs-indicator aria-hidden="true" class="absolute group-data-[tabs=segmented]:inset-y-1 group-data-[tabs=pill]:inset-y-0 rounded-btn group-data-[tabs=segmented]:shadow group-data-[tabs=segmented]:bg-ui group-data-[tabs=pill]:bg-primary-600 group-data-[tabs=default]:top-auto group-data-[tabs=default]:-bottom-px group-data-[tabs=default]:h-0.5 group-data-[tabs=default]:bg-primary-600 duration-300 transition-[left,width]"></div>
+            <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Payments</span>
+            </button>
+            <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Balances</span>
+            </button>
+            <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Customers</span>
+            </button>
+            <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Billing</span>
+            </button>
+        </div>
+
+        <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+            <p class="text-caption">Payments</p>
+        </div>
+        <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="hidden">
+            <p class="text-caption">Balances</p>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="hidden">
+            <p class="text-caption">Customers</p>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="hidden">
+            <p class="text-caption">Billing</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Tabs />
+    </PreviewBlock>
+
+    <div>
+        ## Installation
+
+        To install the Tabs component, copy and paste the following typescript code into your project.
+
+        <CodeSnippet
+            lang="js"
+            client:visible
+            code={`document.addEventListener('DOMContentLoaded', () => {
+    const tabGroups = document.querySelectorAll('[data-tabgroup]');
+
+    tabGroups.forEach((tabGroup) => {
+        const tabList = tabGroup.querySelector('[role="tablist"]') as HTMLElement;
+        const tabs = tabList.querySelectorAll('[role="tab"]') as NodeListOf<HTMLButtonElement>;
+        const tabPanels = tabGroup.querySelectorAll('[role="tabpanel"]');
+        const indicator = tabList.querySelector('[data-tabs-indicator]') as HTMLElement;
+
+        function updateIndicator(selectedTab: HTMLButtonElement) {
+            const tabRect = selectedTab.getBoundingClientRect();
+            const tabListRect = tabList.getBoundingClientRect();
+            indicator.style.width = \`\${tabRect.width}px\`;
+            indicator.style.left = \`\${tabRect.left - tabListRect.left}px\`;
+        }
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                const selectedTab = tab;
+                const selectedPanelId = selectedTab.getAttribute('aria-controls');
+                const selectedPanel = document.getElementById(selectedPanelId as string) as HTMLElement;
+
+                tabs.forEach((t) => {
+                    t.setAttribute('aria-selected', 'false');
+                    t.setAttribute('tabindex', '-1');
+                });
+                tabPanels.forEach((panel) => {
+                    panel.classList.add('hidden');
+                });
+
+                selectedTab.setAttribute('aria-selected', 'true');
+                selectedTab.removeAttribute('tabindex');
+                selectedPanel.classList.remove('hidden');
+
+                updateIndicator(selectedTab);
+            });
+        });
+
+        const initialSelectedTab = tabList.querySelector('[aria-selected="true"]') as HTMLButtonElement;
+        if (initialSelectedTab) {
+            updateIndicator(initialSelectedTab);
+        }
+    });
+});`} />
+    </div>
+
+        <div>
+
+            ## Segmented Variant
+
+            <PreviewBlock codeBlocks={
+            [{
+            code:`<div class="max-w-md w-full">
+    <div data-tabgroup="tls-2" class="space-y-3 w-full" data-rounded="full">
+        <div role="tablist" aria-labelledby="tablist-1" data-tabs="segmented" class="flex group gap-1 relative data-[tabs=default]:pb-1 data-[tabs=segmented]:bg-ui-soft data-[tabs=segmented]:p-1 data-[tabs=segmented]:rounded-[calc(var(--btn-radius)+0.25rem)] data-[tabs=default]:border-b data-[tabs=pill]:[--title-text-color:theme(colors.white)]">
+            <div data-tabs-indicator aria-hidden="true" class="absolute group-data-[tabs=segmented]:inset-y-1 group-data-[tabs=pill]:inset-y-0 rounded-btn group-data-[tabs=segmented]:shadow group-data-[tabs=segmented]:bg-ui group-data-[tabs=pill]:bg-primary-600 group-data-[tabs=default]:top-auto group-data-[tabs=default]:-bottom-px group-data-[tabs=default]:h-0.5 group-data-[tabs=default]:bg-primary-600 duration-300 transition-[left,width]"></div>
+            <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Payments</span>
+            </button>
+            <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Balances</span>
+            </button>
+            <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Customers</span>
+            </button>
+            <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Billing</span>
+            </button>
+        </div>
+
+        <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+            <p class="text-caption">Payments</p>
+        </div>
+        <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="hidden">
+            <p class="text-caption">Balances</p>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="hidden">
+            <p class="text-caption">Customers</p>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="hidden">
+            <p class="text-caption">Billing</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Tabs2 />
+    </PreviewBlock>
+    </div>
+
+    <div>
+
+        ## Pill variant
+
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<div class="max-w-md w-full">
+    <div data-tabgroup="tls-3" class="space-y-3 w-full" data-rounded="full">
+        <div role="tablist" aria-labelledby="tablist-1" data-tabs="pill" class="flex group gap-1 relative data-[tabs=default]:pb-1 data-[tabs=segmented]:bg-ui-soft data-[tabs=segmented]:p-1 data-[tabs=segmented]:rounded-[calc(var(--btn-radius)+0.25rem)] data-[tabs=default]:border-b data-[tabs=pill]:[--title-text-color:theme(colors.white)]">
+            <div data-tabs-indicator aria-hidden="true" class="absolute group-data-[tabs=segmented]:inset-y-1 group-data-[tabs=pill]:inset-y-0 rounded-btn group-data-[tabs=segmented]:shadow group-data-[tabs=segmented]:bg-ui group-data-[tabs=pill]:bg-primary-600 group-data-[tabs=default]:top-auto group-data-[tabs=default]:-bottom-px group-data-[tabs=default]:h-0.5 group-data-[tabs=default]:bg-primary-600 duration-300 transition-[left,width]"></div>
+            <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Payments</span>
+            </button>
+            <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Balances</span>
+            </button>
+            <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Customers</span>
+            </button>
+            <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Billing</span>
+            </button>
+        </div>
+
+        <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+            <p class="text-caption">Payments</p>
+        </div>
+        <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="hidden">
+            <p class="text-caption">Balances</p>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="hidden">
+            <p class="text-caption">Customers</p>
+        </div>
+        <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="hidden">
+            <p class="text-caption">Billing</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Tabs3 />
+    </PreviewBlock>
+    </div>
+</div>

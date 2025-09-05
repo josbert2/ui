@@ -1,0 +1,36 @@
+---
+title: Stats
+description: Showcases key metrics or achievements, using numbers and icons to quickly convey impactful data and build credibility.
+priorityOrder : 5
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { oneCode } from "@blocks/stats/one"
+import { cardsCode } from "@blocks/stats/cards"
+import { testimonialCode } from "@blocks/stats/with-testimonial"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="One"
+    src="/blocks-preview/stats/one"
+    code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Cards"
+    src="/blocks-preview/stats/cards"
+    code={cardsCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="With Testimonial"
+    src="/blocks-preview/stats/with-testimonial"
+    code={testimonialCode}
+    client:visible
+/>

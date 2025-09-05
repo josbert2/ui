@@ -1,0 +1,112 @@
+---
+title: Shadow
+description: How to use custom 'tls' shadows
+priorityOrder : 8
+---
+
+import _components from "@content/_components"
+import DocsCodeStep from "@components/DocsCodeStep"
+import { Title, Text, Caption } from "@tailus-ui/typography"
+import PalettePreviewBlock from "@components/examples/PalettePreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Banner from "@components/Banner"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+export const components = {
+    ..._components
+}
+
+export const newPrimary = {
+    code: `theme : {
+    extend : {
+        colors: ({colors}) => ({
+            ...palettes.oz,
+            primary: colors.purple,
+        })
+    }
+},`,
+    lang: "ts",
+    highlightedLines : "4-5"
+}
+
+export const overrideGray = [
+    {
+        code: `import { grays } from "@tailus/themer-plugins"`,
+        lang: "ts",
+    },
+    {
+    code: `theme : {
+    extend : {
+        colors: ({colors}) => ({
+            ...palettes.oz,
+            primary: colors.purple,
+            gray: grays.slate,
+        })
+    }
+},`,
+    lang: "ts",
+    highlightedLines : "6"
+  }
+]
+
+export const palette = [
+    {
+        code: `import { palette } from "@tailus/themer-plugins"`,
+        lang: "ts",
+    },
+    {
+    code: `theme : {
+    extend : {},
+},
+plugins : [
+    palette,
+
+    // ...other plugins
+]`,
+    lang: "ts",
+  }
+]
+
+<div className="space-y-20">
+    <div>
+        We've created custom shadow styles that serve as an excellent alternative to TailwindCSS shadows, specifically designed for use with cards.
+        <div class="aspect-video mb-6 bg-white border rounded-card flex items-center">
+            <div  class="grid grid-cols-3 gap-4 w-full p-6 sm:p-12 mx-auto [--ui-border-color:theme(colors.gray.200)]">
+                <div class="card bg-white tls-shadow shadow-gray-950/[0.07] aspect-square flex justify-center items-center text-sm text-gray-600">default</div>
+                <div class="card bg-white tls-shadow-md shadow-gray-950/[0.07] aspect-square flex justify-center items-center text-sm text-gray-600">md</div>
+                <div class="card bg-white tls-shadow-lg shadow-gray-950/[0.07] aspect-square flex justify-center items-center text-sm text-gray-600">lg</div>
+            </div>
+        </div>
+
+        <CodeSnippet
+            code={`<div class="card bg-ui tls-shadow aspect-square"></div>
+<div class="card bg-ui tls-shadow-md aspect-square"></div>
+<div class="card bg-ui tls-shadow-lg aspect-square"></div>`
+            }
+            lang="ts"
+            client:visible
+        />
+    </div>
+
+    <div>
+        ## Colors
+        Seamlessly integrates with TailwindCSS shadow color utilities.
+        <div class="aspect-video mb-6 bg-primary-300 border rounded-card flex items-center">
+            <div  class="grid grid-cols-3 gap-4 w-full p-6 sm:p-12 mx-auto [--ui-border-color:theme(colors.gray.200)]">
+                <div class="card bg-white tls-shadow shadow-primary-800/15 aspect-square flex justify-center items-center text-sm text-gray-600">default</div>
+                <div class="card bg-white tls-shadow-md shadow-primary-800/15 aspect-square flex justify-center items-center text-sm text-gray-600">md</div>
+                <div class="card bg-white tls-shadow-lg shadow-primary-800/15 aspect-square flex justify-center items-center text-sm text-gray-600">lg</div>
+            </div>
+        </div>
+
+        <CodeSnippet
+            code={`<div class="card bg-ui tls-shadow shadow-primary-800/15 aspect-square"></div>
+<div class="card bg-ui tls-shadow-md shadow-primary-800/15 aspect-square"></div>
+<div class="card bg-ui tls-shadow-lg shadow-primary-800/15 aspect-square"></div>`
+            }
+            lang="ts"
+            client:visible
+        />
+    </div>
+</div>

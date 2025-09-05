@@ -1,0 +1,77 @@
+---
+import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER, SITE_SOCIAL_LINKEDIN, SITE_SOCIAL_YOUTUBE, SITE_STORE, SITE_BLOG } from '../const';
+import BrandIcon from '../components/utilities/BrandIcon';
+import { Link } from './tailus-ui/typography/Link';
+
+const socialLinks = [
+    {
+        name: 'GitHub',
+        url: SITE_SOCIAL_GITHUB
+    },
+    {
+        name: 'Youtube',
+        url: SITE_SOCIAL_YOUTUBE
+    },
+    {
+        name: 'X/Twitter',
+        url: SITE_SOCIAL_TWITTER
+    },
+    {
+        name: 'LinkedIn',
+        url: SITE_SOCIAL_LINKEDIN
+    },
+    {
+        name: 'Store',
+        url: SITE_STORE
+    },
+    {
+        name: 'Blog',
+        url: SITE_BLOG
+    },
+    {
+        name: 'TailwindCSS Tips',
+        url: "https://tailtips.dev"
+    },
+    { url: "https://spectr.irung.me", name: 'Spectr' },
+    { url: "https://aspect.irung.me", name: 'Aspect' },
+];
+
+const { asThemer = false } = Astro.props;
+---
+
+<footer class="pb-6 pt-8 px-6 lg:px-12" class:list={asThemer ? 'mt-14 border-t' : 'border sm:mb-6 mb-4 xl:mb-10 mt-16 rounded-2xl'}>
+    <div class="max-w-5xl mx-auto">
+        <div class="space-y-4">
+            <BrandIcon />
+            <div class="flex flex-wrap gap-x-4 gap-y-2">
+                {
+                    socialLinks.map(link => (
+                        <Link intent="gray" size="sm" variant="animated" href={link.url}>
+                            {link.name}
+                        </Link>
+                    ))
+                }
+            </div>
+
+            <div class="flex gap-1 overflow-hidden font-medium text-[--title-text-color]">
+                Designed by Tailus in
+                <div class="flex items-start justify-center gap-2 text-center font-semibold sm:gap-1">
+                    <div class="block">
+                        <div class="block pb-2">DR Congo</div>
+                        <div class="-mt-5 grow overflow-hidden">
+                            <svg aria-hidden="true" class="w-20" height="22" viewBox="0 0 283 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.24715 19.3744C72.4051 10.3594 228.122 -4.71194 281.724 7.12332" stroke="url(#paint0_linear_pl)" stroke-width="4"></path>
+                                <defs>
+                                    <linearGradient id="paint0_linear_pl" x1="282" y1="5.49999" x2="40" y2="13" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#facc15"></stop>
+                                        <stop offset="1" stop-color="#a855f7"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

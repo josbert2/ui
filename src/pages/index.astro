@@ -1,0 +1,362 @@
+---
+import Layout from '@layouts/BaseLayout.astro'
+import Container from '@components/Container.astro'
+import { BERNARD_AVATAR, MESCHAC_AVATAR, THEO_AVATAR } from 'src/const'
+import SeparatorRoot from '@components/tailus-ui/Separator'
+import BlockPreview from '@components/BlockPreview'
+import { hero1Code } from 'src/blocks/herosection/saas/saas1.ts'
+import CodeComparason from '@components/CodeComparason'
+import FeaturesBento from '@components/FeaturesBento'
+import { Image } from 'astro:assets'
+import tlsBundle from '../images/tls-bundle-thumb.png'
+---
+
+<Layout title="Tailus UI Html">
+    <div class="absolute inset-0 isolate contain-strict">
+        <div class="absolute left-0 top-0 h-[1280px] w-[560px] -translate-y-[350px] -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]"></div>
+        <div class="absolute left-0 top-0 h-[1280px] w-[240px] -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]"></div>
+        <div class="absolute left-0 top-0 h-[1280px] w-[240px] -translate-y-[350px] -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]"></div>
+    </div>
+
+    <section class="relative z-10 space-y-12 pt-20 will-change-transform sm:pt-20">
+        <Container>
+            <h1 class="text-title mt-8 text-balance bg-gradient-to-b text-4xl font-bold sm:text-5xl lg:text-6xl">Reusable Tailwind Component classes</h1>
+            <p class="mb-12 mt-6 text-xl md:max-w-lg lg:max-w-xl">Free up your time with pre-built classes that update site-wide automatically. Focus on building, not fixing.</p>
+
+            <div class="flex gap-3">
+                <a href="/get-started/installation" class="btn variant-neutral sz-md w-fit gap-2.5 bg-gray-950 !from-gray-900 to-gray-950 dark:!from-white">
+                    <svg class="size-4 opacity-75" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"></path>
+                    </svg>
+                    <span class="btn-label font-medium">Get Started</span>
+                </a>
+                <a href="https://play.tailwindcss.com/CJfPo45T5q" target="_blank" class="btn variant-outlined sz-md w-fit">
+                    <svg class="size-4 opacity-75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                        <path
+                            fill="currentColor"
+                            d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597c6.398-8.531 13.867-11.73 22.398-9.597c4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602q-9.6 12.803-22.399 9.602c-4.87-1.215-8.347-4.746-12.207-8.66c-6.27-6.367-13.53-13.738-29.394-13.738M32.004 64c-17.066 0-27.73 8.531-32 25.602Q9.603 76.799 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66c6.274 6.367 13.536 13.738 29.395 13.738c17.066 0 27.73-8.53 32-25.597q-9.6 12.797-22.399 9.597c-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64m0 0"
+                        ></path>
+                    </svg>
+
+                    <span class="font-medium">Try Online</span>
+                </a>
+            </div>
+        </Container>
+    </section>
+
+    <section class="relative border-b border-gray-200 [--ui-bg:theme(colors.white/0.75)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:border-gray-800 dark:[--ui-bg:theme(colors.gray.900)] dark:[--ui-border-color:theme(colors.gray.800)]">
+        <svg class="absolute inset-0 mx-auto w-full text-secondary-100 blur-3xl dark:hidden dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+        </svg>
+        <svg class="absolute inset-0 m-auto w-full text-primary-200 blur-3xl dark:hidden dark:text-primary-500/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+        </svg>
+        <Container>
+            <div data-shade="900" class="relative mt-6 sm:-mt-64 lg:-mx-4">
+                <div class="relative isolate grid grid-cols-3 divide-x divide-y divide-dashed border-r border-dashed *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed sm:grid-cols-6">
+                    <div class="col-span-2 col-start-2 border-l border-t sm:col-span-1 sm:col-start-6">
+                        <form class="flex gap-3">
+                            <label class="field btn variant-outlined icon-only sz-sm before:!transition-none has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:[background-image:none] has-[:checked]:before:!border-white/15 has-[:checked]:before:!bg-primary-600 sm:hidden lg:flex" for="small">
+                                <input type="radio" id="small" name="size" hidden />
+                                <span class="relative">S</span>
+                            </label>
+                            <label class="field btn variant-outlined icon-only sz-sm before:!transition-none has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:[background-image:none] has-[:checked]:before:!border-white/15 has-[:checked]:before:!bg-primary-600" for="medium">
+                                <input type="radio" id="medium" checked name="size" hidden />
+                                <span class="relative">M</span>
+                            </label>
+                            <label class="field btn variant-outlined icon-only sz-sm before:!transition-none has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:[background-image:none] has-[:checked]:before:!border-white/15 has-[:checked]:before:!bg-primary-600" for="large">
+                                <input type="radio" id="large" name="size" hidden />
+                                <span class="relative">L</span>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="sm:col-start-5">
+                        <label for="r2" class="radio bg-ui group rounded-full">
+                            <input class="peer" type="radio" id="r2" name="radio2" />
+                            <span class="radio-indicator"> </span>
+                        </label>
+                    </div>
+                    <div>
+                        <button class="btn variant-primary sz-sm">Button</button>
+                    </div>
+                    <div class="col-start-3">
+                        <label for="sw2" class="switch variant-primary">
+                            <input checked class="peer" type="checkbox" id="sw2" name="switch2" />
+                            <span class="switch-thumb"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <div class="field">
+                            <label for="c2" class="checkbox bg-ui group">
+                                <input class="peer" type="checkbox" id="c2" name="checkbox1" />
+                                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="field w-full max-w-56">
+                            <input type="email" name="email" class="input variant-mixed sz-md !border !outline-primary-600" placeholder="Your email" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container>
+
+        <div class="border-y border-dashed">
+            <Container>
+                <div class="relative grid divide-x divide-dashed border-x border-dashed sm:grid-cols-2 lg:-mx-4 lg:grid-cols-3 dark:-z-10">
+                    <div class="p-3">
+                        <div class="card bg-ui tls-shadow-md ml-auto flex h-full flex-col justify-between shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
+                            <div class="mb-6 divide-y divide-dashed border-l [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-border-color:theme(colors.gray.800)]">
+                                <div class="py-2">
+                                    <div class="bg-ui flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 pl-2 text-xs">Jan 2022</div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="flex h-8 w-4/5 items-center rounded-r-[--btn-radius] border border-l-0 border-white/5 bg-primary-600 bg-gradient-to-l from-white/15 to-transparent pl-2 text-xs text-white dark:bg-gray-800">Jun 2022</div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="bg-ui flex h-8 w-1/2 items-center rounded-r-[--btn-radius] border border-l-0 pl-2 text-xs">Aug 2022</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-title text-sm font-medium">Realtime insights</div>
+                                <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden p-3 sm:block">
+                        <div class="card bg-ui tls-shadow-md h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
+                            <span class="text-caption text-xs">Great UX</span>
+                            <div class="text-title mt-2 text-sm font-medium">Realtime insights</div>
+                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+
+                            <div class="card variant-outlined mt-12 space-y-3 p-4 [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-border-color:theme(colors.gray.800)]">
+                                <div class="flex justify-between">
+                                    <div class="text-title flex items-center gap-1.5">
+                                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 19v-6q0-.675.275-1.225T3 10.8V8q0-1.25.875-2.125T6 5h4q.575 0 1.075.213T12 5.8q.425-.375.925-.587T14 5h4q1.25 0 2.125.875T21 8v2.8q.45.425.725.975T22 13v6h-2v-2H4v2zm11-9h6V8q0-.425-.288-.712T18 7h-4q-.425 0-.712.288T13 8zm-8 0h6V8q0-.425-.288-.712T10 7H6q-.425 0-.712.288T5 8z"></path></svg>
+                                        <div class="text-sm font-medium">Sleep</div>
+                                    </div>
+                                    <div class="text-caption text-xs">5:45 AM</div>
+                                </div>
+                                <div class="flex items-end justify-between">
+                                    <div class="space-y-1">
+                                        <div class="text-title text-sm font-medium">Time in Bed</div>
+                                        <div class="flex gap-3">
+                                            <div class="-space-x-0.5">
+                                                <span class="text-title align-baseline text-xl font-medium">5</span>
+                                                <span class="text-placeholder text-xs">hr</span>
+                                            </div>
+                                            <div class="-space-x-0.5">
+                                                <span class="text-title align-baseline text-xl font-medium">59</span>
+                                                <span class="text-placeholder text-xs">min</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-end gap-1">
+                                        <div aria-hidden="true" class="h-3 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-10 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-4 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-6 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-9 w-1.5 rounded bg-gradient-to-b from-primary-300 to-primary-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden p-3 lg:block">
+                        <div class="card bg-ui tls-shadow-md ml-auto h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
+                            <div class="relative mb-6 mt-6 [--ui-bg:theme(colors.white)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-bg:theme(colors.gray.800)] dark:[--ui-border-color:theme(colors.gray.800)]">
+                                <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
+                                    <div class="avatar sz-sm">
+                                        <img src={THEO_AVATAR} alt="Théo Balick" width="120" height="120" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Théo Balick</div>
+                                        <div class="text-sm">Closed 'tls-html' PR</div>
+                                    </div>
+                                </div>
+                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
+                                    <div class="avatar sz-md">
+                                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="120" height="120" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Méschac Irung</div>
+                                        <div class="text-sm">Closed 'tls-html' PR</div>
+                                    </div>
+                                </div>
+                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
+                                    <div class="avatar sz-md">
+                                        <img src={BERNARD_AVATAR} alt="Bernard Ngandu" width="120" height="120" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Bernard Ng</div>
+                                        <div class="text-sm">Opened 'tls-react' branch</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-title text-sm font-medium">Realtime insights</div>
+                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+        <div class="relative overflow-hidden">
+            <Container>
+                <div class="grid divide-x divide-dashed border-x border-dashed sm:grid-cols-3 lg:-mx-4 lg:grid-cols-5">
+                    <div class="hidden h-fit border-b border-dashed px-3 sm:block">
+                        <div class="ml-auto flex h-12 w-fit items-center gap-4">
+                            <div class="avatar sz-xs fallback-neutral">G</div>
+                            <SeparatorRoot orientation="vertical" className="h-full" />
+                            <div class="avatar sz-xs fallback-primary">N</div>
+                            <SeparatorRoot orientation="vertical" className="h-full" />
+                            <div class="avatar sz-xs z-10">
+                                <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="120" height="120" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 sm:col-span-2 lg:col-span-4">
+                        <div class="card bg-ui tls-shadow-md w-full overflow-auto shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] lg:overflow-clip dark:[--ui-border-color:theme(colors.gray.800)]">
+                            <div class="mb-6">
+                                <div class="text-title font-medium">Customers</div>
+                                <p class="mt-1 text-sm">New users by First user primary channel group (Default Channel Group)</p>
+                            </div>
+                            <table class="-mb-4 w-max table-auto border-collapse [--ui-border-color:theme(colors.gray.950/0.05)] lg:w-full dark:[--ui-border-color:theme(colors.gray.700/0.25)] dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                                <thead class="text-title sticky top-0 bg-gray-950/5 dark:bg-gray-925">
+                                    <tr class="*:p-3 *:text-left *:text-sm *:font-medium">
+                                        <th class="rounded-l-[--card-radius]">#</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Customer</th>
+                                        <th class="rounded-r-[--card-radius]">Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="*:border-b *:p-3">
+                                        <td>1</td>
+                                        <td>10/31/2023</td>
+                                        <td><span class="badge variant-success sz-xs">Paid</span></td>
+                                        <td>
+                                            <div class="text-title flex items-center gap-2">
+                                                <div class="avatar sz-xxs">
+                                                    <img src={BERNARD_AVATAR} alt="Bernard Ng" width="120" height="120" loading="lazy" />
+                                                </div>
+                                                <span>Bernard Ng</span>
+                                            </div>
+                                        </td>
+                                        <td>$43.99</td>
+                                    </tr>
+                                    <tr class="*:border-b *:p-3">
+                                        <td>2</td>
+                                        <td>10/21/2023</td>
+                                        <td><span class="badge variant-danger sz-xs line-clamp-1">Ref</span></td>
+                                        <td>
+                                            <div class="text-title flex items-center gap-2">
+                                                <div class="avatar sz-xxs">
+                                                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="120" height="120" loading="lazy" />
+                                                </div>
+                                                <span>Méschac Irung</span>
+                                            </div>
+                                        </td>
+                                        <td>$19.99</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+    </section>
+    <section class="relative bg-white pt-16 dark:bg-gray-950">
+        <Container>
+            <h2 class="sr-only">Features</h2>
+            <div class="grid gap-x-4 gap-y-6 px-3 sm:grid-cols-2 md:mx-0 md:grid-cols-3 lg:gap-x-12">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                            <path fill-rule="evenodd" d="M9.58 1.077a.75.75 0 0 1 .405.82L9.165 6h4.085a.75.75 0 0 1 .567 1.241l-6.5 7.5a.75.75 0 0 1-1.302-.638L6.835 10H2.75a.75.75 0 0 1-.567-1.241l6.5-7.5a.75.75 0 0 1 .897-.182Z" clip-rule="evenodd"></path>
+                        </svg>
+
+                        <h3 class="text-title text-sm font-medium">Easy To Use</h3>
+                    </div>
+                    <p class="mt-4 text-sm">Simply copy, paste, and style your HTML projects with familiar semantic class names.</p>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.261Z" clip-rule="evenodd"></path>
+                        </svg>
+
+                        <h3 class="text-title text-sm font-medium">Customizable</h3>
+                    </div>
+                    <p class="mt-4 text-sm">Easily adjust components with utilities or use built-in attributes to modify your theme.</p>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                            <path
+                                fill-rule="evenodd"
+                                d="M5 4a.75.75 0 0 1 .738.616l.252 1.388A1.25 1.25 0 0 0 6.996 7.01l1.388.252a.75.75 0 0 1 0 1.476l-1.388.252A1.25 1.25 0 0 0 5.99 9.996l-.252 1.388a.75.75 0 0 1-1.476 0L4.01 9.996A1.25 1.25 0 0 0 3.004 8.99l-1.388-.252a.75.75 0 0 1 0-1.476l1.388-.252A1.25 1.25 0 0 0 4.01 6.004l.252-1.388A.75.75 0 0 1 5 4ZM12 1a.75.75 0 0 1 .721.544l.195.682c.118.415.443.74.858.858l.682.195a.75.75 0 0 1 0 1.442l-.682.195a1.25 1.25 0 0 0-.858.858l-.195.682a.75.75 0 0 1-1.442 0l-.195-.682a1.25 1.25 0 0 0-.858-.858l-.682-.195a.75.75 0 0 1 0-1.442l.682-.195a1.25 1.25 0 0 0 .858-.858l.195-.682A.75.75 0 0 1 12 1ZM10 11a.75.75 0 0 1 .728.568.968.968 0 0 0 .704.704.75.75 0 0 1 0 1.456.968.968 0 0 0-.704.704.75.75 0 0 1-1.456 0 .968.968 0 0 0-.704-.704.75.75 0 0 1 0-1.456.968.968 0 0 0 .704-.704A.75.75 0 0 1 10 11Z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+
+                        <h3 class="text-title text-sm font-medium">Modern Design</h3>
+                    </div>
+                    <p class="mt-4 text-sm">Follows modern design principles to create usable, accessible and stunning websites.</p>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <section id="semantic" class="relative bg-white pt-24 md:pt-32 dark:bg-transparent">
+        <Container>
+            <div class="grid max-w-3xl space-y-8">
+                <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">No more struggling with long utility classes</h2>
+                <div class="mt-2 max-w-xl space-y-6">
+                    <p class="sm:text-lg">Simply use our copy-paste classes to keep your components consistent across your entire project.</p>
+                </div>
+            </div>
+        </Container>
+        <div class="relative mt-12 pb-16 md:mt-16 md:pb-20">
+            <div class="absolute inset-x-0 bottom-0 top-10 border-t bg-gradient-to-b from-gray-50 to-gray-100 shadow-inner shadow-gray-500/5 dark:from-gray-950 dark:to-gray-950"></div>
+            <Container>
+                <div class="lg:-mx-4">
+                    <CodeComparason client:idle />
+                </div>
+            </Container>
+        </div>
+    </section>
+    <section id="customization" class="scroll-my-12 bg-gray-100 pt-16 md:py-20 dark:bg-transparent">
+        <Container>
+            <div class="grid max-w-xl gap-4 md:px-4 lg:max-w-full lg:grid-cols-2 lg:px-0">
+                <h2 class="text-title text-balance pr-12 text-3xl font-semibold md:text-4xl lg:text-5xl">Built with Customization In Mind</h2>
+                <div class="space-y-6">
+                    <p class="sm:text-lg">Our pre-built component classes give you the flexibility to make them your own. Whether you need to tweak colors, sizes, or layouts, the TailwindCSS foundation ensures that customization is simple and intuitive.</p>
+                    <a href="/theming/theme-config" class="btn variant-soft sz-sm w-fit">Learn More</a>
+                </div>
+            </div>
+        </Container>
+
+        <Container>
+            <div class="relative mt-12 md:mt-16 lg:-mx-4">
+                <FeaturesBento client:visible />
+            </div>
+        </Container>
+    </section>
+    <section id="blocks" class="relative bg-white pt-20 dark:bg-transparent">
+        <Container>
+            <div class="mb-12 grid gap-4 md:mb-16 md:max-w-xl md:px-4 lg:max-w-full lg:grid-cols-2 lg:px-0">
+                <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Build faster with modern UI Blocks</h2>
+                <div class="mt-2 space-y-6">
+                    <p class="sm:text-lg">Speed up your workflow with responsive, pre-built UI blocks designed for marketing websites. Perfect for landing pages, product showcases, and portfolios.</p>
+                    <a href="/blocks/hero-section" class="btn variant-soft sz-sm w-fit">Browse Blocks</a>
+                </div>
+            </div>
+        </Container>
+
+        <BlockPreview forHome title="Hero1" src="/blocks-preview/herosection/saas2" code={hero1Code} client:visible />
+    </section>
+</Layout>

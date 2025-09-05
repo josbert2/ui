@@ -1,0 +1,29 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import DocsLayoutLanding from '@layouts/DocsLayoutLanding.astro'
+
+export async function getStaticPaths() {
+    const component = await getCollection('html')
+    component.sort((a, b) => a.data.priorityOrder! - b.data.priorityOrder!)
+    return component.map((page, index) => ({
+        params: { slug: page.slug },
+        props: {
+            ...page,
+            prev: component[index - 1],
+            next: component[index + 1],
+        },
+    }))
+}
+
+type Props = CollectionEntry<'html'> & {
+    prev: CollectionEntry<'html'>
+    next: CollectionEntry<'html'>
+}
+
+const page = Astro.props
+const { Content } = await page.render()
+---
+
+<DocsLayoutLanding {...page}>
+    <Content />
+</DocsLayoutLanding>

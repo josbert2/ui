@@ -1,0 +1,26 @@
+---
+    const headers = ["#", "First", "Last", "Username"];
+    const rows = [
+        ["1", "Méschac 2", "Irung", "@irung"],
+        ["2", "John", "Doe", "@john"],
+        ["3", "Jane", "Doe", "@jane"],
+    ];
+
+---
+
+
+<table class="border-collapse table-auto border max-w-sm w-full">
+    <thead class="text-title">
+        <tr class="*:font-medium bg-ui-soft dark:bg-[var(--ui-bg)] *:border *:px-3 *:py-2 *:text-left">
+            {headers.map((header) => <th>{header}</th>)}
+        </tr>
+    </thead>
+    <tbody>
+        {rows.map((row) => (
+            <tr class="*:border *:px-3 *:py-2">
+                {row.map((cell) => <td>{cell}</td>)}
+            </tr>
+        ))}
+    </tbody>
+</table>
+            

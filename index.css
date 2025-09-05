@@ -1,0 +1,9 @@
+@import "tailwindcss" prefix(tw);
+
+
+.t{
+  @apply tw:bg-red-500;
+  &-circle{
+    @apply tw:bg-red-500;
+  }
+}

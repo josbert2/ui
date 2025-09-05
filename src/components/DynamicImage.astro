@@ -1,0 +1,20 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+const { name } = Astro.props;
+let svgContent: string | null = null;
+
+if (name) {
+  const svgPath = path.resolve(new URL('.', import.meta.url).pathname, '../images', `${name}.svg`);
+  try {
+    svgContent = await fs.promises.readFile(svgPath, 'utf8');
+  } catch (err) {
+    console.error('No se pudo leer el archivo SVG:', err);
+  }
+}
+---
+
+{svgContent 
+  ? <Fragment set:html={svgContent} /> 
+  : <span>Falta el nombre de la imagen o no se encontró el archivo</span>}

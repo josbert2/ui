@@ -1,0 +1,27 @@
+<div>
+    <button data-dialog-trigger="dialog1" class="btn sz-md variant-outlined">
+        <span class="btn-label">Open Dialog</span>
+    </button>
+    <dialog class="card variant-outlined m-auto size-fit max-w-lg origin-bottom p-8 shadow-xl" role="dialog" id="dialog1" aria-labelledby="dialog1_label">
+        <h2 id="dialog1_label" class="text-title font-medium">Add Delivery Address</h2>
+        <p class="text-body mt-2 text-sm">The delivery address will be used for shipping your orders. Please ensure that the address is accurate and complete.</p>
+
+        <form action="post" id="userAddress" class="mt-6">
+            <div data-shade="950" class="field">
+                <label class="text-title text-sm font-medium" for="address">Address</label>
+                <input type="text" id="address" placeholder="Lubumbashi" required class="input variant-mixed sz-md rounded-btn" />
+            </div>
+        </form>
+
+        <div class="mt-8 flex justify-end gap-3">
+            <button data-dialog-close class="btn sz-sm variant-outlined">
+                <span class="btn-label">Cancel</span>
+            </button>
+            <button class="btn sz-sm variant-primary" type="submit" form="userAddress">
+                <span class="btn-label">Save</span>
+            </button>
+        </div>
+    </dialog>
+</div>
+
+<script src="./dialog.ts"></script>

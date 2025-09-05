@@ -1,0 +1,36 @@
+---
+title: Sign Up
+description: Enables users to create an account by providing personal information, often including terms and conditions acknowledgment.
+priorityOrder : 14
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { signupCode1 } from "@blocks/signup/signup1"
+import { signupCode2 } from "@blocks/signup/signup2"
+import { signupCode3 } from "@blocks/signup/signup3"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Sign Up 1"
+    src="/blocks-preview/signup/signup1"
+    code={signupCode1}
+    client:visible
+/>
+
+<BlockPreview
+    title="Sign Up 2"
+    src="/blocks-preview/signup/signup2"
+    code={signupCode2}
+    client:visible
+/>
+
+<BlockPreview
+    title="Sign Up 3"
+    src="/blocks-preview/signup/signup3"
+    code={signupCode3}
+    client:visible
+/>

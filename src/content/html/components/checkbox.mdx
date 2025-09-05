@@ -1,0 +1,114 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+priorityOrder : 16
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="c1" class="checkbox group">
+                <input class="peer" type="checkbox" id="c1" name="checkbox1"  />
+                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+            </label>
+            <label for="c1" class="block text-title select-none">Create a private project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-sm w-full" data-shade="900">
+            <div class="field">
+                <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                    <label for="c1" class="checkbox group">
+                        <input class="peer" type="checkbox" id="c1" name="checkbox1"  />
+                        <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                    <label for="c1" class="block text-title select-none">Create a private project</label>
+                    <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                </div>
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="c1" class="checkbox group">
+                <input disabled class="peer" type="checkbox" id="c1" name="checkbox1"  />
+                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+            </label>
+            <label for="c1" class="block text-title select-none">Create a private project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                        <label for="c1" class="checkbox group">
+                            <input disabled class="peer" type="checkbox" id="c1" name="checkbox1"  />
+                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                        </label>
+                        <label for="c1" class="block text-title select-none">Create a private project</label>
+                        <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                    </div>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Default Checked
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+            <label for="c1" class="checkbox group">
+                <input checked class="peer" type="checkbox" id="c1" name="checkbox1"  />
+                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+            </label>
+            <label for="c1" class="block text-title select-none">Create a private project</label>
+            <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+        </div>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                        <label for="c2" class="checkbox group">
+                            <input checked class="peer" type="checkbox" id="c2" name="checkbox2"  />
+                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                        </label>
+                        <label for="c2" class="block text-title select-none">Create a private project</label>
+                        <span class="col-start-2 block text-caption text-sm">As a private project, only admins could rewrite</span>
+                    </div>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div>
+    <button data-dialog-trigger="dialog2" class="btn sz-md variant-outlined">
+        <span class="btn-label">Open Dialog</span>
+    </button>
+    <dialog class="card variant-outlined m-auto size-fit w-full max-w-md origin-bottom shadow-xl" role="dialog" id="dialog2" aria-labelledby="dialog2_label">
+        <h2 id="dialog2_label" class="text-title font-medium">Edit Repository</h2>
+        <p class="text-body mt-2 text-sm">Edit repository details</p>
+
+        <hr class="my-4 border-dashed" />
+
+        <form action="post" id="repoEdit" class="space-y-6">
+            <div class="field">
+                <label class="text-title" for="url">Website</label>
+                <input type="url" id="url" required class="input variant-mixed sz-md" />
+                <span class="text-caption inline-block text-sm">Input description</span>
+            </div>
+            <div class="field">
+                <label class="text-title" for="desc">Description</label>
+                <textarea class="textarea variant-mixed sz-md" id="desc" rows="3">Highly customizable components for crafting modern, personalized websites and applications.</textarea>
+            </div>
+            <div data-shade="glassy" class="space-y-3">
+                <div class="field">
+                    <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                        <label for="c1" class="checkbox group">
+                            <input checked class="peer" type="checkbox" id="c1" name="checkbox1" />
+                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                        </label>
+                        <label for="c1" class="text-title block select-none">Releases</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                        <label for="c2" class="checkbox group">
+                            <input class="peer" type="checkbox" id="c2" name="checkbox1" />
+                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                        </label>
+                        <label for="c2" class="text-title block select-none">Packages</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="grid items-center gap-x-3 gap-y-1 [grid-template-columns:auto_1fr]">
+                        <label for="c3" class="checkbox group">
+                            <input class="peer" type="checkbox" id="c3" name="checkbox1" />
+                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                        </label>
+                        <label for="c3" class="text-title block select-none">Environments</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="-mx-8 mt-8 flex justify-end gap-3 border-t px-8 pt-6">
+            <button data-dialog-close class="btn sz-sm variant-outlined">
+                <span class="btn-label">Cancel</span>
+            </button>
+            <button class="btn sz-sm variant-primary" type="submit" form="repoEdit">
+                <span class="btn-label">Save changes</span>
+            </button>
+        </div>
+    </dialog>
+</div>
+
+<script src="./dialog.ts" data-astro-rerun></script>

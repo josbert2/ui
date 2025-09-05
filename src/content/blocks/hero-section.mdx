@@ -1,0 +1,38 @@
+---
+title: Hero Section
+description: The top area of a webpage, capturing attention and summarizing the site's purpose or product.
+priorityOrder : 0
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { hero1Code } from "@blocks/herosection/saas/saas1"
+import { hero2Code } from "@blocks/herosection/saas/saas2"
+import { hero3Code } from "@blocks/herosection/saas/saas3"
+
+export const components = {
+    ..._components
+}
+
+
+
+<BlockPreview
+    title="SaaS 1"
+    src="/blocks-preview/herosection/saas2"
+    code={hero2Code}
+    client:visible
+/>
+
+<BlockPreview
+    title="SaaS 2"
+    src="/blocks-preview/herosection/saas1"
+    code={hero1Code}
+    client:visible
+/>
+
+<BlockPreview
+    title="SaaS 3"
+    src="/blocks-preview/herosection/saas3"
+    code={hero3Code}
+    client:visible
+/>

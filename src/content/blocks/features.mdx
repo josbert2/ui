@@ -1,0 +1,60 @@
+---
+title: Features
+description: A section layout with a structured grid, perfect for presenting multiple features in a neat and organized manner.
+priorityOrder : 3
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { stackedCode } from "@blocks/features/stacked"
+import { cardsCode } from "@blocks/features/cards"
+import { gridCode } from "@blocks/features/grid"
+import { gridTwoCode } from "@blocks/features/grid-two"
+import { softCardsCode } from "@blocks/features/softCards"
+import { bentoOneCode } from "@blocks/features/bento-one"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Cards"
+    src="/blocks-preview/features/cards"
+    code={cardsCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Soft Cards"
+    src="/blocks-preview/features/soft-cards"
+    code={softCardsCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Stacked"
+    src="/blocks-preview/features/stacked"
+    code={stackedCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid"
+    src="/blocks-preview/features/grid"
+    code={gridCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="With Code"
+    src="/blocks-preview/features/grid-two"
+    code={gridTwoCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Bento 1"
+    src="/blocks-preview/features/bento-one"
+    code={bentoOneCode}
+    client:visible
+/>

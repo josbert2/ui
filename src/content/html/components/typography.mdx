@@ -1,0 +1,298 @@
+---
+title: Typography
+description: All you need for typography elements
+priorityOrder : 8
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Table from "@components/Table.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import { MESCHAC_AVATAR } from "src/const"
+import link from "@lib/references/link"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-6">
+    <h1 class="text-4xl text-display font-bold lg:text-5xl">Build Custom Web UIs</h1>
+    <h1 class="text-3xl font-semibold text-title">Title for Headings</h1>
+
+    <p class="text-body">
+        Highly <a href="https://tailus.io" class="link variant-underlined intent-primary" target="_blank" rel="noopener noreferrer">customizable components</a> for building <strong class="text-title">modern</strong> websites and <em class="text-title">applications</em> that look and feel the way you want.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-title">Title 2 for Headings</h2>
+    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    
+    <ul class="list-inside list-disc space-y-2">
+        <li>Modern</li>
+        <li>Customizable</li>
+        <li>Responsive</li>
+        <li>Accessible</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold text-title">Title 3 for Headings</h3>
+    <blockquote class="text-blockquote">Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.</blockquote>
+    
+    <div class="grid gap-3 items-center [grid-template-columns:auto_1fr]">
+        <div class="avatar sz-lg">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" />
+        </div>
+        <div>
+            <p class="text-title">Méschac Irung</p>
+            <span class="block text-caption text-sm">Créator of Tailus UI</span>
+        </div>
+    </div>
+
+    <h4 class="text-lg font-medium text-title">Title 4 for Headings</h4>
+    <h5 class="text-base font-medium text-title">Title 5 for Headings</h5>
+    <h6 class="text-base font-medium text-title">Title 6 for Headings</h6>
+
+    <div className="flex items-end gap-3">
+        <code className="code intent-primary">Code</code>
+        <kbd className="kbd">Kbd</kbd>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+
+        <div class="space-y-6">
+            <span class="text-4xl text-display font-bold lg:text-5xl">Build Custom Web UIs</span>
+            <h1 class="text-3xl font-semibold text-title">Title for Headings</h1>
+            <p class="text-body">
+                Highly <a href="https://tailus.io" class="link variant-underlined intent-primary" target="_blank" rel="noopener noreferrer">customizable components</a> for building <strong class="text-title">modern</strong> websites and <em class="text-title">applications</em> that look and feel the way you want.
+            </p>
+            <h2 class="text-2xl font-semibold text-title">Title 2 for Headings</h2>
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+            <ul class="list-inside list-disc space-y-2">
+                <li>Modern</li>
+                <li>Customizable</li>
+                <li>Responsive</li>
+                <li>Accessible</li>
+            </ul>
+            <h3 class="text-xl font-semibold text-title">Title 3 for Headings</h3>
+            <blockquote class="text-blockquote">Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.</blockquote>
+            
+            <div class="grid gap-3 items-center [grid-template-columns:auto_1fr]">
+                <div class="avatar sz-lg">
+                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" />
+                </div>
+                <div>
+                    <p class="text-title">Méschac Irung</p>
+                    <span class="block text-caption text-sm">Créator of Tailus UI</span>
+                </div>
+            </div>
+
+            <h4 class="text-lg font-medium text-title">Title 4 for Headings</h4>
+            <h5 class="text-base font-medium text-title">Title 5 for Headings</h5>
+            <h6 class="text-base font-medium text-title">Title 6 for Headings</h6>
+            <div className="flex items-end gap-3">
+                <code className="code variant-primary">Code</code>
+                <kbd className="kbd">Kbd</kbd>
+            </div>
+        </div>
+    </PreviewBlock>
+
+    <div>
+        ## Display
+
+        A title designed for prominent display at large sizes, specifically for use in the hero section of a webpage.
+    
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-6">
+    <h1 class="text-4xl text-display font-bold lg:text-5xl">Build Custom Web UIs</h1>
+    <h1 class="text-4xl text-display font-bold lg:text-5xl">Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-400">Custom</span> Web UIs</h1>
+</div>`,
+              lang: "html"
+          }]}>
+
+            <div class="space-y-6">
+                <span class="text-4xl block text-display font-bold lg:text-5xl">Build Custom Web UIs</span>
+                <span class="text-4xl block text-display font-bold lg:text-5xl">Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-400">Custom</span> Web UIs</span>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Title
+
+        Titles (Headings) create a layered system, highlighting key points within the content.
+    
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-6">
+    <h1 class="text-3xl font-semibold text-title">Heading 1</h1>
+    <h2 class="text-2xl font-semibold text-title">Heading 2</h2>
+    <h3 class="text-xl font-semibold text-title">Heading 3</h3>
+    <h4 class="text-lg font-medium text-title">Heading 4</h4>
+    <h5 class="text-base font-medium text-title">Heading 5</h5>
+    <h6 class="text-base font-medium text-title">Heading 6</h6>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="space-y-6">
+                <h1 class="text-3xl font-semibold text-title">Heading 1</h1>
+                <h2 class="text-2xl font-semibold text-title">Heading 2</h2>
+                <h3 class="text-xl font-semibold text-title">Heading 3</h3>
+                <h4 class="text-lg font-medium text-title">Heading 4</h4>
+                <h5 class="text-base font-medium text-title">Heading 5</h5>
+                <h6 class="text-base font-medium text-title">Heading 6</h6>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Text
+
+        The body text elaborates on the structure outlined by titles, providing depth and explanation.
+    
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<p class="text-body">
+    Tailus Themer is a Tailwind CSS <strong class="text-title">Styling Library</strong> for Building Modern, Consistent and Accessible <em class="text-title">Web UIs</em>.
+</p>`,
+              lang: "html"
+          }]}>
+            <div class="space-y-6 max-w-xs">
+                <p class="text-body">
+                    Tailus Themer is a Tailwind CSS <strong class="text-title">Styling Library</strong> for Building Modern, Consistent and Accessible <em class="text-title">Web UIs</em>.
+                </p>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Blockquote
+
+        The body text elaborates on the structure outlined by titles, providing depth and explanation.
+    
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<blockquote class="text-blockquote">Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.</blockquote>`,
+                lang: "html"
+            }]}
+        >
+            <blockquote class="text-blockquote max-w-sm">Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.</blockquote>
+        </PreviewBlock>
+    </div>
+
+
+    <div>
+        ## List
+
+        Bullet points and numbered lists organize content in a hierarchical fashion, highlighting key elements efficiently.
+    
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-6 max-w-xs">
+    <ul class="list-inside list-disc space-y-2">
+        <li>Modern</li>
+        <li>Customizable</li>
+        <li>Responsive</li>
+        <li>Accessible</li>
+    </ul>
+
+    <ol class="list-inside list-decimal space-y-2">
+        <li>Modern</li>
+        <li>Customizable</li>
+        <li>Responsive</li>
+        <li>Accessible</li>
+    </ol>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="space-y-6 max-w-xs">
+                <ul class="list-inside list-disc space-y-2">
+                    <li>Modern</li>
+                    <li>Customizable</li>
+                    <li>Responsive</li>
+                    <li>Accessible</li>
+                </ul>
+
+                <ol class="list-inside list-decimal space-y-2">
+                    <li>Modern</li>
+                    <li>Customizable</li>
+                    <li>Responsive</li>
+                    <li>Accessible</li>
+                </ol>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Link
+
+        Hyperlinks create a web of information, allowing readers to explore related topics in more detail.
+    
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-3 *:block">
+    <a class="link intent-primary" href="#">Tailus UI React</a>
+    <a class="link variant-ghost intent-primary" href="#">Tailus UI React</a>
+    <a class="link variant-animated intent-primary" href="#">Tailus UI React</a>
+</div>`,
+              lang: "html"
+          }]}>
+                <div class="space-y-3 *:block">
+                    <a class="link intent-primary" href="#">Tailus UI React</a>
+                    <a class="link variant-ghost intent-primary" href="#">Tailus UI React</a>
+                    <a class="link variant-animated intent-primary" href="#">Tailus UI React</a>
+                </div>
+        </PreviewBlock>
+
+        <div class="mt-12"> 
+            ### Link props
+
+            Component prop classes of the link element
+
+            <Table data={link} />
+        </div>
+    </div>
+
+    <div>
+        ## Caption
+
+        Captions provide details about images and figures, supplementing the main content and highlighting key visual elements.
+    
+        <PreviewBlock codeBlocks={[{code:`<span class="text-caption">Creator of Tailus UI</span>`,lang: "html"}]}>
+            <span class="text-caption">Creator of Tailus UI</span>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Code
+
+        Code formatted inline highlights specific programming language elements within the surrounding text.
+    
+        <PreviewBlock codeBlocks={[{
+            code: `<div class="space-y-3 *:w-fit *:block">
+    <code class="code variant-primary">primary</code>
+    <code class="code variant-gray">gray</code>
+    <code class="code variant-neutral">neutral</code>
+</div>`,
+            lang: "html"
+        }]}>
+            <div class="space-y-3 *:w-fit *:block">
+                <code class="code variant-primary">primary</code>
+                <code class="code variant-gray">gray</code>
+                <code class="code variant-neutral">neutral</code>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Kbd
+
+        Useful for showcasing keyboard shortcuts or other keyboard-based commands.
+    
+        <PreviewBlock codeBlocks={[{code:`<kbd class="kbd">⌘ K</kbd>`,lang: "html"}]}>
+            <kbd class="kbd">⌘ K</kbd>
+        </PreviewBlock>
+    </div>
+</div>

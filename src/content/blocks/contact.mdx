@@ -1,0 +1,28 @@
+---
+title: Contact
+description: Provides users with information on how to reach the organization, including contact forms, phone numbers, email addresses.
+priorityOrder : 15
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { oneCode } from "@blocks/contact/one"
+import { twoCode } from "@blocks/contact/two"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="One"
+    src="/blocks-preview/contact/one"
+    code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Two"
+    src="/blocks-preview/contact/two"
+    code={twoCode}
+    client:visible
+/>

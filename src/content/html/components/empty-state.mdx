@@ -1,0 +1,47 @@
+---
+title: Empty State
+description: Also known as a blank state, the empty state is basically a screen you encounter when there's no data to display.
+priorityOrder : 17
+badge : new
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="max-w-xl mx-auto">
+    <img class="size-20 mx-auto" src="https://html.tailus.io/empty/files.png" alt="empty folder" width="560" height="560" loading="eager"/>
+
+    <div class="mt-6 text-center">
+        <h1 class="text-title font-semibold text-lg">You don’t seem to have any folder</h1>
+        <p class="max-w-xs mx-auto text-body mt-2 mb-6 text-sm">Basically a screen you encounter when there’s no data to display.</p>
+
+        <button class="btn variant-outlined sz-sm mx-auto">
+            <span class="btn-label">Add new folder</span>
+        </button>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <div class="max-w-xl mx-auto">
+            <img class="h-24 w-fit mx-auto" src="/empty/files.png" alt="files illustration" width="560" height="560" loading="eager"/>
+
+            <div className="mt-6 text-center">
+                <h1 class="text-title font-semibold text-lg">You don’t seem to have any folder</h1>
+                <p class="max-w-xs mx-auto text-body mt-2 mb-6 text-sm">Basically a screen you encounter when there’s no data to display.</p>
+
+                <button class="btn variant-outlined sz-sm mx-auto">
+                    <span class="btn-label">Create a file</span>
+                </button>
+            </div>
+        </div>
+    </PreviewBlock>
+</div>

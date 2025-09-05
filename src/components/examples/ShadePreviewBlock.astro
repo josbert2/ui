@@ -1,0 +1,40 @@
+---
+import PreviewBlock from '@components/PreviewBlock.astro'
+import { Title, Text } from '@tailus-ui/typography'
+import Button from '@tailus-ui/Button'
+
+const shades = ['glassy', '800', '900', '950']
+---
+
+<>
+    {
+        shades.map((shade) => {
+            return (
+                <div class="space-y-6 group">
+                    <Title as="h3" size="base" weight="medium" id={shade} className="capitalize">
+                        {shade}
+                    </Title>
+                    <PreviewBlock codeBlocks={[{ code: `<html data-shade="${shade}" >`, lang: 'html' }]}>
+                        <div class="size-20 absolute inset-0 m-auto bg-gradient-to-b from-success-500 to-info-400 rounded-full" />
+                        <div data-shade={shade} class="my-6 relative max-w-[18rem] p-[--feedback-padding] border feedback-shadow rounded-[--card-radius] feedback-bg group-last:fancy-border">
+                            <Title as="h4" size="base" align="center" weight="medium">
+                                Delete Item
+                            </Title>
+                            <Text align="center" className="mt-3">
+                                This photo will be deleted from your iCloud Photos.
+                            </Text>
+                            <div class="overflow-hidden rounded-b-[--card-radius] -mx-[--feedback-padding] -mb-[--feedback-padding] flex border-t divide-x">
+                                <Button.Root size="lg" className="rounded-none w-1/2" variant="ghost" intent="gray">
+                                    <Button.Label>Cancel</Button.Label>
+                                </Button.Root>
+                                <Button.Root size="lg" className="rounded-none w-1/2" variant="ghost" intent="danger">
+                                    <Button.Label>Delete</Button.Label>
+                                </Button.Root>
+                            </div>
+                        </div>
+                    </PreviewBlock>
+                </div>
+            )
+        })
+    }
+</>

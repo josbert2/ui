@@ -1,0 +1,64 @@
+---
+title: Datatable
+description: A table that displays data in a grid format.
+priorityOrder : 18
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+import DataTableWithExport from "@components/datatables/datatable-with-export"
+import ComponentsPreviewCheck from '@components/ComponentsPreviewCheck.astro';
+
+
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+  <style>{`
+    .dt-layout-row:has(.dt-search),
+    .dt-layout-row:has(.dt-length),
+    .dt-layout-row:has(.dt-paging),
+    .dt-scroll-body thead
+    {
+      display: none !important;
+    }
+  `}</style>
+
+
+    ## Datatable with export
+
+    <ComponentsPreviewCheck 
+      template={1}
+      folder="datatables" 
+      name="datatable-with-export" 
+    />
+
+   
+   
+
+    <script  src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script  src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script  src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.html5.min.js"></script>
+    
+    <script is:inline src="../../../../flyonui/flyonui.js"></script>
+
+
+    
+
+  <script>{`
+   
+  `}</script>
+
+
+   
+</div>

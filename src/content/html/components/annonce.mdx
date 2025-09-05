@@ -1,0 +1,136 @@
+---
+title: Annonce
+description: The annonce component is used to display an announcement on top of the hero section.
+priorityOrder : 9
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import { root, concern } from "@lib/references/annonce"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+    <span class="annonce-concern sz-xs variant-primary">New</span>
+    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+</a>`,
+              lang: "html"
+          }]}>
+        <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+            <span class="annonce-concern sz-xs variant-primary">New</span>
+            <span class="text-title text-sm">Introduction Tailus UI Html</span>
+        </a>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 space-y-12 mb-12"> 
+            <div>
+                ### Root 
+
+                The parent component of the `Annonce` component
+
+                <Table data={root} />
+            </div>
+
+            <div>
+                ### Concern
+
+                The subject of the announcement
+
+                <Table data={concern} />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Root variants
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-6">
+    <a href="#" class="annonce gap-2 sz-sm w-fit mx-auto">
+        <span class="annonce-concern sz-xs variant-primary">New</span>
+        <span class="text-title text-sm">Introduction Tailus UI Html</span>
+    </a>
+
+    <a href="#" class="annonce variant-outlined gap-2 sz-sm w-fit mx-auto">
+        <span class="annonce-concern sz-xs variant-primary">New</span>
+        <span class="text-title text-sm">Introduction Tailus UI Html</span>
+    </a>
+
+    <a href="#" class="annonce variant-soft gap-2 sz-sm w-fit mx-auto">
+        <span class="annonce-concern sz-xs variant-primary">New</span>
+        <span class="text-title text-sm">Introduction Tailus UI Html</span>
+    </a>
+
+    <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+        <span class="annonce-concern sz-xs variant-primary">New</span>
+        <span class="text-title text-sm">Introduction Tailus UI Html</span>
+    </a>
+</div>`,
+              lang: "html"
+          }]}>
+
+            <div class="space-y-6" data-shade="900">
+                <a href="#" class="annonce gap-2 sz-sm w-fit mx-auto">
+                    <span class="annonce-concern sz-xs variant-primary">New</span>
+                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                </a>
+
+                <a href="#" class="annonce variant-outlined gap-2 sz-sm w-fit mx-auto">
+                    <span class="annonce-concern sz-xs variant-primary">New</span>
+                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                </a>
+
+                <a href="#" class="annonce variant-soft gap-2 sz-sm w-fit mx-auto">
+                    <span class="annonce-concern sz-xs variant-primary">New</span>
+                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                </a>
+
+                <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+                    <span class="annonce-concern sz-xs variant-primary">New</span>
+                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                </a>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Concern variants
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-6">
+    <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+        <span class="annonce-concern sz-xs variant-primary">New</span>
+        <span class="text-title text-sm">Introduction Tailus UI Html</span>
+    </a>
+
+    <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+        <span class="annonce-concern sz-xs variant-neutral">New</span>
+        <span class="text-title text-sm">Introduction Tailus UI Html</span>
+    </a>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="space-y-6" data-shade="900">
+                <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+                    <span class="annonce-concern sz-xs variant-primary">New</span>
+                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                </a>
+
+                <a href="#" class="annonce variant-mixed gap-2 sz-sm w-fit mx-auto">
+                    <span class="annonce-concern sz-xs variant-neutral">New</span>
+                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                </a>
+            </div>
+        </PreviewBlock>
+    </div>
+</div>
+

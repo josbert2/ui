@@ -1,0 +1,679 @@
+---
+title: Table
+description: A table component to display data in a tabular format.
+priorityOrder : 24
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR, BERNARD_AVATAR, THEO_AVATAR, GLODIE_AVATAR } from "src/const"
+
+
+import CodeHightLight from '@components/CodeHightLight';
+import TableDefault from "@components/tables/table.astro"
+
+
+export const components = {
+    ..._components
+}
+
+
+
+<div className="space-y-20" data-theme="dark">
+ 
+  <PreviewBlock codeBlocks={[{ code: `<TableDefault />`, lang: "html" }]}>
+    <TableDefault />
+</PreviewBlock>
+
+ <CodeHightLight 
+      client:visible
+      codeBlocks={[
+        {
+          code: `<TableDefault />`,
+          lang: "jsx"
+        },
+      ]}
+    >
+      {/* Aquí va el componente que deseas renderizar */}
+      <TableDefault />
+    </CodeHightLight>
+
+    <div>
+        ## Comparator
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="overflow-auto w-full lg:overflow-visible">
+    <table class="border-separate border-spacing-x-3 table-auto md:max-w-xl w-max md:w-full dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+        <thead class="text-title sticky top-0 bg-white dark:bg-gray-925">
+            <tr class="*:font-medium *:py-4 *:text-left">
+                <th></th>
+                <th class="space-y-2">
+                    <span>Free</span>
+                    <a href="#" class="btn variant-soft intent-gray sz-xs w-fit">Get Started </a>
+                </th>
+                <th class="space-y-2 px-4 bg-ui-soft rounded-t-[--card-radius]">
+                    <span>Pro</span>
+                    <a href="#" class="btn variant-solid intent-primary sz-xs w-fit">Get Started </a>
+                </th>
+                <th class="space-y-2">
+                    <span>Startup</span>
+                    <a href="#" class="btn variant-soft intent-gray sz-xs w-fit">Get Started </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="text-sm text-caption">
+            <tr class="*:py-2">
+                <td class="text-title font-medium">Features</td>
+                <td></td>
+                <td class="bg-ui-soft px-4 border-none"></td>
+                <td></td>
+            </tr>
+            <tr class="*:py-2 *:border-b">
+                <td>Feature 1</td>
+                <td class="text-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+                <td class="bg-ui-soft text-title px-4 border-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+                <td class="text-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+            </tr>
+            <tr class="*:py-2 *:border-b">
+                <td>Feature 2</td>
+                <td class="text-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+                <td class="bg-ui-soft text-title px-4 border-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+                <td class="text-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+            </tr>
+            <tr class="*:py-2 *:border-b">
+                <td>Feature 3</td>
+                <td></td>
+                <td class="bg-ui-soft text-title px-4 border-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+                <td class="text-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                    </svg>
+                </td>
+            </tr>
+            <tr class="*:pb-2 *:pt-4">
+                <td class="text-title font-medium">Reporting</td>
+                <td></td>
+                <td class="bg-ui-soft"></td>
+                <td></td>
+            </tr>
+            <tr class="*:py-2 *:border-b *:text-sm">
+                <td>Tokens</td>
+                <td></td>
+                <td class="bg-ui-soft text-title px-4 border-none">20 Users</td>
+                <td class="text-title">Unlimited</td>
+            </tr>
+            <tr class="*:py-2 *:border-b *:text-sm">
+                <td>Video calls</td>
+                <td></td>
+                <td class="bg-ui-soft text-title px-4 border-none">12 Weeks</td>
+                <td class="text-title">56</td>
+            </tr>
+            <tr class="*:pb-2 *:pt-4">
+                <td class="text-title font-medium">Support</td>
+                <td></td>
+                <td class="bg-ui-soft"></td>
+                <td></td>
+            </tr>
+            <tr class="*:py-2 *:border-b *:text-sm">
+                <td>Tokens</td>
+                <td></td>
+                <td class="bg-ui-soft text-title px-4 border-none">Secondes</td>
+                <td class="text-title">Unlimited</td>
+            </tr>
+            <tr class="*:py-2 *:border-b *:text-sm">
+                <td>Video calls</td>
+                <td></td>
+                <td class="bg-ui-soft text-title px-4 border-none">Hours</td>
+                <td class="text-title">56</td>
+            </tr>
+            <tr class="*:py-4 *:text-sm">
+                <td></td>
+                <td></td>
+                <td class="bg-ui-soft border-none rounded-b-[--card-radius]"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="overflow-auto w-full lg:overflow-visible">
+                <table class="border-separate border-spacing-x-3 table-auto md:max-w-xl w-max md:w-full dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                    <thead class="text-title sticky top-0 bg-white dark:bg-gray-925">
+                        <tr class="*:font-medium *:py-4 *:text-left">
+                            <th></th>
+                            <th class="space-y-2">
+                                <span>Free</span>
+                                <a href="#" class="btn variant-soft intent-gray sz-xs w-fit">Get Started </a>
+                            </th>
+                            <th class="space-y-2 px-4 bg-ui-soft rounded-t-[--card-radius]">
+                                <span>Pro</span>
+                                <a href="#" class="btn variant-primary sz-xs w-fit">Get Started </a>
+                            </th>
+                            <th class="space-y-2">
+                                <span>Startup</span>
+                                <a href="#" class="btn variant-soft intent-gray sz-xs w-fit">Get Started </a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-caption">
+                        <tr class="*:py-2">
+                            <td class="text-title font-medium">Features</td>
+                            <td></td>
+                            <td class="bg-ui-soft px-4 border-none"></td>
+                            <td></td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b">
+                            <td>Feature 1</td>
+                            <td class="text-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                            <td class="bg-ui-soft text-title px-4 border-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                            <td class="text-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b">
+                            <td>Feature 2</td>
+                            <td class="text-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                            <td class="bg-ui-soft text-title px-4 border-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                            <td class="text-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b">
+                            <td>Feature 3</td>
+                            <td></td>
+                            <td class="bg-ui-soft text-title px-4 border-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                            <td class="text-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr class="*:pb-2 *:pt-4">
+                            <td class="text-title font-medium">Reporting</td>
+                            <td></td>
+                            <td class="bg-ui-soft"></td>
+                            <td></td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b *:text-sm">
+                            <td>Tokens</td>
+                            <td></td>
+                            <td class="bg-ui-soft text-title px-4 border-none">20 Users</td>
+                            <td class="text-title">Unlimited</td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b *:text-sm">
+                            <td>Video calls</td>
+                            <td></td>
+                            <td class="bg-ui-soft text-title px-4 border-none">12 Weeks</td>
+                            <td class="text-title">56</td>
+                        </tr>
+                        <tr class="*:pb-2 *:pt-4">
+                            <td class="text-title font-medium">Support</td>
+                            <td></td>
+                            <td class="bg-ui-soft"></td>
+                            <td></td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b *:text-sm">
+                            <td>Tokens</td>
+                            <td></td>
+                            <td class="bg-ui-soft text-title px-4 border-none">Secondes</td>
+                            <td class="text-title">Unlimited</td>
+                        </tr>
+                        <tr class="*:py-2 *:border-b *:text-sm">
+                            <td>Video calls</td>
+                            <td></td>
+                            <td class="bg-ui-soft text-title px-4 border-none">Hours</td>
+                            <td class="text-title">56</td>
+                        </tr>
+                        <tr class="*:py-4 *:text-sm">
+                            <td></td>
+                            <td></td>
+                            <td class="bg-ui-soft border-none rounded-b-[--card-radius]"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Customers
+        
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="overflow-auto card variant-mixed w-full lg:overflow-clip">
+    <div class="mb-6">
+        <h2 class="text-title font-medium">Customers</h2>
+        <p class="text-sm mt-1">New users by First user primary channel group (Default Channel Group)</p>
+    </div>
+    <table class="border-collapse table-auto w-max dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+        <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
+            <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
+                <th class="rounded-l-[--card-radius]">#</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th class="rounded-r-[--card-radius]">Revenue</th>
+            </tr>
+        </thead>
+        <tbody class="text-sm">
+            <tr class="*:p-3 *:border-b">
+                <td>1</td>
+                <td>10/31/2023</td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height=""/>
+                        </div>
+                        <span>Bernard Ng</span>
+                    </div>
+                </td>
+                <td>Ampire Ess</td>
+                <td>$43.99</td>
+            </tr>
+            <tr class="*:p-3 *:border-b">
+                <td>2</td>
+                <td>10/21/2023</td>
+                <td><span class="badge variant-neutral sz-xs">Ref</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height=""/>
+                        </div>
+                        <span>Méschac Irung</span>
+                    </div>
+                </td>
+                <td>Astrolus H</td>
+                <td>$19.99</td>
+            </tr>
+            <tr class="*:p-3 *:border-b">
+                <td>3</td>
+                <td>05/21/2023</td>
+                <td><span class="badge variant-danger sz-xs">Can</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={THEO_AVATAR} alt="Théo Balick" width="" height=""/>
+                        </div>
+                        <span>Théo Balick</span>
+                    </div>
+                </td>
+                <td>Alt Next</td>
+                <td>$59.99</td>
+            </tr>
+            <tr class="*:p-3 *:border-b">
+                <td>4</td>
+                <td>05/21/2023</td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height=""/>
+                        </div>
+                        <span>Glodie Lukose</span>
+                    </div>
+                </td>
+                <td>Radiant</td>
+                <td>$29.99</td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="overflow-auto card variant-mixed w-full lg:overflow-clip">
+                <div class="mb-6">
+                    <h2 class="text-title font-medium">Customers</h2>
+                    <p class="text-sm mt-1">New users by First user primary channel group (Default Channel Group)</p>
+                </div>
+                <table class="border-collapse table-auto w-max dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                    <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
+                        <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
+                            <th class="rounded-l-[--card-radius]">#</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th class="rounded-r-[--card-radius]">Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="*:p-3 *:border-b">
+                            <td>1</td>
+                            <td>10/31/2023</td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height=""/>
+                                    </div>
+                                    <span>Bernard Ng</span>
+                                </div>
+                            </td>
+                            <td>Ampire Ess</td>
+                            <td>$43.99</td>
+                        </tr>
+                        <tr class="*:p-3 *:border-b">
+                            <td>2</td>
+                            <td>10/21/2023</td>
+                            <td><span class="badge variant-neutral sz-xs">Ref</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height=""/>
+                                    </div>
+                                    <span>Méschac Irung</span>
+                                </div>
+                            </td>
+                            <td>Astrolus H</td>
+                            <td>$19.99</td>
+                        </tr>
+                        <tr class="*:p-3 *:border-b">
+                            <td>3</td>
+                            <td>05/21/2023</td>
+                            <td><span class="badge variant-danger sz-xs">Can</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={THEO_AVATAR} alt="Théo Balick" width="" height=""/>
+                                    </div>
+                                    <span>Théo Balick</span>
+                                </div>
+                            </td>
+                            <td>Alt Next</td>
+                            <td>$59.99</td>
+                        </tr>
+                        <tr class="*:p-3 *:border-b">
+                            <td>4</td>
+                            <td>05/21/2023</td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height=""/>
+                                    </div>
+                                    <span>Glodie Lukose</span>
+                                </div>
+                            </td>
+                            <td>Radiant</td>
+                            <td>$29.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## With chexkbox
+        
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="overflow-auto card variant-mixed w-full lg:overflow-clip">
+    <div class="mb-6">
+        <h2 class="text-title font-medium">Customers</h2>
+        <p class="text-sm mt-1">New users by First user primary channel group (Default Channel Group)</p>
+    </div>
+    <table class="border-collapse table-auto w-max dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+        <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
+            <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
+                <th class="rounded-l-[--card-radius]">#</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th class="rounded-r-[--card-radius]">Revenue</th>
+            </tr>
+        </thead>
+        <tbody class="text-sm pt-1 [--ui-soft-bg:theme(colors.gray.50)] dark:[--ui-soft-bg:theme(colors.gray.925)]">
+            <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c11" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c11" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
+                <td>10/31/2023</td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height=""/>
+                        </div>
+                        <span>Bernard Ng</span>
+                    </div>
+                </td>
+                <td>Ampire Ess</td>
+                <td>$43.99</td>
+            </tr>
+            <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c12" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c12" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
+                <td>10/21/2023</td>
+                <td><span class="badge variant-neutral sz-xs">Ref</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height=""/>
+                        </div>
+                        <span>Méschac Irung</span>
+                    </div>
+                </td>
+                <td>Astrolus H</td>
+                <td>$19.99</td>
+            </tr>
+            <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c13" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c13" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
+                <td>05/21/2023</td>
+                <td><span class="badge variant-danger sz-xs">Can</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={THEO_AVATAR} alt="Théo Balick" width="" height=""/>
+                        </div>
+                        <span>Théo Balick</span>
+                    </div>
+                </td>
+                <td>Alt Next</td>
+                <td>$59.99</td>
+            </tr>
+            <tr class="rounded-card *:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c14" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c14" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
+                <td>05/21/2023</td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
+                <td>
+                    <div class="flex items-center gap-2 text-title">
+                        <div class="avatar sz-xxs">
+                            <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height=""/>
+                        </div>
+                        <span>Glodie Lukose</span>
+                    </div>
+                </td>
+                <td>Radiant</td>
+                <td>$29.99</td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="overflow-auto card variant-mixed w-full lg:overflow-clip">
+                <div class="mb-6">
+                    <h2 class="text-title font-medium">Customers</h2>
+                    <p class="text-sm mt-1">New users by First user primary channel group (Default Channel Group)</p>
+                </div>
+                <table class="border-collapse table-auto w-max dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                    <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
+                        <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
+                            <th class="rounded-l-[--card-radius]">
+                                <label for="c1" class="checkbox group size-4">
+                                    <input class="peer" type="checkbox" id="c1" name="checkbox1" />
+                                    <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </label>
+                            </th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th class="rounded-r-[--card-radius]">Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm pt-1 [--ui-soft-bg:theme(colors.gray.50)] dark:[--ui-soft-bg:theme(colors.gray.925)]">
+                        <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                            <td>
+                                <label for="c11" class="checkbox group size-4">
+                                    <input class="peer" type="checkbox" id="c11" name="checkbox1" />
+                                    <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </label>
+                            </td>
+                            <td>10/31/2023</td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height=""/>
+                                    </div>
+                                    <span>Bernard Ng</span>
+                                </div>
+                            </td>
+                            <td>Ampire Ess</td>
+                            <td>$43.99</td>
+                        </tr>
+                        <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                            <td>
+                                <label for="c12" class="checkbox group size-4">
+                                    <input class="peer" type="checkbox" id="c12" name="checkbox1" />
+                                    <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </label>
+                            </td>
+                            <td>10/21/2023</td>
+                            <td><span class="badge variant-neutral sz-xs">Ref</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height=""/>
+                                    </div>
+                                    <span>Méschac Irung</span>
+                                </div>
+                            </td>
+                            <td>Astrolus H</td>
+                            <td>$19.99</td>
+                        </tr>
+                        <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                            <td>
+                                <label for="c13" class="checkbox group size-4">
+                                    <input class="peer" type="checkbox" id="c13" name="checkbox1" />
+                                    <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </label>
+                            </td>
+                            <td>05/21/2023</td>
+                            <td><span class="badge variant-danger sz-xs">Can</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={THEO_AVATAR} alt="Théo Balick" width="" height=""/>
+                                    </div>
+                                    <span>Théo Balick</span>
+                                </div>
+                            </td>
+                            <td>Alt Next</td>
+                            <td>$59.99</td>
+                        </tr>
+                        <tr class="rounded-card *:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                            <td>
+                                <label for="c14" class="checkbox group size-4">
+                                    <input class="peer" type="checkbox" id="c14" name="checkbox1" />
+                                    <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </label>
+                            </td>
+                            <td>05/21/2023</td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
+                            <td>
+                                <div class="flex items-center gap-2 text-title">
+                                    <div class="avatar sz-xxs">
+                                        <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height=""/>
+                                    </div>
+                                    <span>Glodie Lukose</span>
+                                </div>
+                            </td>
+                            <td>Radiant</td>
+                            <td>$29.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </PreviewBlock>
+    </div>
+</div>

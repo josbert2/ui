@@ -1,0 +1,258 @@
+---
+title: Theming
+description: Learn how to configure your theme
+priorityOrder : 5
+---
+
+import _components from "@content/_components"
+import DocsCodeStep from "@components/DocsCodeStep"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+
+export const components = {
+    ..._components
+}
+
+export const configCode = `module.exports = {
+    content: [
+        './*.html',
+        "./src/**/*.{html,js}"
+    ],
+    theme: {
+        extend: {
+            colors: ({ colors }) => ({
+                primary : colors.indigo,
+                danger : colors.rose,
+                warning : colors.yellow,
+                success : colors.lime,
+                info : colors.blue,
+                gray : colors.zinc,
+            }),
+        }
+    }
+};`
+
+export const config = {
+    code: configCode,
+    lang: "ts",
+    highlightedLines:"8-14",
+}
+
+export const palette = [
+    {
+        code: `import { palettes } from "@tailus/themer-plugins"`,
+        lang: "ts",
+    },
+    {
+    code: `theme: {
+    extend: {
+        colors: palettes.trust,
+    }
+}`,
+    lang: "ts",
+    highlightedLines : "3"
+  }
+]
+
+export const rounded = [
+    {
+        code: '<html data-rounded="large" >',
+        lang : "html"
+    }
+]
+
+export const shade = [
+    {
+        code: '<html data-rounded="large" data-shade="900" >',
+        lang : "html"
+    }
+]
+
+export const paddingVars = {
+    code: `@layer base {
+    :root {
+        --card-padding: theme("spacing[6]");
+    }
+}`,
+    lang: "css",
+}
+
+export const colorsVars = {
+    code: `@layer base {
+    :root {
+        --display-text-color: theme(colors.gray.950);
+        --title-text-color: var(--display-text-color);
+        --caption-text-color: theme(colors.gray.500);
+        --body-text-color: theme(colors.gray.700);
+        --placeholder-text-color: theme(colors.gray.400);
+    }
+}`,
+    lang: "css",
+}
+
+export const darkVars = {
+    code: `@layer base {
+    .dark {
+        --display-text-color: theme(colors.white);
+        --title-text-color: var(--display-text-color);
+        --caption-text-color: theme(colors.gray.500);
+        --body-text-color: theme(colors.gray.300);
+        --placeholder-text-color: theme(colors.gray.600);
+    }
+}`,
+    lang: "css",
+}
+
+export const mediaDarkVars = {
+    code: `@layer base {
+    :root {
+
+        // ...colors on light mode
+
+        @media(prefers-color-scheme:dark){
+            --display-text-color: theme(colors.white);
+            --title-text-color: var(--display-text-color);
+            --caption-text-color: theme(colors.gray.500);
+            --body-text-color: theme(colors.gray.300);
+            --placeholder-text-color: theme(colors.gray.600);
+        }
+    }
+}`,
+    lang: "css",
+}
+
+export const animations = [
+    {
+        code: `import { palettes, rounded, shade, components, animations } from "@tailus/themer-plugins"`,
+        lang: "ts",
+    },
+    {
+    code: `theme: {
+    extend: {
+        colors: palettes.trust,
+    }
+},
+plugins : [
+    rounded,
+    shade,
+    components,
+    animations
+]`,
+    lang: "ts",
+    highlightedLines : "10"
+    }
+]
+
+export const visualizations = {
+    code: `@layer base {
+    :root {
+        --area-primary-stroke: theme(colors.primary.600);
+        --area-secondary-stroke: theme(colors.secondary.600);
+        --area-accent-stroke: theme(colors.accent.600);
+        --area-gray-stroke: theme(colors.gray.600);
+        --area-neutral-stroke: theme(colors.gray.950);
+    }
+}`,
+    lang: "css",
+}
+
+<div className="space-y-20">
+    <div>
+        To configure your theme, you'll need to use Tailwind Css config file, `data-attributes` and css variables to style the overal UI or specific components.
+    </div>
+
+    <div>
+        ## Palette
+
+        Use your own colors or kickstart your project with default tailwindcss colors
+        
+        <CodeSnippet {...config} client:visible />
+
+        The curated palettes are:
+        - `trust`
+        - `oz`
+        - `mystery`
+        - `passion`
+        - `energy`
+        - `nature`
+        - `spring`
+        - `winter`
+        - `romance`
+
+        Learn more about customizing the palette on the [Palette](/theming/palette) page.
+    </div>
+    <div>
+        ## Border Radius
+
+        Apply the border radius using the `data-rounded` attribute, preferably on the `<html>` element.
+
+        <DocsStackedSnippets snippets={rounded} client:visible />
+        
+        The `data-rounded` attribute accepts the following values :
+
+        - `none`
+        - `default`
+        - `small`
+        - `medium`
+        - `large`
+        - `xlarge`
+        - `2xlarge`
+        - `3xlarge`
+        - `full`
+
+        Learn more about customizing the border radius on the [Rounded](/theming/rounded) page.
+    </div>
+
+    <div>
+        ## Shade
+
+        Adjust the background and border colors of your components using the `data-shade` attribute. This change is more noticeable in dark mode.
+
+        <DocsStackedSnippets snippets={shade} client:visible />
+
+        The available shades are:
+
+        -   `800`
+        -   `900`
+        -   `925`
+        -   `950`
+        -   `glassy`
+
+        Learn more about customizing the shades on the [Shade](/theming/shade) page.
+    </div>
+
+    <div>
+        ## Padding and Typography
+        
+        You can adjust the padding and text colors of your components using CSS variables. 
+
+        <div className="space-y-12 mt-12">
+            <div>
+                ### Padding variables
+                
+                Define the padding CSS variables in your CSS file by assigning them values within the `:root` selector. Make sure to place these definitions inside the `@layer` base block for proper layering.
+            
+                <CodeSnippet {...paddingVars} client:visible />
+            </div>
+
+            <div>
+                ### Text color variables
+
+                Define the text colors CSS variables in your CSS file by assigning them values within the `:root` selector. Make sure to place these definitions inside the `@layer` base block for proper layering.
+                <CodeSnippet {...colorsVars} client:visible />
+            </div>
+        </div>
+
+        Although you can assign any values to the CSS variables, we suggest using the `theme` function to access values from the `theme` object in your `tailwind.config.ts` file. This approach promotes consistency across your styles.
+        
+        #### Dark mode
+
+        Setting text colors in dark mode depends on your chosen implementation. 
+        
+        If you're using the `class` method (now replaced with `selector`), create a `.dark` class and assign the CSS variables there. 
+        <CodeSnippet {...darkVars} client:visible />
+
+        If you're using the `media` method, add the CSS variables within the `@media (prefers-color-scheme: dark)` block.
+        <CodeSnippet {...mediaDarkVars} client:visible />
+    </div>
+</div>

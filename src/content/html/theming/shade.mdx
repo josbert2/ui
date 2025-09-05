@@ -1,0 +1,140 @@
+---
+title: Shade
+description: Learn how to set and customize the shade of your theme.
+priorityOrder : 8
+---
+
+import _components from "@content/_components"
+import DocsCodeStep from "@components/DocsCodeStep"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ShadePreviewBlock from "@components/examples/ShadePreviewBlock.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+
+export const components = {
+    ..._components
+}
+
+export const shade = [
+    {
+        code: '<html data-shade="900" >',
+        lang : "html"
+  }
+]
+
+export const specificExample = `<html data-shade="900" >
+    <head> </head>
+    <body>
+        <main>
+            <div class="grid grid-cols-4 gap-3">
+                <div>Theme shade</div>
+                <div>Theme shade</div>
+                <div>Theme shade</div>
+                <div data-shade="800">800</div>
+            </div>
+        </main>
+    </body>
+</html>
+`
+
+export const shadeDataAttribute = {
+    code: `@layer base {
+    [data-shade="900"] {
+        --ui-border-color: theme(colors.gray.200);
+        --ui-bg: theme(colors.white/var(--ui-bg-opacity));
+        --ui-soft-bg: theme(colors.gray.100);
+        --ui-bg-opacity: 1;
+        --overlay-bg: theme(colors.gray.950/0.25);
+    }
+}`,
+    lang: "css",
+}
+
+export const shadeVars = {
+    code: `@layer base {
+    :root {
+        --ui-border-color: theme(colors.gray.200);
+        --ui-bg: theme(colors.white/var(--ui-bg-opacity));
+        --ui-soft-bg: theme(colors.gray.100);
+        --input-bg: theme(colors.gray.200);
+        --ui-bg-opacity: 1;
+        --overlay-bg: theme(colors.gray.950/0.25);
+    }
+}`,
+    lang: "css",
+}
+
+<div className="space-y-20">
+
+    <div>
+        Adjust the background and border colors of your components using the `data-shade` attribute. This change is more noticeable in dark mode.
+
+        <DocsStackedSnippets snippets={shade} client:visible />
+    </div>
+
+    <div>
+        ## Shades
+        The available shades are:
+
+        <div className="space-y-12">
+            <ShadePreviewBlock />
+        </div>
+    </div>
+
+    <div>
+        ## Adding shade to a specific component
+        You can add the `data-shade` attribute to any component to apply a different shade to that specific component.
+
+        <PreviewBlock codeBlocks={[{code:specificExample, lang:"tsx"}]}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3" data-shade="900">
+                <div className="p-[--card-padding] h-20 text-[--body-text-color] feedback-bg feedback-shadow rounded-[--card-radius] border text-xs flex items-center justify-center">Theme shade</div>
+                <div className="p-[--card-padding] h-20 text-[--body-text-color] feedback-bg feedback-shadow rounded-[--card-radius] border text-xs flex items-center justify-center">Theme shade</div>
+                <div className="p-[--card-padding] h-20 text-[--body-text-color] feedback-bg feedback-shadow rounded-[--card-radius] border text-xs flex items-center justify-center">Theme shade</div>
+                <div className="p-[--card-padding] h-20 text-[--title-text-color] feedback-bg feedback-shadow rounded-[--card-radius] border text-xs flex items-center justify-center" data-shade="800">800</div>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Customization
+        
+        You have the flexibility to modify an existing shade or even bypass the default shades altogether. This can be achieved by assigning new values to the CSS variables that control borders and background colors.
+
+        <div className="space-y-12">
+            <div>
+                ### Customizing a shade
+
+                Choose a shade to customize, then modify its CSS variables within the `@layer` base block in your CSS file.
+                
+                <CodeSnippet {...shadeDataAttribute} client:visible />
+            </div>
+
+            <div>
+                ### Default shades
+                
+                Define the shade CSS variables in your CSS file by assigning them values within the `:root` selector. Make sure to place these definitions inside the `@layer` base block for proper layering.
+                <CodeSnippet {...shadeVars} client:visible />
+            </div>
+        </div>
+        Read the [Dark mode](/theming/theme-config#dark-mode) section in the theming guide to learn about customizing shades in dark mode.
+    </div>
+
+    <div data-shade="900">
+        ## Utilities
+
+        <PreviewBlock codeBlocks={[{
+            code: `<div class="border" >
+<div class="bg-ui">
+<div class="bg-ui-soft">
+<div class="bg-overlay">`,
+            lang: 'html'
+        }]}>
+            <div class="flex flex-wrap gap-3">
+                <div class="size-20 border rounded-card flex justify-center items-center text-xs font-mono">border</div>
+                <div class="size-20 border rounded-card bg-ui dark:border-none flex justify-center items-center text-xs font-mono">bg</div>
+                <div class="size-20 rounded-card bg-ui-soft flex justify-center items-center text-xs font-mono">soft bg</div>
+                <div class="size-20 rounded-card bg-overlay flex justify-center items-center text-xs font-mono">overlay</div>
+            </div>
+        </PreviewBlock>
+    </div>
+</div>

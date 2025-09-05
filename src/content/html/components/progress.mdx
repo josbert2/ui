@@ -1,0 +1,72 @@
+---
+title: Progress
+description: Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+priorityOrder : 19
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/progress"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="progress sz-md max-w-sm w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+    <div class="progress-indicator variant-primary w-[66%]"></div>
+</div>`,
+              lang: "html"
+          }]}>
+        <div class="progress sz-md max-w-sm w-full" data-shade="900" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+            <div class="progress-indicator variant-primary w-[66%]"></div>
+        </div>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Progress 
+
+            The progress component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## Neutral
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="progress sz-md max-w-sm w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+    <div class="progress-indicator variant-neutral w-[66%]"></div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="progress sz-md max-w-sm w-full" data-shade="900" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                <div class="progress-indicator variant-neutral w-[66%]"></div>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Size xl
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="progress sz-md max-w-sm w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+    <div class="progress-indicator variant-success w-[66%]"></div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="progress sz-xl max-w-sm w-full" data-shade="900" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                <div class="progress-indicator variant-success w-[66%]"></div>
+            </div>
+        </PreviewBlock>
+    </div>
+</div>

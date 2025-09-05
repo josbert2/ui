@@ -1,0 +1,88 @@
+---
+title: Installation
+description: Learn how to install Tailus UI HTML in your project.
+priorityOrder : 1
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import BoilerplateCard from "@components/utilities/BoilerplateCard"
+import InstallationCode from "@components/InstallationCode"
+
+export const components = {
+    ..._components
+}
+
+export const configCode = `module.exports = {
+    content: [
+        './*.html',
+        "./src/**/*.{html,js}"
+    ],
+    theme: {
+        extend: {
+            colors: ({ colors }) => ({
+                primary : colors.indigo,
+                danger : colors.rose,
+                warning : colors.yellow,
+                success : colors.lime,
+                info : colors.blue,
+                gray : colors.zinc,
+            }),
+        }
+    }
+};`
+
+export const config = {
+    code: configCode,
+    lang: "ts",
+    highlightedLines:"8-14",
+}
+
+
+<div className="space-y-20">
+    <div>
+        ## Prerequisites
+        Before you begin, ensure that you have already installed Tailwind v4 CSS in your project. If not, please follow the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation/using-postcss).
+    </div>
+
+    <div>
+        ## Installation
+        <div className="space-y-12">
+            <div>
+                ### 1. Add Component Classes
+            
+                Select from three CSS files designed for different themes: one for light mode, one for dark mode, and one that supports both modes. Choose the file that aligns with your project requirements and kickstart your development journey.
+            
+                <InstallationCode client:visible/>
+            
+                - **Light**: Ideal for websites with only a light mode.
+                - **Dark**: Perfect for websites with only a dark mode.
+                - **Both**: Best for websites that support both light and dark themes.
+            </div>
+
+            <div>
+                ### 2. Set your color palette
+
+                Use your own colors or kickstart your project with default tailwindcss colors
+
+                <CodeSnippet {...config} client:visible />
+
+                Learn more about [palettes](/theming/palette)
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## What's next?
+
+        Great job! You've successfully installed Tailus UI Html in your project. Next, let's learn how to configure your [theme](/theming/theme-config).
+    </div>
+
+    <div>
+        ## Framework Guides
+
+        <div className="grid grid-cols-2 mt-6 sm:grid-cols-4 gap-3" data-shade="900">
+            <BoilerplateCard framework="astro" href="/get-started/astro-guide" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+---
+title: Input
+description: Allows users to input data into a form.
+priorityOrder : 18
+
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <input type='email' class="input variant-plain sz-md" placeholder="Your email" />
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-bottomOutlined sz-md" placeholder="Your email" />
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-soft sz-md" placeholder="Your email" />
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-outlined sz-md" placeholder="Your email" />
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-mixed sz-md" placeholder="Your email" />
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-xs w-full" data-shade="900">
+            <div class="field">
+                <input type='email' class="input variant-plain sz-md" placeholder="Your email" />
+            </div>
+            <div class="field">
+                <input type='email' class="input variant-bottomOutlined sz-md" placeholder="Your email" />
+            </div>
+            <div class="field">
+                <input type='email' class="input variant-soft sz-md" placeholder="Your email" />
+            </div>
+            <div class="field">
+                <input type='email' class="input variant-outlined sz-md" placeholder="Your email" />
+            </div>
+            <div class="field">
+                <input type='email' class="input variant-mixed sz-md" placeholder="Your email" />
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Input 
+
+            The input component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## With label
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="email">Email</label>
+        <input type='email' id="email" class="input variant-mixed sz-md"/>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="email">Email</label>
+                    <input type='email' id="email" class="input variant-mixed sz-md"/>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## With Caption
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="email2">Email</label>
+        <input type='email' id="email2" class="input variant-mixed sz-md"/>
+        <span class="inline-block text-sm text-caption">Input description</span>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="email2">Email</label>
+                    <input type='email' id="email2" class="input variant-mixed sz-md"/>
+                    <span class="inline-block text-sm text-caption">Input description</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <label class="text-title" for="email3">Email</label>
+        <input disabled type='email' id="email3" class="input variant-mixed sz-md"/>
+        <span class="inline-block text-sm text-caption">Input description</span>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <label class="text-title" for="email3">Email</label>
+                    <input disabled type='email' id="email3" class="input variant-mixed sz-md"/>
+                    <span class="inline-block text-sm text-caption">Input description</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Size
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <div class="field">
+        <input type='email' class="input variant-mixed sz-sm" placeholder="Your email"/>
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-mixed sz-md" placeholder="Your email"/>
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-mixed sz-lg" placeholder="Your email"/>
+    </div>
+    <div class="field">
+        <input type='email' class="input variant-mixed sz-xl" placeholder="Your email"/>
+    </div>
+</form>`,
+            lang: "html"
+        }]}>
+            <form class="space-y-4 max-w-xs w-full" data-shade="900">
+                <div class="field">
+                    <input type='email' class="input variant-mixed sz-sm" placeholder="Your email"/>
+                </div>
+                <div class="field">
+                    <input type='email' class="input variant-mixed sz-md" placeholder="Your email"/>
+                </div>
+                <div class="field">
+                    <input type='email' class="input variant-mixed sz-lg" placeholder="Your email"/>
+                </div>
+                <div class="field">
+                    <input type='email' class="input variant-mixed sz-xl" placeholder="Your email"/>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+</div>

@@ -1,0 +1,299 @@
+@import 'tailwindcss' ;
+
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);     /* valor neutro para todos los botones */
+}
+
+@import '../tailus.css';
+@plugin "../../../flyonui/index.js" {
+  themes: all;
+ 
+};
+@import './button/button.css';
+
+:root {
+  /* Base */
+  --base-100: oklch(20% 0.01 260);
+  --base-200: oklch(26% 0.015 260);
+  --base-300: oklch(33% 0.02 260);
+  --base-content: oklch(95.5% 0.015 270);
+
+  /* Primary / Secondary */
+  --primary: oklch(72.25% 0.146 231.39);
+  --primary-content: oklch(98% .022 95.277);
+  --secondary: oklch(66.8% 0.0184 304.67);
+
+  /* Accent */
+  --accent: oklch(71.37% 0.1434 254.62);
+  --accent-content: oklch(98% .022 95.277);
+
+  /* Neutral */
+  --neutral: rgba(191, 193, 201, 1);
+  --neutral-content: oklch(98% .022 95.277);
+
+  /* Info / Success / Warning / Error */
+  --info: oklch(79.71% 0.1339 211.53);
+  --info-content: oklch(98% .022 95.277);
+
+  --success: oklch(77.29% 0.1535 163.22);
+  --success-content: oklch(98% .022 95.277);
+
+  --warning: oklch(75.76% 0.159 55.93);
+  --warning-content: oklch(98% .022 95.277);
+
+  --error: oklch(75.88% 0.1385 31.29);
+  --error-content: oklch(98% .022 95.277);
+
+  /* Extras */
+  --avocado-500: oklch(75.88% 0.1385 31.29);
+  --header: oklch(23.2% .006 285.95);
+  --body: oklch(20% 0.01 260);
+  --border-color: oklch(98% 0.005 270 / 0.08);
+  --gradient-decoration: oklch(98% 0.005 270 / 0.06);
+  --svg-decoration: oklch(98% 0.005 270 / 0.06);
+  --sub-content-code: oklch(0.24 0.01 0 / 0.19);
+
+  /* Radii */
+  --radius-selector: 1rem;
+  --radius-field: 24px;
+  --radius-box: 0.5rem;
+
+  /* Sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* Border */
+  --border: 1px;
+
+  /* Effects */
+  --depth: 1;
+  --noise: 0;
+}
+
+
+@plugin "../../../flyonui/theme/index.js" {
+  name: "maintheme";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+  --color-base-300: var(--base-300);
+  --color-base-content: var(--base-content);
+  --color-primary: var(--primary);
+  --color-primary-content: var(--primary-content);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-content: var(--accent-content);
+  --color-neutral: var(--neutral);
+  --color-neutral-content: var(--neutral-content);
+  --color-info: var(--info);
+  --color-info-content: var(--info-content);
+  --color-success: var(--success);
+  --color-success-content: var(--success-content);
+  --color-warning: var(--warning);
+  --color-warning-content: var(--warning-content);
+  --color-error: var(--error);
+  --color-error-content: var(--error-content);
+
+  --radius-selector: var(--radius-selector);
+  --radius-field: var(--radius-field);
+  --radius-box: var(--radius-box);
+
+  --size-selector: var(--size-selector);
+  --size-field: var(--size-field);
+
+  --border: var(--border);
+
+  --depth: var(--depth);
+  --noise: var(--noise);
+
+  --color-avocado-500: var(--avocado-500);
+  --color-header: var(--header);
+  --color-body: var(--body);
+  --color-border: var(--border-color);
+  --color-gradient-decoration: var(--gradient-decoration);
+  --color-svg-decoration: var(--svg-decoration);
+  --color-sub-content-code: var(--sub-content-code);
+}
+
+@plugin "../../../flyonui/theme/index.js" {
+  name: "maintheme-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+  --color-base-300: var(--base-300);
+  --color-base-content: var(--base-content);
+
+  --color-primary: var(--primary);
+  --color-primary-content: var(--primary-content);
+
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-content: var(--accent-content);
+
+  --color-neutral: var(--neutral);
+  --color-neutral-content: var(--neutral-content);
+
+  --color-info: var(--info);
+  --color-info-content: var(--info-content);
+
+  --color-success: var(--success);
+  --color-success-content: var(--success-content);
+
+  --color-warning: var(--warning);
+  --color-warning-content: var(--warning-content);
+
+  --color-error: var(--error);
+  --color-error-content: var(--error-content);
+
+  --radius-selector: var(--radius-selector);
+  --radius-field: var(--radius-field);
+  --radius-box: var(--radius-box);
+
+  --size-selector: var(--size-selector);
+  --size-field: var(--size-field);
+
+  --border: var(--border);
+
+  --depth: var(--depth);
+  --noise: var(--noise);
+
+  --color-avocado-500: var(--avocado-500);
+  --color-header: var(--header);
+  --color-body: var(--body);
+  --color-border: var(--border-color);
+  --color-gradient-decoration: var(--gradient-decoration);
+  --color-svg-decoration: var(--svg-decoration);
+  --color-sub-content-code: var(--sub-content-code);
+}
+
+
+
+
+.svg-color-main svg{
+  width: 100%;
+  height: 100%;
+}
+
+.text-\[var\(--title-text-color\)\]{
+  color: var(--color-base-content);
+}
+
+.text-\[--body-text-color\] {
+  color: var(--color-base-content);
+}
+
+.to-primary\/10 {
+  --tw-gradient-to: var(--color-primary);
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+.to-primary\/10 {
+  --tw-gradient-to: 
+color-mix(in oklab, var(--color-primary) 10%, transparent);
+}
+
+.from-base-100\/10 {
+  --tw-gradient-from: 
+color-mix(in oklab, var(--color-base-100) 10%, transparent);
+}
+
+.from-base-100\/10 {
+  --tw-gradient-from: var(--color-base-100);
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+.bg-gradient-to-br {
+  --tw-gradient-position: to bottom right in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+
+.ring-primary\/20 {
+  --tw-ring-color: 
+color-mix(in oklab, var(--color-primary) 20%, transparent);
+}
+
+.text-base-content\/90 {
+  color: 
+color-mix(in oklab, var(--color-base-content) 90%, transparent);
+}
+.text-base-content\/80 {
+  color: 
+color-mix(in oklab, var(--color-base-content) 80%, transparent);
+}
+
+
+/*Modal variants*/
+@custom-variant overlay-open {
+  &.open {
+    @slot;
+  }
+
+  .open & {
+    @slot;
+  }
+}
+
+@custom-variant overlay-layout-open {
+  &.overlay-body-open {
+    @slot;
+  }
+
+  .overlay-body-open & {
+    @slot;
+  }
+}
+
+@custom-variant overlay-backdrop-open {
+  &.overlay-backdrop {
+    @slot;
+  }
+
+  .overlay-backdrop & {
+    @slot;
+  }
+}
+
+
+
+/* Dropdown variants */
+
+@custom-variant dropdown-open {
+  &.dropdown-menu.open {
+    @slot;
+  }
+
+  .dropdown.open > & {
+    @slot;
+  }
+
+  .dropdown.open > .dropdown-toggle & {
+    @slot;
+  }
+
+  .dropdown.open > .dropdown-menu > & {
+    @slot;
+  }
+}
+
+@custom-variant dropdown-item-disabled {
+  .dropdown.open > .dropdown-menu &.disabled {
+    @slot;
+  }
+}
+
+@custom-variant dropdown-item-checked {
+  .dropdown.open .dropdown-menu [aria-checked="true"] & {
+    @slot;
+  }
+
+  .dropdown.open .dropdown-menu &[aria-checked="true"] {
+    @slot;
+  }
+}

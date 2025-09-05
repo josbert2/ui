@@ -1,0 +1,273 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal an associated section of content.
+frameworkDocs : 
+    name : W3C Accordion
+    link : https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+priorityOrder : 26
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR, BERNARD_AVATAR, THEO_AVATAR, GLODIE_AVATAR } from "src/const"
+import Accordion1 from "@components/interactive/Accordion1.astro"
+import Accordion2 from "@components/interactive/AccordionMultiple.astro"
+import Accordion3 from "@components/interactive/AccordionDisabled.astro"
+import Accordion4 from "@components/interactive/AccordionDefault.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div data-accordion="single" class="divide-y [--accordion-content-height:0px] max-w-md mx-auto">
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-0" id="accordion1id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 transform duration-300 group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">What is the refund policy?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-0" data-state="closed" role="region" aria-labelledby="accordion1id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">We offer a 30-day money back guarantee. If you are not satisfied with our product, you can request a refund within 30 days of your purchase.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-1" id="accordion2id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">How can I change my account details?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-1" data-state="closed" role="region" aria-labelledby="accordion2id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">You can change your account details by logging into your account and navigating to the "Account Settings" page. From there, you can update your personal information, email address, and password.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-2" id="accordion3id" class="group peer text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">Do you offer customer support?</span>
+            </button>
+        </h3>
+        <div data-content data-state="closed" id="faq-2" role="region" aria-labelledby="accordion3id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">Yes, we offer 24/7 customer support. Our dedicated support team is here to help you with any issues or questions you may have.</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Accordion1 />
+    </PreviewBlock>
+
+    <div>
+        ## Installation
+
+        To install the Accordion component, copy and paste the following typescript code into your project.
+
+        <CodeSnippet
+            lang="js"
+            client:visible
+            code={`document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('[data-accordion]');
+
+    accordions.forEach((accordion) => {
+        const mode = accordion.getAttribute('data-accordion');
+        const triggers = accordion.querySelectorAll('[data-trigger]');
+
+        triggers.forEach((trigger) => {
+            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                const content = document.getElementById(trigger.getAttribute('aria-controls') as string) as HTMLElement;
+                if (content) {
+                    content.style.setProperty('--accordion-content-height', \`\${content.scrollHeight}px\`);
+                    content.dataset.state = 'open';
+                }
+            }
+        });
+
+        triggers.forEach((trigger) => {
+            trigger.addEventListener('click', function () {
+                const content = document.getElementById(this.getAttribute('aria-controls')) as HTMLDivElement;
+                const isOpen = this.getAttribute('aria-expanded') === 'true';
+
+                if (mode === 'single') {
+                    triggers.forEach((btn) => {
+                        if (btn !== this) {
+                            btn.setAttribute('aria-expanded', 'false');
+                            const controlId = btn.getAttribute('aria-controls');
+                            if (controlId) {
+                                const contentElement = document.getElementById(controlId);
+                                if (contentElement) {
+                                    contentElement.style.setProperty('--accordion-content-height', '0');
+                                    contentElement.dataset.state = 'closed';
+                                }
+                            }
+                        }
+                    });
+                }
+
+                this.setAttribute('aria-expanded', (!isOpen).toString());
+                isOpen ? content.style.setProperty('--accordion-content-height', '0') : content.style.setProperty('--accordion-content-height', \`\${content.scrollHeight}px\`);
+                content.dataset.state = isOpen ? 'closed' : 'open';
+            });
+        });
+    });
+});`} />
+    </div>
+
+            <PreviewBlock codeBlocks={
+            [{
+            code:`<div data-accordion="multiple" class="divide-y [--accordion-content-height:0px] max-w-md mx-auto">
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="true" aria-controls="faq-0" id="accordion1id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 transform duration-300 group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">What is the refund policy?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-0" data-state="open" role="region" aria-labelledby="accordion1id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">We offer a 30-day money back guarantee. If you are not satisfied with our product, you can request a refund within 30 days of your purchase.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-1" id="accordion2id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">How can I change my account details?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-1" data-state="closed" role="region" aria-labelledby="accordion2id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">You can change your account details by logging into your account and navigating to the "Account Settings" page. From there, you can update your personal information, email address, and password.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-2" id="accordion3id" class="group peer text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">Do you offer customer support?</span>
+            </button>
+        </h3>
+        <div data-content data-state="closed" id="faq-2" role="region" aria-labelledby="accordion3id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">Yes, we offer 24/7 customer support. Our dedicated support team is here to help you with any issues or questions you may have.</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Accordion4 />
+    </PreviewBlock>
+
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<div data-accordion="multiple" class="divide-y [--accordion-content-height:0px] max-w-md mx-auto">
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-0" id="accordion1id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 transform duration-300 group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">What is the refund policy?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-0" data-state="closed" role="region" aria-labelledby="accordion1id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">We offer a 30-day money back guarantee. If you are not satisfied with our product, you can request a refund within 30 days of your purchase.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-1" id="accordion2id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">How can I change my account details?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-1" data-state="closed" role="region" aria-labelledby="accordion2id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">You can change your account details by logging into your account and navigating to the "Account Settings" page. From there, you can update your personal information, email address, and password.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-2" id="accordion3id" class="group peer text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">Do you offer customer support?</span>
+            </button>
+        </h3>
+        <div data-content data-state="closed" id="faq-2" role="region" aria-labelledby="accordion3id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">Yes, we offer 24/7 customer support. Our dedicated support team is here to help you with any issues or questions you may have.</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Accordion2 />
+    </PreviewBlock>
+
+    <PreviewBlock codeBlocks={
+            [{
+            code:`<div data-accordion="multiple" class="divide-y [--accordion-content-height:0px] max-w-md mx-auto">
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-0" id="accordion1id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 transform duration-300 group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">What is the refund policy?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-0" data-state="closed" role="region" aria-labelledby="accordion1id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">We offer a 30-day money back guarantee. If you are not satisfied with our product, you can request a refund within 30 days of your purchase.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button data-trigger aria-expanded="false" aria-controls="faq-1" id="accordion2id" class="group text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">How can I change my account details?</span>
+            </button>
+        </h3>
+        <div data-content id="faq-1" data-state="closed" role="region" aria-labelledby="accordion2id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">You can change your account details by logging into your account and navigating to the "Account Settings" page. From there, you can update your personal information, email address, and password.</p>
+        </div>
+    </div>
+    <div data-accordion-item>
+        <h3>
+            <button disabled data-trigger aria-expanded="false" aria-controls="faq-2" id="accordion3id" class="group peer text-title flex w-full items-center gap-3 py-4">
+                <svg class="size-4 rotate-0 duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-aria-[expanded=true]:rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 9-8 8-8-8"></path>
+                </svg>
+                <span class="font-medium">Do you offer customer support?</span>
+            </button>
+        </h3>
+        <div data-content data-state="closed" id="faq-2" role="region" aria-labelledby="accordion3id" class="h-[--accordion-content-height] overflow-hidden px-7 duration-300">
+            <p class="text-body mb-4">Yes, we offer 24/7 customer support. Our dedicated support team is here to help you with any issues or questions you may have.</p>
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+        <Accordion3 />
+    </PreviewBlock>
+</div>

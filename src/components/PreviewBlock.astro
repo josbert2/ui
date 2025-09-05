@@ -1,0 +1,22 @@
+---
+import ComponentPreview from "@components/ComponentPreview";
+import CodeSnippet, {type CodeSnippetProps} from "@components/utilities/CodeSnippet";
+import DocsStackedSection from "./DocsStackedSnippets";
+import { twMerge } from 'tailwind-merge';
+import Highlight  from "./HightLight";
+const { codeBlocks, className } = Astro.props as { codeBlocks: CodeSnippetProps[]; className?: string };
+---
+
+<div class="mt-6">
+    <ComponentPreview className={twMerge('mb-3', className)} client:visible>
+        <slot />
+    </ComponentPreview>
+ 
+    {
+        codeBlocks.length > 1 ? (
+            <DocsStackedSection snippets={codeBlocks} client:visible />
+        ) : (
+            <CodeSnippet className="aspect-auto" {...codeBlocks[0]} client:visible />
+        )   
+    }
+</div>

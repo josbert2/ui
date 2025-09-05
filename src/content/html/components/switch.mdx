@@ -1,0 +1,114 @@
+---
+title: Switch
+description: A control that allows the user to toggle between checked and not checked.
+priorityOrder : 23
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw1" class="text-title">Airplane mode</label>
+            <label for="sw1" class="switch variant-primary">
+                <input checked class="peer" type="checkbox" id="sw1" name="switch1"  />
+                <span class="switch-thumb"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-sm w-full" data-shade="900">
+            <div class="field">
+                <div class="grid [grid-template-columns:1fr_auto]">
+                    <label for="sw1" class="text-title">Airplane mode</label>
+                    <label for="sw1" class="switch variant-primary">
+                        <input checked class="peer" type="checkbox" id="sw1" name="switch1"  />
+                        <span class="switch-thumb"></span>
+                    </label>
+                </div>
+                <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Neutral
+
+            <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw4" class="text-title">Airplane mode</label>
+           <label for="sw4" class="switch variant-neutral">
+                <input checked class="peer" type="checkbox" id="sw4" name="switch1"  />
+                <span class="switch-thumb variant-neutral"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid [grid-template-columns:1fr_auto]">
+                        <label for="sw4" class="text-title">Airplane mode</label>
+                        <label for="sw4" class="switch variant-neutral">
+                        <input checked class="peer" type="checkbox" id="sw4" name="switch1"  />
+                        <span class="switch-thumb variant-neutral"></span>
+                    </label>
+                    </div>
+                    <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw1" class="text-title">Airplane mode</label>
+            <label for="sw1" class="switch variant-primary">
+                <input disabled class="peer" type="checkbox" id="sw1" name="switch1"  />
+                <span class="switch-thumb"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid [grid-template-columns:1fr_auto]">
+                        <label for="sw5" class="text-title">Airplane mode</label>
+                        <label for="sw5" class="switch variant-primary">
+                            <input disabled class="peer" type="checkbox" id="sw5" name="switch1"  />
+                            <span class="switch-thumb"></span>
+                        </label>
+                    </div>
+                    <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+</div>

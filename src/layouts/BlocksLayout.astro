@@ -1,0 +1,87 @@
+---
+import { Text, Link, Caption, Title } from '@tailus-ui/typography'
+import { twMerge } from 'tailwind-merge'
+import { ChevronRight } from 'lucide-react'
+import BaseHead from '@components/BaseHead.astro'
+import { ViewTransitions } from 'astro:transitions'
+import BlocksFooter from '@components/BlocksFooter'
+import DocsHeader2 from '@components/DocsHeader2.astro'
+import '@styles/pagefind.css'
+import '@styles/color-theme.css'
+
+import BlocksNav from '@components/BlocksNav.astro'
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+
+const { title, description, breadcrumb = true } = Astro.props
+---
+
+<script is:inline>
+    function setCustomization(document) {
+        const theme = localStorage.getItem('theme') || 'dark'
+
+        const root = document.documentElement
+
+        if (theme == 'dark') {
+            root.classList.add('dark')
+        } else {
+            root.classList.remove('dark')
+        }
+    }
+
+    setCustomization(document)
+
+    document.addEventListener('astro:before-swap', (event) => {
+        setCustomization(event.newDocument)
+    })
+</script>
+
+<html lang="en" data-palette="tls" data-rounded="large" data-shade="900">
+    <head>
+        <BaseHead title={`${title} | Tailus UI Blocks`} description={description} />
+        <ViewTransitions />
+    </head>
+    <body class="bg-gray-50 font-sans antialiased dark:bg-gray-950">
+        <DocsHeader2 sticky />
+        <BlocksNav />
+        <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-20 mx-auto h-0 w-full -translate-y-px lg:h-24">
+            <BlurDivs />
+        </div>
+        <main class="will-change-auto">
+            <div class="absolute inset-0 z-[-2] max-h-96 bg-[radial-gradient(ellipse_80%_70%_at_20%_-20%,var(--bg-color),bg-transparent)] duration-300 [--bg-color:theme(colors.primary.400)] dark:[--bg-color:theme(colors.gray.800)]"></div>
+
+            <div class="absolute inset-x-0 top-0 mx-auto hidden max-w-7xl lg:block">
+                <div class="absolute left-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/[0.07] dark:from-white/[0.07]"></div>
+                <div class="absolute right-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/[0.07] dark:from-white/[0.07]"></div>
+                <div class="absolute -left-20 top-[4.5rem] h-12 w-20 p-2">
+                    <div class="-z-10 h-full w-full bg-[radial-gradient(var(--bg-color)_1px,transparent_1px)] [--bg-color:theme(colors.gray.950/0.1)] [background-size:6px_6px] dark:[--bg-color:theme(colors.white/0.05)]"></div>
+                </div>
+                <div class="absolute -right-20 top-[4.5rem] h-12 w-20 p-2">
+                    <div class="-z-10 h-full w-full bg-[radial-gradient(var(--bg-color)_1px,transparent_1px)] [--bg-color:theme(colors.gray.950/0.1)] [background-size:6px_6px] dark:[--bg-color:theme(colors.white/0.05)]"></div>
+                </div>
+            </div>
+            <div class={twMerge('pt-6', breadcrumb && 'md:pt-20')}>
+                <div class="mx-auto mb-20 max-w-7xl px-8">
+                    {
+                        breadcrumb && (
+                            <nav class="flex items-center gap-2">
+                                <Link size="sm" intent="gray" variant="underlined" href="/blocks">
+                                    Blocks
+                                </Link>
+                                <ChevronRight className="size-3.5 text-[--caption-text-color]" />
+                                <Caption neutral>{title}</Caption>
+                            </nav>
+                        )
+                    }
+                    <div class="mt-6">
+                        <Title weight={{ initial: 'semibold' }} size="3xl">{title}</Title>
+                        <Text className="mb-0 max-w-xl lg:text-lg">{description}</Text>
+                    </div>
+                </div>
+                <div class="space-y-20">
+                    <slot />
+                </div>
+            </div>
+        </main>
+        <BlocksFooter />
+    </body>
+</html>

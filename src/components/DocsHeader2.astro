@@ -1,0 +1,131 @@
+---
+import { SITE_SOCIAL_GITHUB } from '../const'
+import { GitHubIcon } from './utilities/icons/'
+import ThemeSwitcher from './ThemeSwitcher'
+import Button from '@tailus-ui/Button'
+import { MenuListIcon } from '@components/utilities/icons'
+import { ChevronDownIcon } from '@radix-ui/react-icons'
+import NavLinks from './NavLinks.astro'
+import SearchButton from './Button/SearchButton'
+import { twMerge } from 'tailwind-merge'
+import BrandLogo from './utilities/BrandLogo'
+import BlocksCustomizer from './customizer/BlocksCustomizer'
+import SeparatorRoot from './tailus-ui/Separator'
+
+const { asThemer = false, sticky = false } = Astro.props
+---
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const navitems = document.querySelector('#mobile-navitems') as HTMLElement
+        const hamburger = document.querySelector('#mobile-navitems-trigger')
+        let isActive = navitems?.getAttribute('data-state') === 'open'
+
+        function toggleItems() {
+            isActive = !isActive
+            navitems?.setAttribute('data-state', isActive ? 'open' : 'closed')
+            hamburger?.setAttribute('data-state', isActive ? 'open' : 'closed')
+        }
+
+        hamburger?.addEventListener('click', toggleItems)
+    })
+</script>
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const menuList = document.getElementById('menu-list')
+        const menuListTrigger = document.getElementById('menu-list-trigger')
+        const tableOfContent = document.querySelector('#table-of-content')
+        const tableOfContentTrigger = document.querySelector('#table-of-content-trigger')
+
+        tableOfContentTrigger?.addEventListener('click', () => {
+            tableOfContent?.classList.toggle('hidden')
+            !menuList?.classList.contains('hidden') && menuList?.classList.toggle('hidden')
+            tableOfContent?.classList.contains('hidden') ? document.body.classList.remove('overflow-hidden') : document.body.classList.add('overflow-hidden')
+        })
+
+        menuListTrigger?.addEventListener('click', () => {
+            menuList?.classList.toggle('hidden')
+            !tableOfContent?.classList.contains('hidden') && tableOfContent?.classList.toggle('hidden')
+            menuList?.classList.contains('hidden') ? document.body.classList.remove('overflow-hidden') : document.body.classList.add('overflow-hidden')
+        })
+    })
+</script>
+
+<header data-rounded="full" class={twMerge('fixed inset-x-0 z-40 flex flex-col  backdrop-blur-2xl ', sticky ? 'relative lg:h-[4.5rem] bg-transparent dark:bg-transparent' : 'lg:h-16 border-b dark:border-white/[0.07] dark:[box-shadow:0_1px_1px_0_rgb(var(--colors-gray-925))]')}>
+    <div class="mx-auto my-auto flex h-fit w-full items-center justify-between gap-4 px-8 py-2 sm:gap-6 xl:px-0" class:list={asThemer ? 'max-w-5xl' : 'max-w-[76rem]'}>
+        <div class="flex items-center sm:gap-6">
+            <a href="/" aria-label="Home page" class="rounded-full">
+                <BrandLogo className="h-7" />
+            </a>
+
+            <div data-state="closed" id="mobile-navitems" class="absolute inset-x-0 bottom-0 top-[5.78rem] -z-50 h-0 overflow-hidden border-gray-950/10 bg-white px-5 shadow-lg shadow-gray-950/5 transition-[height] duration-300 data-[state=open]:h-dvh lg:hidden dark:border-white/10 dark:bg-gray-925/75 dark:backdrop-blur-xl">
+                <div class="py-8">
+                    <NavLinks />
+                </div>
+            </div>
+
+            <nav class="hidden lg:block">
+                <NavLinks />
+            </nav>
+        </div>
+
+        <div class="flex items-center justify-between lg:gap-1.5">
+            {!sticky && <SearchButton client:idle />}
+
+            <div class="flex items-center gap-1.5">
+                {
+                    sticky && (
+                        <>
+                            <BlocksCustomizer client:load transition:name="customizer" />
+                        </>
+                    )
+                }
+                <SeparatorRoot orientation="vertical" className="mx-3 h-4" />
+                <ThemeSwitcher client:load />
+                <Button.Root variant="ghost" intent="gray" href={SITE_SOCIAL_GITHUB} aria-label="Visit our GitHub" size="md" className="size-9 px-0">
+                    <Button.Icon type="only" size="md">
+                        <GitHubIcon className="size-4" />
+                    </Button.Icon>
+                </Button.Root>
+                <Button.Root id="mobile-navitems-trigger" data-state="closed" variant="ghost" intent="gray" size="md" aria-label="Toggle navlinks" className="group relative -mr-2.5 flex size-9 flex-col transition duration-200 hover:bg-transparent lg:hidden dark:hover:bg-transparent">
+                    <Button.Icon type="only">
+                        <div class="absolute inset-0 m-auto transition-transform duration-300 group-data-[state=open]:-translate-x-px group-data-[state=open]:translate-y-0.5 group-data-[state=open]:rotate-45">
+                            <div aria-hidden="true" class="absolute inset-x-0 top-0 mx-auto h-[1.5px] w-[1.125rem] translate-y-[13.5px] rounded bg-gray-950 transition-transform duration-200 group-data-[state=open]:translate-y-4 dark:bg-white"></div>
+                            <div aria-hidden="true" class="absolute inset-x-0 top-0 mx-auto h-[1.5px] w-[1.125rem] translate-y-[21.5px] rounded bg-gray-950 transition-transform duration-200 group-data-[state=open]:translate-y-4 group-data-[state=open]:rotate-90 dark:bg-white"></div>
+                        </div>
+                    </Button.Icon>
+                </Button.Root>
+            </div>
+        </div>
+    </div>
+
+    {
+        !sticky && (
+            <div class="relative z-[55] flex h-10 w-full justify-between border-t px-4 sm:px-2 lg:hidden dark:border-gray-500/20">
+                <button id="menu-list-trigger" class="group flex h-full items-center gap-1.5 px-4 text-sm text-gray-700 sm:px-6 dark:text-gray-300">
+                    <MenuListIcon />
+                    Menu
+                </button>
+                <button id="table-of-content-trigger" class="group -mr-1 flex h-full items-center gap-1.5 px-4 text-sm text-gray-700 sm:px-6 dark:text-gray-300">
+                    On this page
+                    <ChevronDownIcon />
+                </button>
+            </div>
+        )
+    }
+</header>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('astro:page-load', () => {
+            // @ts-ignore
+            new PagefindUI({
+                element: '#search',
+                showSubResults: false,
+                resultsCount: false,
+                showImages: false,
+            })
+        })
+    })
+</script>

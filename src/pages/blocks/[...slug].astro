@@ -1,0 +1,29 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import BlocksLayout from '@layouts/BlocksLayout.astro'
+
+export async function getStaticPaths() {
+    const component = await getCollection('blocks')
+    component.sort((a, b) => a.data.priorityOrder! - b.data.priorityOrder!)
+    return component.map((page, index) => ({
+        params: { slug: page.slug },
+        props: {
+            ...page,
+            prev: component[index - 1],
+            next: component[index + 1],
+        },
+    }))
+}
+
+type Props = CollectionEntry<'blocks'> & {
+    prev: CollectionEntry<'blocks'>
+    next: CollectionEntry<'blocks'>
+}
+
+const page = Astro.props
+const { Content } = await page.render()
+---
+
+<BlocksLayout {...page} title={page.data.title} description={page.data.description}>
+    <Content />
+</BlocksLayout>

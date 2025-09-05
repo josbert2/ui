@@ -1,0 +1,80 @@
+---
+title: Astro Guide
+description: Install and Configure Tailus UI HTML with Astro
+priorityOrder : 3
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import csscode from "@lib/csscode"
+
+export const components = {
+    ..._components
+}
+
+export const configCode = `import {palettes} from "@tailus/themer-plugins"
+
+module.exports = {
+    content: [
+        './index.html',
+        './src/**/*.{js,ts,jsx,tsx}',
+    ],
+    theme: {
+        extend: {
+            colors : palettes.trust
+        },
+    }
+};`
+
+export const config = {
+    code: configCode,
+    lang: "ts",
+    highlightedLines:"1,10",
+}
+
+<div>
+    ## 1. Create a new Astro project
+
+    First, create a new Astro project by running the following command:
+
+    <CodeSnippet lang="bash" code={`npm create astro@latest astrolus
+cd astrolus`} client:visible />
+</div>
+
+<div>
+    ## 2. Add Tailwind CSS
+
+    Next, Tailwind CSS to your project by running the following command:
+
+    <CodeSnippet lang="bash" code="npx astro add tailwind" client:visible />
+</div>
+
+<div>
+    ## 3. Install Tailus UI Themer Plugins
+
+    Next, install Tailus UI Themer Plugins by running the following command:
+
+    <CodeSnippet lang="bash" code="npm install @tailus/themer-plugins" client:visible />
+</div>
+
+<div>
+    ## 4. Set your color palette
+
+    In your Tailwind Css config File, import the `palettes` object and add the default palette
+
+    <CodeSnippet {...config} client:visible />
+</div>
+
+<div>
+    ## 5. Add components classes
+
+    To add the components classes copy-paste the following code in your main css file
+
+    <CodeSnippet code={csscode} lang="css" client:visible />
+</div>
+
+<div>
+    ## What's next?
+
+    Great job! You've successfully installed Tailus UI HTML in your project. Next, let's learn how to configure your [theme](/theming/theme-config).
+</div>

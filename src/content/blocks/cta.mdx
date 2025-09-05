@@ -1,0 +1,36 @@
+---
+title: Call To Action
+description: Prompts users to take a specific action, such as signing up, purchasing, or contacting, using clear and compelling language.
+priorityOrder : 8
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { ctaCode } from "@blocks/cta/cta"
+import { mailCode } from "@blocks/cta/mail"
+import { cardCode } from "@blocks/cta/card"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="CTA 1"
+    src="/blocks-preview/cta/cta1"
+    code={ctaCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Mail"
+    src="/blocks-preview/cta/mail"
+    code={mailCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Card"
+    src="/blocks-preview/cta/card"
+    code={cardCode}
+    client:visible
+/>

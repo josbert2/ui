@@ -1,0 +1,64 @@
+---
+import PreviewBlock from '@components/PreviewBlock.astro'
+import { Title } from '@tailus-ui/typography'
+import { palettes } from '@lib/palettes'
+---
+
+<>
+    {
+        palettes.map((palette) => {
+            const { colors } = palette
+            return (
+                <div class="space-y-6" data-palette={palette.name}>
+                    <Title size="base" weight="medium" className="capitalize">
+                        {palette.name}
+                    </Title>
+                    <PreviewBlock
+                        codeBlocks={[
+                            {
+                                code: `theme: {
+    extend: {
+        colors: ({ colors }) => ({
+            primary : colors.${colors.primary},
+            danger : colors.${colors.danger},
+            warning : colors.${colors.warning},
+            success : colors.${colors.success},
+            info : colors.${colors.info},
+            gray : colors.${colors.gray},
+        }),
+    }
+}`,
+                                lang: 'ts',
+                            },
+                        ]}>
+                        <div class="grid grid-cols-6 border rounded-card" data-shade="900">
+                            <div class="p-6 col-span-full border-b flex items-center justify-center">
+                                <span class="annonce variant-mixed gap-2 sz-xs">
+                                    <span class="annonce-concern sz-xs variant-primary">New</span>
+                                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                                </span>
+                            </div>
+                            <div class="p-6 col-span-2 border-b flex items-center justify-center">
+                                <button class="btn variant-primary sz-sm">Generate</button>
+                            </div>
+                            <div class="p-6 col-span-2 border-l border-b flex items-center justify-center">
+                                <label for={`sw-${palette.name}`} class="switch variant-primary">
+                                    <input checked class="peer" type="checkbox" id={`sw-${palette.name}`} name="switch1" />
+                                    <span class="switch-thumb" />
+                                </label>
+                            </div>
+                            <div class="p-6 col-span-2 border-l border-b flex items-center justify-center">
+                                <span class="badge variant-success sz-sm">Badge</span>
+                            </div>
+                            <div class="p-6 col-span-full flex items-center justify-center">
+                                <div class="progress sz-md w-2/3">
+                                    <div class="progress-indicator variant-primary w-[60%]" />
+                                </div>
+                            </div>
+                        </div>
+                    </PreviewBlock>
+                </div>
+            )
+        })
+    }
+</>

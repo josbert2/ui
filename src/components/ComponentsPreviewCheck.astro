@@ -1,0 +1,395 @@
+---
+// ComponentsPreviewCheck.astro
+import { Code } from 'astro:components';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+const { name, folder = '', template = 0 } = Astro.props;
+
+
+const modules = import.meta.glob(`../lib/ui/**/*.{astro,jsx,tsx}`, { eager: true });
+
+
+const entry = Object.entries(modules).find(([path]) => {
+
+  return path.includes(`/${folder}/${name}.`);
+});
+
+
+const SelectedComponent = entry ? entry[1].default : null;
+
+
+console.log(SelectedComponent)
+
+// Definir la ruta donde se encuentran tus componentes
+const componentsDir = path.resolve('./src/components');
+const filePath = `${componentsDir}/${name}.astro`; 
+
+const fileExtension = path.extname(filePath);
+const fileName = `${name}${fileExtension}`;
+
+
+
+let sourceCode = '';
+try {
+  sourceCode = await fs.readFile(SelectedComponent.moduleId, 'utf-8');
+} catch (error) {
+  sourceCode = `Error: No se pudo cargar el código de ${name}: ${error.message}`;
+}
+
+
+
+// Importar dinámicamente el componente
+const components = import.meta.glob('./MiBoton.{astro,jsx,tsx}', { eager: true });
+const componentPath = Object.keys(components).find(path => 
+  path.includes(`/${name}.`));
+const ComponentToRender = SelectedComponent;
+
+// Estado para controlar qué pestaña está activa (preview o code)
+const initialActiveTab = 'preview';
+---
+
+{template === 1 ? (
+  /* Rama TRUE */
+    <style is:global>
+        .astro-code.one-dark-pro {
+              padding: 21px !important;
+              background-color:red !important;
+              border-radius: 10px !important;
+        }
+
+    </style>
+    <div class="relative !mb-5 flex aspect-auto !pb-0 min-h-32 items-center justify-center rounded-[--card-radius] border  p-2 sm:mx-0 sm:min-h-56  dark:bg-gray-925" style="background-color: #2C2C31;">
+      <div class="preview-container flex space-x-2">
+          {ComponentToRender
+            ? <ComponentToRender />
+            : <p>No se pudo cargar el componente {name}</p>}
+      </div>
+    </div>
+    <div class="overflow-hidden !p-0 code-block">
+      <div class="sub-code-content rounded-md border color-avocado-500">
+        <div role="tablist" aria-orientation="horizontal" class="inline-flex justify-center items-center p-1 h-10 rounded-md bg-muted text-muted-foreground" tabindex="0" data-orientation="horizontal" style="outline: none;">
+            <button
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="radix-:r30R0:-content-css"
+                data-state="active"
+                id="radix-:r30R0:-trigger-css"
+                class="inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-primary-500 data-[state=active]:border-b data-[state=active]:border-primary-500"
+                tabindex="-1"
+                data-orientation="horizontal"
+                data-radix-collection-item=""
+            >
+                Code
+            </button>
+        </div>
+
+      <div class="p-3 rounded-md">
+        <Code
+          code={sourceCode}
+          lang={fileExtension.substring(1)}
+          theme="one-dark-pro"
+          wrap
+        />
+      </div>
+    
+      </div>
+    </div>
+) : (
+  /* Rama FALSE (else) */
+  <div class="component-demo-container">
+  <div class="demo-header">
+    <span class="file-name">{fileName}</span>
+    <div class="demo-actions">
+      <!-- Botón para tab de preview -->
+      <button class="demo-tab-button active inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-primary/75 border border-primary-foreground/25 text-primary-foreground shadow-sm shadow-black/5 hover:bg-primary/90 h-9 py-2 px-3" data-tab="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="2"></circle>
+          <path d="M12 19c-4 0-7.5-3.5-10-7 2.5-3.5 6-7 10-7s7.5 3.5 10 7c-2.5 3.5-6 7-10 7z"></path>
+        </svg>
+        Preview
+      </button>
+      <button class="demo-tab-button inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-primary/75 border border-primary-foreground/25 text-primary-foreground shadow-sm shadow-black/5 hover:bg-primary/90 h-9 py-2 px-3" data-tab="code">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="demo-content">
+    <!-- Tab de preview: usamos clase .tab-preview -->
+    <div class="demo-tab tab-preview active">
+      <div class="preview-container">
+        {ComponentToRender
+          ? <ComponentToRender />
+          : <p>No se pudo cargar el componente {name}</p>}
+      </div>
+    </div>
+
+    <!-- Tab de code: usamos clase .tab-code -->
+    <div class="overflow-hidden w-full demo-tab tab-code">
+      <div class="overflow-hidden code-container">
+        <div class="overflow-hidden code-header">
+          <!-- Botón para copiar: ahora sin ID -->
+          <button class="copy-button" aria-label="Copiar código">
+            <svg ...> ... </svg>
+          </button>
+        </div>
+        <!-- Bloque de código: también sin ID -->
+        <div class="overflow-hidden code-block">
+          <Code
+            code={sourceCode}
+            lang={fileExtension.substring(1)}
+            theme="one-dark-pro"
+            wrap
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+)}
+
+
+
+<style>
+  .component-demo-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #2a2a2a;
+    margin: 2rem 0;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  .demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #333;
+    background-color: #252525;
+  }
+  
+  .file-name {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #9da5b4;
+  }
+  
+  .demo-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+
+  .bg-ln-gray-900 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(46 46 46 / var(--tw-bg-opacity));
+  }
+  .text-ln-gray-0 {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.px-\[18px\] {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.text-ln-label-sm {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.006em;
+    font-weight: 500;
+}
+
+  
+
+  
+  .demo-content {
+
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #code-tab {
+    width: 100%;
+  }
+  
+  .demo-tab {
+    display: none;
+  }
+  
+  .demo-tab.active {
+    display: block;
+  }
+  
+  .preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100px;
+ 
+    color: black;
+  }
+  
+  .code-container {
+    position: relative;
+    font-size: 0.9rem;
+    overflow: auto;
+    background-color: #21252b;
+  }
+  
+  .code-header {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+  }
+  
+  .copy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #9da5b4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .copy-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .copy-button.copied {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .code-block {
+    padding: 1rem;
+  }
+  
+  .code-block :global(pre) {
+    background-color: #21252b !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+  }
+  
+  .code-block :global(.astro-code) {
+    background-color: #2C2C31 !important;
+    border-radius: 10px;
+  }
+  
+  /* Asegurarse de que los colores del código resaltado resalten bien */
+  .code-block :global(.token.keyword),
+  .code-block :global(.token.import),
+  .code-block :global(.token.export),
+  .code-block :global(.token.from) {
+    color: #c678dd !important;
+  } 
+  
+  .code-block :global(.token.function) {
+    color: #61afef !important;
+  }
+  
+  .code-block :global(.token.string) {
+    color: #98c379 !important;
+  }
+  
+  .code-block :global(.token.number),
+  .code-block :global(.token.boolean) {
+    color: #d19a66 !important;
+  }
+  
+  .code-block :global(.token.punctuation) {
+    color: #abb2bf !important;
+  }
+  
+  .code-block :global(.token.operator) {
+    color: #56b6c2 !important;
+  }
+  
+  .code-block :global(.token.jsx-tag),
+  .code-block :global(.token.tag) {
+    color: #e06c75 !important;
+  }
+  
+  .code-block :global(.token.attr-name),
+  .code-block :global(.token.property) {
+    color: #e5c07b !important;
+  }
+
+  .shadow-black\/5 {
+    --tw-shadow-color: 
+    color-mix(in oklab, var(--color-black) 5%, transparent);
+}
+
+.bg-primary\/75 {
+  
+}
+
+.demo-tab-button.active {
+  background-color: 
+  color-mix(in oklab, oklch(.596 .145 163.225) 75%, transparent);
+  border-color: 
+  color-mix(in oklab, oklch(.979 .021 166.113) 25%, transparent);
+}
+
+
+</style>
+
+<script>
+  function initTabsAndCopy() {
+    const containers = document.querySelectorAll('.component-demo-container');
+
+    containers.forEach((container) => {
+      const tabButtons = container.querySelectorAll('.demo-tab-button');
+      const tabs = container.querySelectorAll('.demo-tab');
+      const copyButton = container.querySelector('.copy-button');
+      const codeBlock = container.querySelector('.code-block pre');
+
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const tabName = button.getAttribute('data-tab');
+          tabs.forEach((tab) => tab.classList.remove('active'));
+          tabButtons.forEach((btn) => btn.classList.remove('active'));
+          const tabToActivate = container.querySelector(`.tab-${tabName}`);
+          if (tabToActivate) tabToActivate.classList.add('active');
+          button.classList.add('active');
+        });
+      });
+
+      if (copyButton && codeBlock) {
+        copyButton.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(codeBlock.textContent || '');
+            copyButton.classList.add('copied');
+            setTimeout(() => copyButton.classList.remove('copied'), 2000);
+          } catch (err) {
+            console.error('Error al copiar:', err);
+          }
+        });
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initTabsAndCopy);
+  document.addEventListener('astro:after-swap', initTabsAndCopy);
+</script>
+
+
+

@@ -1,0 +1,315 @@
+---
+title: Link
+description: The link element is used to create hyperlinks to other web pages or resources.
+priorityOrder : 14
+---
+
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import PreviewWithCode from "@components/PreviewWithCode.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/button"
+import HeroComponent from "@components/HeroComponent.astro"
+import Divider from "../../../images/divider.svg"
+
+export const components = {
+    ..._components
+}
+
+
+<HeroComponent 
+    title="Link"
+    description="The link element is used to create hyperlinks to other web pages or resources."
+    image="link"
+/>
+
+### Headings
+
+Use of Tailwind CSS font size utility classes to style various headings.
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<h1 className="text-base-content text-4xl">Heading 1</h1>
+    <h2 className="text-base-content text-3xl">Heading 2</h2>
+    <h3 className="text-base-content text-2xl">Heading 3</h3>
+    <h4 className="text-base-content text-xl">Heading 4</h4>
+    <h5 className="text-base-content text-lg">Heading 5</h5>
+    <h6 className="text-base-content text-base">Heading 6</h6>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<h1 className="text-base-content text-4xl">Heading 1</h1>
+    <h2 className="text-base-content text-3xl">Heading 2</h2>
+    <h3 className="text-base-content text-2xl">Heading 3</h3>
+    <h4 className="text-base-content text-xl">Heading 4</h4>
+    <h5 className="text-base-content text-lg">Heading 5</h5>
+    <h6 className="text-base-content text-base">Heading 6</h6>` }}
+  />
+</PreviewBlock>
+
+
+
+### Paragraph
+
+The {"<p>"} tag is extensively employed in HTML documents for composing longer passages of text, typically separated by blank lines. Adhering to proper usage of this tag can notably improve on-page SEO performance.
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<div>
+      <h5 className="text-base-content text-lg font-semibold">Body text</h5>
+      <p className="text-base-content/80 text-base">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Duis
+        mollis, est non commodo luctus.Duis mollis, est non commodo luctus.
+      </p>
+    </div>
+    <div>
+      <h5 className="text-base-content text-lg font-semibold">Small text</h5>
+      <small className="text-base-content/80">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Duis
+        mollis, est non commodo luctus.Duis mollis, est non commodo luctus.
+      </small>
+    </div>
+    <div>
+      <h5 className="text-base-content text-lg font-semibold">Muted text</h5>
+      <p className="text-base-content/50 text-base">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Duis
+        mollis, est non commodo luctus.Duis mollis, est non commodo luctus.
+      </p>
+    </div>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<div>
+      <h5 className="text-base-content text-lg font-semibold">Body text</h5>
+      <p className="text-base-content/80 text-base">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Duis
+        mollis, est non commodo luctus.Duis mollis, est non commodo luctus.
+      </p>
+    </div>
+    <div>
+      <h5 className="text-base-content text-lg font-semibold">Small text</h5>
+      <small className="text-base-content/80">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Duis
+        mollis, est non commodo luctus.Duis mollis, est non commodo luctus.
+      </small>
+    </div>
+    <div>
+      <h5 className="text-base-content text-lg font-semibold">Muted text</h5>
+      <p className="text-base-content/50 text-base">
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus. Duis
+        mollis, est non commodo luctus.Duis mollis, est non commodo luctus.
+      </p>
+    </div>` }}
+  />
+</PreviewBlock>
+
+
+
+### Inline text elements
+
+Styling for common inline HTML5 elements.
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<p className="text-base-content/80"> You can use the mark tag to <mark>highlight</mark> text. </p>
+    <p className="text-base-content/80"><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p className="text-base-content/80"><s>This line of text is meant to be treated as no longer accurate.</s></p>
+    <p className="text-base-content/80"><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+    <p className="text-base-content/80"><u>This line of text will render as underlined.</u></p>
+    <p className="text-base-content/80"><small>This line of text is meant to be treated as fine print.</small></p>
+    <p className="text-base-content/80"><strong>This line rendered as bold text.</strong></p>
+    <p className="text-base-content/80"><em>This line rendered as italicized text.</em></p>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<p className="text-base-content/80"> You can use the mark tag to <mark>highlight</mark> text. </p>
+    <p className="text-base-content/80"><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p className="text-base-content/80"><s>This line of text is meant to be treated as no longer accurate.</s></p>
+    <p className="text-base-content/80"><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+    <p className="text-base-content/80"><u>This line of text will render as underlined.</u></p>
+    <p className="text-base-content/80"><small>This line of text is meant to be treated as fine print.</small></p>
+    <p className="text-base-content/80"><strong>This line rendered as bold text.</strong></p>
+    <p className="text-base-content/80"><em>This line rendered as italicized text.</em></p>` }}
+  />
+</PreviewBlock>
+
+
+
+
+### Gradient text
+
+Use the classes bg-clip-text, text-transparent, and bg-gradient-{} to achieve a gradient overlay effect on a text element.
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<p className="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl w-fit"> Gradient text </p>`,
+      lang: "html"
+    }
+  ]}
+>
+
+ <p className="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl w-fit"> Gradient text </p>
+
+</PreviewBlock>
+
+
+
+### First-line and first-letter
+
+Apply styles to the initial line of a text block using the ::first-line pseudo-element, and to the first letter with the ::first-letter pseudo-element.
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<p className="first-letter:text-base-content text-justify first-letter:float-left first-letter:me-3 first-letter:text-7xl first-letter:font-bold first-line:uppercase first-line:tracking-widest">
+      You see this old vinyl record, weathered and worn, its label scratched and faded? At first glance, it may appear as
+      nothing more than discarded junk. Yet, to me, it holds something infinitely precious—the sound of my childhood. It's
+      not just music; it's a treasure trove of memories, each groove on its surface a testament to days gone by. As I gently
+      place the needle onto its surface, I am transported back to a time when summer nights stretched on forever, filled
+      with the warmth of family gatherings and pop that emanates from the speakers is like a whisper from the past, a
+      nostalgic echo of moments I hold dear.
+    </p>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<p className="first-letter:text-base-content text-justify first-letter:float-left first-letter:me-3 first-letter:text-7xl first-letter:font-bold first-line:uppercase first-line:tracking-widest">
+      You see this old vinyl record, weathered and worn, its label scratched and faded? At first glance, it may appear as
+      nothing more than discarded junk. Yet, to me, it holds something infinitely precious—the sound of my childhood. It's
+      not just music; it's a treasure trove of memories, each groove on its surface a testament to days gone by. As I gently
+      place the needle onto its surface, I am transported back to a time when summer nights stretched on forever, filled
+      with the warmth of family gatherings and pop that emanates from the speakers is like a whisper from the past, a
+      nostalgic echo of moments I hold dear.
+    </p>` }}
+  />
+</PreviewBlock>
+
+
+
+### Open/closed state
+
+Conditional application of styles based on the open state of either a  element.
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<div className="max-w-lg">
+      <details open="" className="open:bg-base-100 rounded-lg p-6 open:shadow">
+        <summary className="text-base-content select-none text-base font-semibold">How did paperclips come to be?</summary>
+        <div className="text-base-content/80 mt-3 text-base">
+          <p>
+            The humble paperclip has an interesting history. It was first patented in the late 19th century by Norwegian
+            inventor Johan Vaaler, although the exact origin of the paperclip dates back even earlier to other similar
+            designs.
+          </p>
+        </div>
+      </details>
+    </div>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<div className="max-w-lg">
+      <details open="" className="open:bg-base-100 rounded-lg p-6 open:shadow">
+        <summary className="text-base-content select-none text-base font-semibold">How did paperclips come to be?</summary>
+        <div className="text-base-content/80 mt-3 text-base">
+          <p>
+            The humble paperclip has an interesting history. It was first patented in the late 19th century by Norwegian
+            inventor Johan Vaaler, although the exact origin of the paperclip dates back even earlier to other similar
+            designs.
+          </p>
+        </div>
+      </details>
+    </div>` }}
+  />
+</PreviewBlock>
+
+
+
+### Text color
+
+
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<p className="text-bg-primary px-2 py-4"> This uses text-primary-content on a bg-primary background: <span className="font-medium">text-bg-primary</span> </p>
+    
+    <p className="text-bg-soft-primary px-2 py-4"> This uses text-primary-content on a bg-soft-primary background: <span className="font-medium">text-bg-soft-primary</span> </p>
+    
+    <p className="text-border-primary px-2 py-4"> This uses text-primary-content alongside a border-primary: <span className="font-medium">text-border-primary</span> </p>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<p className="text-bg-primary px-2 py-4"> This uses text-primary-content on a bg-primary background: <span className="font-medium">text-bg-primary</span> </p>
+    
+    <p className="text-bg-soft-primary px-2 py-4"> This uses text-primary-content on a bg-soft-primary background: <span className="font-medium">text-bg-soft-primary</span> </p>
+    
+    <p className="text-border-primary px-2 py-4"> This uses text-primary-content alongside a border-primary: <span className="font-medium">text-border-primary</span> </p>` }}
+  />
+</PreviewBlock>
+
+
+
+### Semantic gradient background
+
+
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<span className="gradient-bg gradient-bg-primary w-full rounded-md p-5">
+    <p className="text-primary-content"> Use these semantic gradient background classes to create a smooth left-to-right gradient. The gradient starts with the semantic color on the left and transitions to a 20% darker shade on the right. This helps add depth and visual interest while maintaining consistency with your theme colors.
+    </p>
+    </span>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<span className="gradient-bg gradient-bg-primary w-full rounded-md p-5">
+    <p className="text-primary-content"> Use these semantic gradient background classes to create a smooth left-to-right gradient. The gradient starts with the semantic color on the left and transitions to a 20% darker shade on the right. This helps add depth and visual interest while maintaining consistency with your theme colors.
+    </p>
+    </span>` }}
+  />
+</PreviewBlock>
+
+
+
+### Open/closed state
+
+Conditional application of styles based on the open state of either a  element.
+
+Los elementos html que esten asi  para todos
+
+<PreviewBlock
+  codeBlocks={[
+    {
+      code: `<details open="" className="open:bg-base-100 rounded-lg p-6 open:shadow"><summary className="text-base-content select-none text-base font-semibold">How did paperclips come to be?</summary><div className="text-base-content/80 mt-3 text-base"><p>The humble paperclip has an interesting history. It was first patented in the late 19th century by Norwegian
+    inventor Johan Vaaler, although the exact origin of the paperclip dates back even earlier to other similar
+    designs.</p></div></details>`,
+      lang: "html"
+    }
+  ]}
+>
+  <div
+    dangerouslySetInnerHTML={{ __html: `<details open="" className="open:bg-base-100 rounded-lg p-6 open:shadow"><summary className="text-base-content select-none text-base font-semibold">How did paperclips come to be?</summary><div className="text-base-content/80 mt-3 text-base"><p>The humble paperclip has an interesting history. It was first patented in the late 19th century by Norwegian
+    inventor Johan Vaaler, although the exact origin of the paperclip dates back even earlier to other similar
+    designs.</p></div></details>` }}
+  />
+</PreviewBlock>

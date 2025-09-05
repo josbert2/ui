@@ -1,0 +1,23 @@
+<script is:inline>
+  document.addEventListener("astro:before-preparation", () => {
+    document.querySelector(".animate-slide").classList.remove("hidden");
+  });
+  document.addEventListener("astro:after-preparation", () => {
+    document.querySelector(".animate-slide").classList.add("hidden");
+  });
+</script>
+
+<div
+  transition:name="pageloader"
+  class="animate-slide hidden fixed top-0 inset-x-0 h-0.5 z-[100]"
+>
+  <div
+    class="absolute inset-x-0 -top-1/2 -z-10 -translate-y-1/2 h-1 bg-primary-950 dark:bg-primary-400 blur-xl rounded-full"
+  >
+  </div>
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-500 rounded-full"
+  >
+  </div>
+</div>

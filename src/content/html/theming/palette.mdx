@@ -1,0 +1,137 @@
+---
+title: Palette
+description: A guide to customizing the palette of your theme.
+priorityOrder : 6
+---
+
+import _components from "@content/_components"
+import DocsCodeStep from "@components/DocsCodeStep"
+import { Title, Text, Caption } from "@tailus-ui/typography"
+import PalettePreviewBlock from "@components/examples/PalettePreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Banner from "@components/Banner"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+
+export const components = {
+    ..._components
+}
+
+export const newPrimary = {
+    code: `theme : {
+    extend : {
+        colors: ({colors}) => ({
+            ...palettes.oz,
+            primary: colors.purple,
+        })
+    }
+},`,
+    lang: "ts",
+    highlightedLines : "4-5"
+}
+
+export const overrideGray = [
+    {
+        code: `import { grays } from "@tailus/themer-plugins"`,
+        lang: "ts",
+    },
+    {
+    code: `theme : {
+    extend : {
+        colors: ({colors}) => ({
+            ...palettes.oz,
+            primary: colors.purple,
+            gray: grays.slate,
+        })
+    }
+},`,
+    lang: "ts",
+    highlightedLines : "6"
+  }
+]
+
+export const palette = [
+    {
+        code: `import { palette } from "@tailus/themer-plugins"`,
+        lang: "ts",
+    },
+    {
+    code: `theme : {
+    extend : {},
+},
+plugins : [
+    palette,
+
+    // ...other plugins
+]`,
+    lang: "ts",
+  }
+]
+
+<div className="space-y-20">
+    Tailus UI Html is built on top of Tailwind Css, which means that you can customize the colors of your theme by changing the colors in the `tailwind.config.js` file.
+
+    <div>
+        ## Semantic Naming
+        Our color system uses semantic color names to make it intuitive to understand the purpose of each color. For instance, primary is used for primary actions, success for success notifications, danger for error alerts, and so on. This approach simplifies the process of customizing and maintaining your application’s color palette.
+    </div>
+
+    <div data-palette="oz">
+        ## Required Colors
+
+        <div className="space-y-3" data-palette="passion">
+        <button class="btn variant-primary sz-sm">Primary</button>
+            HOLAAAA
+        </div>
+
+        For the theme to function properly, certain colors are necessary. Each color should have shades ranging from `50` to `950`.
+
+        <div className="grid grid-cols-3 gap-3">
+            <div className="space-y-3">
+                <Caption weight="medium">Brand</Caption>
+                <div className="flex gap-3 items-center">
+                    <div className="size-4 border border-gray-950/5 dark:border-white/10 rounded-full bg-primary-500" />
+                    <Text className="my-0" neutral>Primary</Text>
+                </div>
+            </div>
+            <div className="space-y-3">
+                <Caption weight="medium">Feedback</Caption>
+                <div className="flex gap-3 items-center">
+                    <div className="size-4 border border-gray-950/5 dark:border-white/10 rounded-full bg-success" />
+                    <Text className="my-0" neutral>Success</Text>
+                </div>
+                <div className="flex gap-3 items-center">
+                    <div className="size-4 border border-gray-950/5 dark:border-white/10 rounded-full bg-secondary" />
+                    <Text className="my-0" neutral>Danger</Text>
+                </div>
+                <div className="flex gap-3 items-center">
+                    <div className="size-4 border border-gray-950/5 dark:border-white/10 rounded-full bg-warning" />
+                    <Text className="my-0" neutral>Warning</Text>
+                </div>
+                <div className="flex gap-3 items-center">
+                    <div className="size-4 border border-gray-950/5 dark:border-white/10 rounded-full bg-info" />
+                    <Text className="my-0" neutral>Info</Text>
+                </div>
+            </div>
+            <div>
+                <Caption weight="medium">Neutral</Caption>
+                <div className="mt-3 flex gap-3 items-center">
+                    <div className="size-4 rounded-full bg-gray" />
+                    <Text className="my-0" neutral>Gray</Text>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Some Palettes
+        We've curated a selection of TailwindCSS colors to serve as a starter palette for your projects.
+
+        The available palettes are as follows:
+
+        <div className="space-y-12">
+            <PalettePreviewBlock />
+        </div>
+
+        Learn more about colors on the TailwindCSS official [documentation](https://tailwindcss.com/docs/customizing-colors)
+    </div>
+</div>

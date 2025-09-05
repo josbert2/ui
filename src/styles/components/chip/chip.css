@@ -1,0 +1,82 @@
+.hs-chip-toggle{
+
+}
+
+
+
+.hs-chip-toggle {
+    --btn-fg: var(--color-neutral-content);
+    background-color: rgba(39, 39, 42, 0.5);
+    color: #a1a1aa; 
+    color: var(--base-content);
+    position: relative; 
+    border-radius: 9999px;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /***************************************************
+   * Hover y active (si deseas un poco de feedback)
+   ***************************************************/
+  .hs-chip-toggle:hover {
+    background-color: rgba(39, 39, 42, 0.8);
+  }
+  .hs-chip-toggle:active {
+    background-color: rgba(39, 39, 42, 0.9);
+  }
+  
+  /***************************************************
+   * Cuando está seleccionado => "selected"
+   ***************************************************/
+  .hs-chip-toggle.selected {
+    background-color: #2a1711;  /* color de fondo */
+    color: #ff9066;             /* color de texto */
+    /* Si usas un anillo distinto, aplica aquí o en tailwind */
+  }
+  
+  /***************************************************
+   * .text-container: para animar padding-right
+   ***************************************************/
+  .hs-chip-toggle .text-container {
+    display: inline-flex;
+    align-items: center;
+    /* Transición "stretch" */
+    transition: padding-right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Sin selección => sin espacio extra */
+    padding-right: 0;
+  }
+  
+  /***************************************************
+   * Cuando está seleccionado => deja espacio a la derecha
+   * para el check (1.5rem es un ejemplo)
+   ***************************************************/
+  .hs-chip-toggle.selected .text-container {
+    padding-right: 1.5rem;
+  }
+  
+  /***************************************************
+   * .check-wrapper: el contenedor para el check
+   * se anima con scale(0)->scale(1) y opacidad
+   ***************************************************/
+  .hs-chip-toggle .check-wrapper {
+    position: absolute;
+    right: 0.5rem; /* Ajusta según tu preferencia */
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+  
+    /* Animación "spring-like" */
+    transition:
+      transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  /***************************************************
+   * Cuando el chip está seleccionado => check visible
+   ***************************************************/
+  .hs-chip-toggle.selected .check-wrapper {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }

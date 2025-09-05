@@ -1,0 +1,52 @@
+---
+title: Footer
+description: Contains important information, such as contact details, links to policies, social media icons, and copyright notices.
+priorityOrder : 9
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { oneCode } from "@blocks/footer/one"
+import { twoCode } from "@blocks/footer/two"
+import { threeCode } from "@blocks/footer/three"
+import { fourCode } from "@blocks/footer/four"
+import { fiveCode } from "@blocks/footer/five"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="One"
+    src="/blocks-preview/footer/one"
+    code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Two"
+    src="/blocks-preview/footer/two"
+    code={twoCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Three"
+    src="/blocks-preview/footer/three"
+    code={threeCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Four"
+    src="/blocks-preview/footer/four"
+    code={fourCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Five"
+    src="/blocks-preview/footer/five"
+    code={fiveCode}
+    client:visible
+/>

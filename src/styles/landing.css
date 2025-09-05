@@ -1,0 +1,87 @@
+
+@import 'tailwindcss';
+
+
+[data-primary] {
+    --selection-background-color: var(--color-primary-3);
+    --selection-color: var(--color-primary-11)
+}
+
+:root {
+    --radius-none: 0;
+    --radius-xs: 3px;
+    --radius-sm: 4.5px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 10px;
+    --radius-2xl: 12px;
+    --radius-3xl: 14px;
+    --radius-full: 9999px;
+    --height-base-input-size-1: 1.5rem;
+    --height-base-input-size-2: 2rem;
+    --height-base-input-size-3: 2.5rem;
+    --height-base-input-size-4: 3rem;
+    --height-base-toggle-size-1: 1rem;
+    --height-base-toggle-size-2: 1.25rem;
+    --height-base-toggle-size-3: 1.5rem;
+    --height-base-toggle-size-4: 1.75rem;
+    --color-gutter-edge: var(--color-surface-3);
+    --width-gutter: 1rem;
+    --width-landing-container: var(--breakpoint-lg);
+  
+}
+body{
+    color:#d4d4d4
+}
+.text-surface-10{
+    color: #bababa;
+}
+
+@media (width >= 768px) {
+    .md\:grid-cols-\[var\(--width-gutter\)_minmax\(0\,calc\(var\(--width-landing-container\)-var\(--width-gutter\)\*2\)\)_var\(--width-gutter\)\] {
+        grid-template-columns: var(--width-gutter) minmax(0, calc(var(--width-landing-container) - var(--width-gutter)* 2)) var(--width-gutter);
+    }
+}
+
+@media (width >= 768px) {
+    .md\:grid-cols-\[1fr_minmax\(0\,var\(--width-landing-container\)\)_1fr\] {
+        grid-template-columns: 1fr minmax(0, var(--width-landing-container)) 1fr;
+    }
+}
+
+.grid-rows-\[auto_1fr_auto\] {
+    grid-template-rows: auto 1fr auto;
+}
+
+
+.text-edge-primary {
+    color: #222221;
+}
+
+
+.bg-color-header{
+    background-color: var(--color-header);
+}
+body{
+    background-color: #242428;
+}
+
+* {
+    border-color: var(--color-border);
+}
+
+
+
+.bg-\[image\:repeating-linear-gradient\(315deg\,_var\(--color\)_0\,_var\(--color\)_1px\,_transparent_0\,_transparent_50\%\)\] {
+    background-image: repeating-linear-gradient(315deg, var(--color-gradient-decoration) 0, var(--color-gradient-decoration) 1px, transparent 0, transparent 50%);
+}
+
+.text-decoration{
+    color: var(--color-svg-decoration);
+}
+
+
+
+.sub-code-content{
+    background-color: var(--color-sub-content-code);
+}

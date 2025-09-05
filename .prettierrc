@@ -1,0 +1,33 @@
+{
+    "printWidth": 500,
+    "semi": false,
+    "tabWidth": 4,
+    "parser": "babel",
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": true,
+    "quoteProps" : "as-needed",
+    "jsxSingleQuote" : false,
+    "bracketSpacing" : true,
+    "bracketSameLine" : false,
+    "useTabs" : false,
+    "plugins": [
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        },
+        {
+            "files": "*.tsx",
+            "options": {
+                "parser": "babel-ts"
+            }
+        }
+    ],
+    "tailwindConfig": "./tailwind.config.ts"
+}

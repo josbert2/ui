@@ -1,0 +1,34 @@
+<div class="max-w-md w-full">
+    <div data-tabgroup="2" class="space-y-3 w-full" data-rounded="full">
+        <div role="tablist" aria-labelledby="tablist-1" data-tabs="pill" class="flex group gap-1 relative data-[tabs=default]:pb-1 data-[tabs=segmented]:bg-ui-soft data-[tabs=segmented]:p-1 data-[tabs=segmented]:rounded-[calc(var(--btn-radius)+0.25rem)] data-[tabs=default]:border-b data-[tabs=pill]:[--title-text-color:theme(colors.white)]">
+            <div data-tabs-indicator aria-hidden="true" class="absolute group-data-[tabs=segmented]:inset-y-1 group-data-[tabs=pill]:inset-y-0 rounded-btn group-data-[tabs=segmented]:shadow group-data-[tabs=segmented]:bg-ui group-data-[tabs=pill]:bg-primary-600 group-data-[tabs=default]:top-auto group-data-[tabs=default]:-bottom-px group-data-[tabs=default]:h-0.5 group-data-[tabs=default]:bg-primary-600 duration-300 transition-[left,width]"></div>
+            <button id="tab2-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel2-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Payments</span>
+            </button>
+            <button id="tab2-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel2-2" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Balances</span>
+            </button>
+            <button id="tab2-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel2-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Customers</span>
+            </button>
+            <button id="tab2-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel2-3" tabindex="-1" class="btn sz-sm group-data-[tabs=default]:variant-ghost aria-[selected=true]:!text-title">
+                <span class="focus">Billing</span>
+            </button>
+        </div>
+
+        <div id="tabpanel2-1" role="tabpanel" tabindex="0" aria-labelledby="tab2-1">
+            <p class="text-caption">Payments</p>
+        </div>
+        <div id="tabpanel2-2" role="tabpanel" tabindex="0" aria-labelledby="tab2-2" class="hidden">
+            <p class="text-caption">Balances</p>
+        </div>
+        <div id="tabpanel2-3" role="tabpanel" tabindex="0" aria-labelledby="tab2-3" class="hidden">
+            <p class="text-caption">Customers</p>
+        </div>
+        <div id="tabpanel2-3" role="tabpanel" tabindex="0" aria-labelledby="tab2-4" class="hidden">
+            <p class="text-caption">Billing</p>
+        </div>
+    </div>
+</div>
+
+<script src="./tabs.ts" />

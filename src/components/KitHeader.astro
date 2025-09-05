@@ -1,0 +1,75 @@
+---
+const links = [
+    {
+        label: 'Documentation',
+        href: '/get-started/installation',
+    },
+    {
+        label: 'Semantic Classes',
+        href: '/#semantic',
+    },
+    {
+        label: 'Customization',
+        href: '/#customization',
+    },
+    {
+        label: 'Blocks',
+        href: '/#blocks',
+    },
+]
+---
+
+<script>
+    const kitNav = document.querySelector('#kit-nav') as HTMLElement
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY
+
+        if (scrollY > kitNav.getBoundingClientRect().top) {
+            kitNav.classList.remove('border-transparent')
+            kitNav.classList.add('border-white/50', 'bg-white/75', 'backdrop-blur-xl', 'dark:bg-gray-950/75', 'dark:border-white/5')
+            kitNav.classList.replace('outline-transparent', 'outline-gray-950/10')
+        } else {
+            kitNav.classList.remove('border-white/50', 'bg-white/75', 'backdrop-blur-xl', 'dark:bg-gray-950/75', 'dark:border-white/5')
+            kitNav.classList.add('border-transparent')
+            kitNav.classList.replace('outline-gray-950/10', 'outline-transparent')
+        }
+    })
+</script>
+
+<div class="absolute inset-x-0 z-20 mx-auto h-12 border-y border-gray-950/[0.07] dark:border-white/5"></div>
+<div id="kit-nav" class="rounded-card sticky top-1 z-30 mx-1 mt-16 max-w-5xl border border-transparent px-3.5 py-1.5 outline outline-1 outline-transparent duration-300 lg:top-2 lg:mx-auto lg:px-4 dark:outline-transparent">
+    <div class="[--body-text-color:theme(colors.gray.600)] dark:[--body-text-color:theme(colors.gray.400)]">
+        <nav class="relative flex items-center gap-6">
+            <a href="/" aria-label="Home page" class="rounded-full">
+                <svg class="text-title h-3" viewBox="0 0 408 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.181641 94.0001V0.90918H17.0453V40.3183H60.1816V0.90918H77.0907V94.0001H60.1816V54.4546H17.0453V94.0001H0.181641Z" fill="currentColor"></path>
+                    <path
+                        d="M129.568 24.1819V36.9092H89.4316V24.1819H129.568ZM99.3407 7.45464H115.795V73.0001C115.795 75.2122 116.129 76.9092 116.795 78.091C117.492 79.2425 118.401 80.0304 119.523 80.4546C120.644 80.8789 121.886 81.091 123.25 81.091C124.28 81.091 125.22 81.0152 126.068 80.8637C126.947 80.7122 127.613 80.5758 128.068 80.4546L130.841 93.3183C129.962 93.6213 128.704 93.9546 127.068 94.3183C125.462 94.6819 123.492 94.894 121.159 94.9546C117.038 95.0758 113.326 94.4546 110.023 93.091C106.72 91.6971 104.098 89.5455 102.159 86.6365C100.25 83.7274 99.3104 80.091 99.3407 75.7274V7.45464Z"
+                        fill="currentColor"></path>
+                    <path
+                        d="M143.329 94.0001V24.1819H159.057V36.0455H159.875C161.329 32.0455 163.738 28.9243 167.102 26.6819C170.466 24.4092 174.481 23.2728 179.148 23.2728C183.875 23.2728 187.86 24.4243 191.102 26.7274C194.375 29.0001 196.678 32.1061 198.011 36.0455H198.738C200.284 32.1668 202.89 29.0758 206.557 26.7728C210.254 24.4395 214.632 23.2728 219.693 23.2728C226.117 23.2728 231.36 25.3031 235.42 29.3637C239.481 33.4243 241.511 39.3486 241.511 47.1365V94.0001H225.011V49.6819C225.011 45.3486 223.86 42.1819 221.557 40.1819C219.254 38.1516 216.435 37.1365 213.102 37.1365C209.132 37.1365 206.026 38.3789 203.784 40.8637C201.572 43.3183 200.466 46.5152 200.466 50.4546V94.0001H184.329V49.0001C184.329 45.394 183.238 42.5152 181.057 40.3637C178.905 38.2122 176.087 37.1365 172.602 37.1365C170.238 37.1365 168.087 37.7425 166.148 38.9546C164.208 40.1365 162.663 41.8183 161.511 44.0001C160.36 46.1516 159.784 48.6668 159.784 51.5455V94.0001H143.329Z"
+                        fill="currentColor"></path>
+                    <path d="M274.659 0.90918V94.0001H258.204V0.90918H274.659Z" fill="currentColor"></path>
+                    <path d="M325 84H408V94H325V84Z" fill="currentColor"></path>
+                    <path
+                        d="M368.898 1.18185H381.545V46.7955C381.545 51.7955 380.363 56.1932 378 59.9887C375.659 63.7841 372.363 66.75 368.113 68.8864C363.863 71 358.898 72.0569 353.216 72.0569C347.511 72.0569 342.534 71 338.284 68.8864C334.034 66.75 330.738 63.7841 328.398 59.9887C326.057 56.1932 324.886 51.7955 324.886 46.7955V1.18185H337.534V45.7387C337.534 48.6478 338.17 51.2387 339.443 53.5114C340.738 55.7841 342.557 57.5682 344.898 58.8637C347.238 60.1364 350.011 60.7728 353.216 60.7728C356.42 60.7728 359.193 60.1364 361.534 58.8637C363.898 57.5682 365.716 55.7841 366.988 53.5114C368.261 51.2387 368.898 48.6478 368.898 45.7387V1.18185Z"
+                        fill="currentColor"></path>
+                    <path d="M407.94 1.18185V71H395.292V1.18185H407.94Z" fill="currentColor"></path>
+                </svg>
+            </a>
+
+            <ul class="flex gap-3 overflow-x-auto">
+                {
+                    links.map((link) => (
+                        <li>
+                            <a href={link.href} class="hover:text-title block w-max text-nowrap px-3 py-1.5 text-sm">
+                                {link.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+---
+// src/components/Icon.astro
+import { iconMap } from '../lib/iconMap';
+
+const { name, alt = '', className = '' } = Astro.props;
+const src = iconMap[name];
+
+
+---
+
+{src ? (
+  <img src={src} alt={alt || name} class={className} loading="lazy" />
+) : (
+  <span style="color: red;">[Icon "{name}" not found]</span>
+)}

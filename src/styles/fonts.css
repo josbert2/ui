@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../fonts/Geist/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Font-sans';
+  src: url('../fonts/fontSans.woff2')  format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+/* Variables CSS opcionales para usarlas donde gustes */
+
+
+
+:root {
+  --font-sans: "Font-sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+}
+

@@ -1,0 +1,20 @@
+---
+title: Bento
+description: A section layout with content organized into grid-like compartments, making it easy to present multiple elements neatly and clearly.
+priorityOrder : 2
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { pricingCode } from "@blocks/comparator/pricing"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Bento1"
+    src="https://ui.tailus.io/examples/forms/register3/"
+    code={pricingCode}
+    client:visible
+/>

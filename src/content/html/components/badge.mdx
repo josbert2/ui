@@ -1,0 +1,96 @@
+---
+title: Badge
+description: A small component typically used to display status information or additional context for another UI element.
+priorityOrder : 11
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/badge"
+import ComponentsPreviewCheck from '@components/ComponentsPreviewCheck.astro';
+
+
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <ComponentsPreviewCheck name="badge" />
+
+    <script is:inline src="../../../../packages/preline/dist/chip.js"></script>
+    <script is:inline>
+        const chipEl = document.querySelector('[data-hs-chip]');
+        const chipInstance = new HSChip(chipEl);
+    </script>
+
+
+   
+
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="flex gap-3">
+    <span class="badge sz-sm variant-neutral">Badge</span>
+    <span class="badge sz-sm variant-info">Badge</span>
+    <span class="badge sz-sm variant-success">Badge</span>
+    <span class="badge sz-sm variant-warning">Badge</span>
+    <span class="badge sz-sm variant-danger">Badge</span>
+    <span class="badge sz-sm variant-urgent">Badge</span>
+</div>`,
+              lang: "html"
+          }]}>
+        <div class="flex gap-3">
+            <span class="badge sz-sm variant-neutral">Badge</span>
+            <span class="badge sz-sm variant-info">Badge</span>
+            <span class="badge sz-sm variant-success">Badge</span>
+            <span class="badge sz-sm variant-warning">Badge</span>
+            <span class="badge sz-sm variant-danger">Badge</span>
+            <span class="badge sz-sm variant-urgent">Badge</span>
+        </div>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Badge 
+
+            The badge component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## Sizes
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="flex items-end gap-3">
+    <span class="badge sz-xs variant-success">Badge</span>
+    <span class="badge sz-sm variant-success">Badge</span>
+    <span class="badge sz-md variant-success">Badge</span>
+    <span class="badge sz-lg variant-success">Badge</span>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="flex items-end gap-3">
+                <span class="badge sz-xs variant-success">Badge</span>
+                <span class="badge sz-sm variant-success">Badge</span>
+                <span class="badge sz-md variant-success">Badge</span>
+                <span class="badge sz-lg variant-success">Badge</span>
+            </div>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Number
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<span class="badge sz-sm variant-urgent !px-1">32</span>`,
+              lang: "html"
+          }]}>
+            <span class="badge sz-sm variant-urgent !px-1">32</span>
+        </PreviewBlock>
+    </div>
+</div>

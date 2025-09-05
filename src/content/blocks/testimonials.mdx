@@ -1,0 +1,52 @@
+---
+title: Testimonials
+description: Features reviews or endorsements from users or clients, showcasing their positive experiences to build trust and credibility.
+priorityOrder : 7
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { bentoCode } from "@blocks/testimonials/bento"
+import { plainCode } from "@blocks/testimonials/plain"
+import { centeredCode } from "@blocks/testimonials/centered"
+import { bentoSoftCode } from "@blocks/testimonials/bento-soft"
+import { freeGridCode } from "@blocks/testimonials/free-grid"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Bento"
+    src="/blocks-preview/testimonials/bento"
+    code={bentoCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Bento Soft Cards"
+    src="/blocks-preview/testimonials/bento-soft"
+    code={bentoSoftCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Plain"
+    src="/blocks-preview/testimonials/plain"
+    code={plainCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Centered Plain"
+    src="/blocks-preview/testimonials/centered"
+    code={centeredCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Wall Of Love"
+    src="/blocks-preview/testimonials/free-grid"
+    code={freeGridCode}
+    client:visible
+/>
