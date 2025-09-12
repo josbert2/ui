@@ -6,7 +6,6 @@
     "type": "git",
     "url": "https://github.com/Tailus-UI/tailus ui html"
   },
-  
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
@@ -59,6 +58,7 @@
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-toolbar": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@squircle-js/react": "^1.2.18",
     "@tailus/themer": "^0.1.6",
     "@tailus/themer-plugins": "^0.1.2",
     "@tailwindcss/container-queries": "^0.1.1",
@@ -79,6 +79,7 @@
     "highlight.js": "^11.11.1",
     "jszip": "^3.10.1",
     "lucide-react": "^0.378.0",
+    "motion": "^12.23.12",
     "nanostores": "^0.9.5",
     "pdfmake": "^0.2.18",
     "picocolors": "^1.1.1",
@@ -114,6 +115,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
+    "@iconify-json/tabler": "^1.2.22",
+    "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/prismjs": "^1.26.2",
     "@types/react": "^18.3.3",

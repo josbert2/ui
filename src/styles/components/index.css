@@ -1,5 +1,5 @@
 @import 'tailwindcss' ;
-
+@plugin "@iconify/tailwind4";
 
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);     /* valor neutro para todos los botones */
@@ -20,7 +20,7 @@
   --base-content: oklch(95.5% 0.015 270);
 
   /* Primary / Secondary */
-  --primary: oklch(72.25% 0.146 231.39);
+  --primary: oklch(0.72 0.19 149.57);
   --primary-content: oklch(98% .022 95.277);
   --secondary: oklch(66.8% 0.0184 304.67);
 
@@ -56,7 +56,7 @@
 
   /* Radii */
   --radius-selector: 1rem;
-  --radius-field: 24px;
+  --radius-field: 14px;
   --radius-box: 0.5rem;
 
   /* Sizes */
