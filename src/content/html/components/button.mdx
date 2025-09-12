@@ -170,316 +170,51 @@ export const buttonVariants = () => {
       name="icon"
     />
 
-    <div class="">
-      
-   
-   
-
-
-
-
-        
-       
-         
-   
-
-
-
-
- 
-
-
-
-
-   
-
-
-
-
-
-
-
-  
-
-
-    
-
-
-    <div class="mt-10"></div>
-    
-
-
-
-
-
-     <div class="mt-10"></div>
     ## Icon only
     ### Use btn-square or btn-circle to create circle/square button with a 1:1 ratio.
 
+    <ComponentsPreviewCheck 
+      template={1}
+      folder="button" 
+      name="onlyIcon"
+    />
 
-     <PreviewBlock codeBlocks={
-              [{
-            code:`<button class="btn btn-square btn-primary" aria-label="Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-square btn-soft btn-primary" aria-label="Soft Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-square btn-outline btn-primary" aria-label="Outline Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-square btn-gradient btn-primary" aria-label="Gradient Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-primary" aria-label="Circle Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-soft btn-primary" aria-label="Circle Soft Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-outline btn-primary" aria-label="Circle Outline Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-gradient btn-primary" aria-label="Circle Gradient Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>`,
-              lang: "html"
-    }]} >
-
-        <div  class="w-full">
-            <button class="btn btn-square btn-primary" aria-label="Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-square btn-soft btn-primary" aria-label="Soft Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-square btn-outline btn-primary" aria-label="Outline Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-square btn-gradient btn-primary" aria-label="Gradient Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-primary" aria-label="Circle Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-soft btn-primary" aria-label="Circle Soft Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-outline btn-primary" aria-label="Circle Outline Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-<button class="btn btn-circle btn-gradient btn-primary" aria-label="Circle Gradient Icon Button"> <span class="icon-[tabler--star] size-4.5 shrink-0"></span></button>
-        </div>
-    </PreviewBlock>
-
-
-    <div class="mt-10"></div>
     ## Buttons with input tags
     ###  You can use btn class on ```<button>, <input>, <a>,``` etc…
 
+    <ComponentsPreviewCheck 
+      template={1}
+      folder="button" 
+      name="inputTags"
+    />
 
-     <PreviewBlock codeBlocks={
-              [{
-            code:`<a role="button" class="btn">Link</a>
-<button type="submit" class="btn">Button</button>
-<input type="button" value="Input" class="btn" />
-<input type="submit" value="Submit" class="btn" />
-<input type="radio" aria-label="Radio" class="btn" />
-<input type="checkbox" aria-label="Checkbox" class="btn" />
-<input type="reset" value="Reset" class="btn" />`,
-              lang: "html"
-    }]} >
-
-        <div  class="w-full">
-            <a role="button" class="btn">Link</a>
-            <button type="submit" class="btn">Button</button>
-            <input type="button" value="Input" class="btn" />
-            <input type="submit" value="Submit" class="btn" />
-            <input type="radio" aria-label="Radio" class="btn" />
-            <input type="checkbox" aria-label="Checkbox" class="btn" />
-            <input type="reset" value="Reset" class="btn" />
-        </div>
-    </PreviewBlock>
-
-
-    <div class="mt-10"></div>
     ## Social buttons
     ###  Use the following sample code to build custom Social, Payment, and other types of buttons. This example also demonstrates how to create a custom button using two variables: --btn-color and --btn-fg.
 
-
-     <PreviewBlock codeBlocks={
-              [{
-            code:`<!-- Solid -->
-<div class="flex flex-wrap gap-2 w-full">
-  <button class="btn [--btn-color:#1877F2] text-white" >
-    <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-  </button>
-  <button class="btn [--btn-color:#000] text-white" >
-    <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-  </button>
-  <button class="btn [--btn-color:#0a66c2] text-white" >
-    <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-  </button>
-  <button class="btn [--btn-color:#2b3137] text-white" >
-    <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-  </button>
-</div>
-
-<!-- Soft -->
-<div class="flex flex-wrap gap-2 w-full">
-  <button class="btn btn-soft [--btn-color:#1877F2]">
-    <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-  </button>
-  <button class="btn btn-soft [--btn-color:#000]">
-    <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-  </button>
-  <button class="btn btn-soft [--btn-color:#0a66c2]">
-    <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-  </button>
-  <button class="btn btn-soft [--btn-color:#2b3137]">
-    <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-  </button>
-</div>
-
-<!-- Outline -->
-<div class="flex flex-wrap gap-2 w-full">
-  <button class="btn btn-outline [--btn-color:#1877F2]">
-    <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-  </button>
-  <button class="btn btn-outline [--btn-color:#000]">
-    <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-  </button>
-  <button class="btn btn-outline [--btn-color:#0a66c2]">
-    <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-  </button>
-  <button class="btn btn-outline [--btn-color:#2b3137]">
-    <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-  </button>
-</div>
-
-<!-- Text -->
-<div class="flex flex-wrap gap-2 w-full">
-  <button class="btn btn-text [--btn-color:#1877F2]">
-    <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-  </button>
-  <button class="btn btn-text [--btn-color:#000]">
-    <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-  </button>
-  <button class="btn btn-text [--btn-color:#0a66c2]">
-    <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-  </button>
-  <button class="btn btn-text [--btn-color:#2b3137]">
-    <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-  </button>
-</div>`,
-              lang: "html"
-    }]} >
-
-        <div  class="w-full">
-      
-            <div class="flex flex-wrap gap-2 w-full">
-            <button class="btn [--btn-color:#1877F2] text-white" >
-                <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-            </button>
-            <button class="btn [--btn-color:#000] text-white" >
-                <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-            </button>
-            <button class="btn [--btn-color:#0a66c2] text-white" >
-                <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-            </button>
-            <button class="btn [--btn-color:#2b3137] text-white" >
-                <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-            </button>
-            </div>
+    <ComponentsPreviewCheck 
+      template={1}
+      folder="button" 
+      name="socialButton"
+    />
 
 
-            <div class="flex flex-wrap gap-2 w-full">
-            <button class="btn btn-soft [--btn-color:#1877F2]">
-                <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-            </button>
-            <button class="btn btn-soft [--btn-color:#000]">
-                <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-            </button>
-            <button class="btn btn-soft [--btn-color:#0a66c2]">
-                <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-            </button>
-            <button class="btn btn-soft [--btn-color:#2b3137]">
-                <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-            </button>
-            </div>
-
-            <div class="flex flex-wrap gap-2 w-full">
-            <button class="btn btn-outline [--btn-color:#1877F2]">
-                <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-            </button>
-            <button class="btn btn-outline [--btn-color:#000]">
-                <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-            </button>
-            <button class="btn btn-outline [--btn-color:#0a66c2]">
-                <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-            </button>
-            <button class="btn btn-outline [--btn-color:#2b3137]">
-                <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-            </button>
-            </div>
-
-            <div class="flex flex-wrap gap-2 w-full">
-  <button class="btn btn-text [--btn-color:#1877F2]">
-    <span class="icon-[tabler--brand-facebook] size-4.5 shrink-0"></span> Facebook
-  </button>
-  <button class="btn btn-text [--btn-color:#000]">
-    <span class="icon-[tabler--brand-x] size-4.5 shrink-0"></span> Twitter
-  </button>
-  <button class="btn btn-text [--btn-color:#0a66c2]">
-    <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span> LinkedIn
-  </button>
-  <button class="btn btn-text [--btn-color:#2b3137]">
-    <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span> Github
-  </button>
-</div>
-        </div>
-    </PreviewBlock>
-
-
-    <div class="mt-10"></div>
     ## Loading buttons
     ###  Use loading component to add a loader to the button.
 
+    <ComponentsPreviewCheck 
+      template={1}
+      folder="button" 
+      name="loading"
+    />
 
-
-
-     <PreviewBlock codeBlocks={
-              [{
-            code:`<button class="btn btn-square btn-primary" aria-label="Loading Button">
-<span class="loading loading-spinner"></span>
-</button>
-
-<button class="btn btn-primary">
-  <span class="loading loading-spinner"></span>
-  loading
-</button>`,
-              lang: "html"
-    }]} >
-
-        <div  class="w-full">
-            <button class="btn btn-square btn-primary" aria-label="Loading Button">
-<span class="loading loading-spinner"></span>
-</button>
-
-<button class="btn btn-primary">
-  <span class="loading loading-spinner"></span>
-  loading
-</button>
-        </div>
-    </PreviewBlock>
-
-
-
- <div class="mt-10"></div>
     ## Dashed buttons
     ###  You can achieve this style by combining the border-dashed utility class with the btn-outline modifier class.
 
-
-
-    <PreviewBlock codeBlocks={
-              [{
-            code:`<button class="border-dashed btn btn-outline">Default</button>
-<button class="border-dashed btn btn-outline btn-primary">Primary</button>
-<button class="border-dashed btn btn-outline btn-secondary">Secondary</button>
-<button class="border-dashed btn btn-outline btn-accent">Accent</button>
-<button class="border-dashed btn btn-outline btn-info">Info</button>
-<button class="border-dashed btn btn-outline btn-success">Success</button>
-<button class="border-dashed btn btn-outline btn-warning">Warning</button>
-<button class="border-dashed btn btn-outline btn-error">Error</button>`,
-              lang: "html"
-    }]} >
-
-        <div  class="flex flex-wrap gap-2 w-full">
-           <button class="border-dashed btn btn-outline">Default</button>
-            <button class="border-dashed btn btn-outline btn-primary">Primary</button>
-            <button class="border-dashed btn btn-outline btn-secondary">Secondary</button>
-            <button class="border-dashed btn btn-outline btn-accent">Accent</button>
-            <button class="border-dashed btn btn-outline btn-info">Info</button>
-            <button class="border-dashed btn btn-outline btn-success">Success</button>
-            <button class="border-dashed btn btn-outline btn-warning">Warning</button>
-            <button class="border-dashed btn btn-outline btn-error">Error</button>
-        </div>
-    </PreviewBlock>
-    
-
-
-    </div>
-
+    <ComponentsPreviewCheck 
+      template={1}
+      folder="button" 
+      name="dashed"
+    />
 
    
 

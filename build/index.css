@@ -19567,6 +19567,9 @@ mark {
     color: color-mix(in oklab, var(--color-base-content) 80%, transparent);
   }
 }
+.space-y-20 h2 {
+  margin-block-end: 0;
+}
 @layer base {
   :where(:root),:root:has(input.theme-controller[value=light]:checked),[data-theme=light] {
     color-scheme: light;

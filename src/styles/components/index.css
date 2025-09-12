@@ -297,3 +297,8 @@ color-mix(in oklab, var(--color-base-content) 80%, transparent);
     @slot;
   }
 }
+
+
+.space-y-20 h2{
+  margin-block-end: 0;
+}
