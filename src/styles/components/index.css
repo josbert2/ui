@@ -13,6 +13,7 @@
 @import './button/button.css';
 
 :root {
+
   /* Base */
   --base-100: oklch(20% 0.01 260);
   --base-200: oklch(26% 0.015 260);
@@ -302,3 +303,7 @@ color-mix(in oklab, var(--color-base-content) 80%, transparent);
 .space-y-20 h2{
   margin-block-end: 0;
 }
+
+
+
+

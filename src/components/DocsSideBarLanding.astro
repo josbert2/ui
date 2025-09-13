@@ -54,7 +54,7 @@ const blocksLinks = blocks
     })
 </script>
 
-<div class="relative px-8 pt-6 h-full lg:-ml-4 lg:px-0 lg:pl-4 lg:pt-0">
+<div class="fixed px-8 pt-6 h-screen lg:-ml-4 lg:px-0 lg:pl-4 lg:pt-0">
     <div aria-hidden="true" class="absolute top-0 left-0 right-3 h-10 pointer-events-none">
         <BlurDivs />
     </div>
@@ -111,7 +111,7 @@ const blocksLinks = blocks
                     .sort(([a], [b]) => reactOrder.indexOf(a) - reactOrder.indexOf(b)) // Sort based on the order array
                     .map(([subdirectory, pages]) => (
                         <div>
-                            <Caption as="span" weight="medium" neutral className="capitalize text-edge-primary">
+                            <Caption as="span" weight="medium" neutral className="capitalize text-white">
                                 {subdirectory.replace('-', ' ')}
                             </Caption>
                             <ul class="mt-4 space-y-2">

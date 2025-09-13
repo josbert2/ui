@@ -139,12 +139,16 @@ const repo = 'html.tailus.io'
             
             <div class="lg:mx-auto lg:flex l lg:gap-24 xl:px-0">
                 <div id="menu-list" style="    width:14.5%;left:24px" class=" fixed bottom-0 left-0 z-50 hidden h-[calc(100dvh-5.75rem)] w-full bg-white lg:left-auto lg:flex lg:h-[calc(100dvh-4rem)] lg:w-48 lg:flex-col lg:justify-end lg:bg-transparent dark:bg-gray-925 dark:lg:bg-transparent" data-pagefind-ignore>
-                    <DocsSideBarLanding target={collection} />
+                    
                 </div>
                 <div class="w-full lg:ml-auto">
                     <main class="row-start-2 row-end-3">
                         <div class="hidden md:grid justify-center lg:mx-auto  grid-cols-1 md:grid-cols-[1fr_minmax(0,var(--width-landing-container))_1fr]">
-                            <div class="hidden col-start-1 md:block light:bg-surface-a1"></div>
+                            <div class="hidden col-start-1 md:block light:bg-surface-a1">
+                                <div class="w-full justify-end flex">
+                                    <DocsSideBarLanding target={collection} />
+                                </div>
+                            </div>
                             <div class="relative border-r border-b-0 border-l GoldenRatioLayoutDesktop border-edge-primary">
                                <!--- <svg class="absolute inset-0 pointer-events-none overflow-visible text-decoration -m-[1.5px]" viewBox="0 0 340 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g>
@@ -290,9 +294,13 @@ const repo = 'html.tailus.io'
                     <DocsFooter />
                 </div>
             </div>
+
         </main>
         <Search client:load>
             <div id="search"></div>
         </Search>
+        <div style="--pattern-fg: color-mix(in oklab, #ffffff99 10%, transparent);" class="h-full fixed left-0 w-[37px] -right-px col-start-2 row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+        <div style="--pattern-fg: color-mix(in oklab, #ffffff99 10%, transparent);" class="h-full fixed right-0 w-[37px] -right-px col-start-2 row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+
     </body>
 </html>
