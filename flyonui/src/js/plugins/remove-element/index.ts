@@ -23,6 +23,7 @@ class HSRemoveElement extends HSBasePlugin<IRemoveElementOptions> implements IRe
   constructor(el: HTMLElement, options?: IRemoveElementOptions) {
     super(el, options)
 
+ 
     const data = el.getAttribute('data-remove-element-options')
     const dataOptions: IRemoveElementOptions = data ? JSON.parse(data) : {}
     const concatOptions = {
@@ -50,11 +51,43 @@ class HSRemoveElement extends HSBasePlugin<IRemoveElementOptions> implements IRe
   }
 
   private remove() {
-    if (!this.removeTarget) return false
-
-    this.removeTarget.classList.add(this.removeTargetAnimationClass)
-
-    afterTransition(this.removeTarget, () => setTimeout(() => this.removeTarget.remove()))
+    if (!this.removeTarget) return false;
+  
+    const target = this.removeTarget;
+  
+    // añade la clase de animación
+    target.classList.add(this.removeTargetAnimationClass);
+  
+    // Detectar duración total de transición (delay + duration)
+    const cs = getComputedStyle(target);
+    const dur = (cs.transitionDuration || '0s').split(',').map(parseTimeToMs).reduce((a, b) => a + b, 0);
+    const delay = (cs.transitionDelay || '0s').split(',').map(parseTimeToMs).reduce((a, b) => a + b, 0);
+    const total = dur + delay;
+  
+    // Siempre intenta afterTransition, pero con fallback garantizado
+    try {
+      afterTransition(target, () => target.remove());
+    } catch {
+      // si afterTransition explotó, igual removemos con el fallback
+    }
+  
+    // Fallback seguro: si no hay transición real, remueve en el próximo frame.
+    if (!total) {
+      requestAnimationFrame(() => target.remove());
+    } else {
+      // Si hay transición, damos un margen (total + 50ms) por si el evento no dispara.
+      setTimeout(() => {
+        if (document.body.contains(target)) target.remove();
+      }, total + 50);
+    }
+  
+    function parseTimeToMs(str: string) {
+      const s = str.trim();
+      if (s.endsWith('ms')) return parseFloat(s);
+      if (s.endsWith('s')) return parseFloat(s) * 1000;
+      const n = parseFloat(s);
+      return isNaN(n) ? 0 : n;
+    }
   }
 
   // Public methods

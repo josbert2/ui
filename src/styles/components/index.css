@@ -73,54 +73,8 @@
 }
 
 
-@plugin "../../../flyonui/theme/index.js" {
-  name: "maintheme";
-  default: true;
-  prefersdark: false;
-  color-scheme: light;
 
-  --color-base-100: var(--base-100);
-  --color-base-200: var(--base-200);
-  --color-base-300: var(--base-300);
-  --color-base-content: var(--base-content);
-  --color-primary: var(--primary);
-  --color-primary-content: var(--primary-content);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-accent-content: var(--accent-content);
-  --color-neutral: var(--neutral);
-  --color-neutral-content: var(--neutral-content);
-  --color-info: var(--info);
-  --color-info-content: var(--info-content);
-  --color-success: var(--success);
-  --color-success-content: var(--success-content);
-  --color-warning: var(--warning);
-  --color-warning-content: var(--warning-content);
-  --color-error: var(--error);
-  --color-error-content: var(--error-content);
-
-  --radius-selector: var(--radius-selector);
-  --radius-field: var(--radius-field);
-  --radius-box: var(--radius-box);
-
-  --size-selector: var(--size-selector);
-  --size-field: var(--size-field);
-
-  --border: var(--border);
-
-  --depth: var(--depth);
-  --noise: var(--noise);
-
-  --color-avocado-500: var(--avocado-500);
-  --color-header: var(--header);
-  --color-body: var(--body);
-  --color-border: var(--border-color);
-  --color-gradient-decoration: var(--gradient-decoration);
-  --color-svg-decoration: var(--svg-decoration);
-  --color-sub-content-code: var(--sub-content-code);
-}
-
-@plugin "../../../flyonui/theme/index.js" {
+@plugin "../../../flyonui/index.js" {
   name: "maintheme-dark";
   default: false;
   prefersdark: true;

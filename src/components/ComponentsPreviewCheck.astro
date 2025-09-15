@@ -4,7 +4,7 @@ import { Code } from 'astro:components';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const { name, folder = '', template = 0 } = Astro.props;
+const { name, folder = '', template = 0, 'class': className = '' } = Astro.props;
 
 
 const modules = import.meta.glob(`../lib/ui/**/*.{astro,jsx,tsx}`, { eager: true });
@@ -60,7 +60,7 @@ const initialActiveTab = 'preview';
 
     </style>
     <div class="relative !mb-5 flex aspect-auto !pb-0 min-h-32 items-center justify-center rounded-[--card-radius] border  p-2 sm:mx-0 sm:min-h-56  dark:bg-gray-925" style="background-color: #2C2C31;">
-      <div class="preview-container flex space-x-2">
+      <div class:list={['preview-container', className]}>
           {ComponentToRender
             ? <ComponentToRender />
             : <p>No se pudo cargar el componente {name}</p>}
